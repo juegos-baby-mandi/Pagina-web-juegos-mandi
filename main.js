@@ -1,1 +1,1 @@
-console.log('Sitio funcionando');
+// JavaScript base
