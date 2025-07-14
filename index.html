@@ -12,16 +12,17 @@
 <body>
 
   <!-- Fondo de video -->
-  <video autoplay muted loop id="video-fondo">
-    <source src="videos/fondo.mp4" type="video/mp4" />
-    Tu navegador no soporta video HTML5.
-  </video>
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="videos/fondo.mp4" type="video/mp4">
+      Tu navegador no soporta videos HTML5.
+    </video>
+    <div class="video-overlay"></div>
+  </div>
 
-  <!-- Encabezado fijo con navegación -->
+  <!-- Encabezado con logo y navegación -->
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="Juegos Baby Mandi" />
-    </div>
+    <img src="img/logo.png" alt="Juegos Baby Mandi" class="logo" />
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -30,7 +31,7 @@
         <li><a href="experiencias.html">Experiencias</a></li>
         <li><a href="testimonios.html">Testimonios</a></li>
         <li><a href="promociones.html">Promociones</a></li>
-        <li><a href="empresas.html">Eventos Empresas</a></li>
+        <li><a href="eventos-empresas.html">Eventos Empresas</a></li>
         <li><a href="consejos.html">Consejos</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
@@ -41,7 +42,7 @@
   <main>
     <section class="bienvenida">
       <h1>Bienvenidos a Juegos Baby Mandi</h1>
-      <p>Especialistas en arriendo de juegos inflables y entretenimiento para todo tipo de eventos. Desde 2018 llevamos alegría a miles de familias, empresas y comunidades.</p>
+      <p>Especialistas en arriendo de juegos inflables y entretenimiento para todo tipo de eventos. Desde 2018 llevamos alegría a miles de familias, empresas y comunidades en la Región Metropolitana.</p>
     </section>
 
     <section class="ofrecemos">
@@ -53,23 +54,34 @@
         <li>💦 Juegos inflables de agua y toboganes</li>
         <li>🎊 Fiestas de espuma</li>
         <li>🎮 Juegos electrónicos y kiddies</li>
+        <li>🎉 Taca Taca, Arcade, ping pong, etc</li>
       </ul>
     </section>
 
-    <section class="cta">
-      <p>Consulta disponibilidad por <a href="https://wa.me/56946535784" target="_blank">WhatsApp</a> antes de reservar.</p>
-      <a href="catalogo.html" class="boton-catalogo">Ver Catálogo</a>
+    <section class="disponibilidad">
+      <h2>Consulta disponibilidad para reservar</h2>
+      <p>Todos nuestros productos están sujetos a disponibilidad. Escríbenos por <a href="https://wa.me/56946535784" target="_blank">WhatsApp</a> antes de confirmar.</p>
+    </section>
+
+    <section class="ver-catalogo">
+      <h2>Ver Catálogo</h2>
+      <ul>
+        <li><a href="inflables.html">Juegos Inflables</a></li>
+        <li><a href="mecanicos.html">Juegos Mecánicos</a></li>
+        <li><a href="electronicos.html">Juegos Electrónicos e Interior</a></li>
+        <li><a href="agua.html">Juegos de Agua y Espuma</a></li>
+        <li><a href="catalogo.html">👉 Ver todo el catálogo junto</a></li>
+      </ul>
     </section>
   </main>
 
   <!-- Pie de página -->
   <footer>
-    <p>© 2025 Juegos Baby Mandi | Pudahuel, Lo Prado, Renca, Quinta Normal, Cerro Navia</p>
+    <p>© 2025 Juegos Baby Mandi | Región Metropolitana</p>
     <p>Correo: <a href="mailto:juegosbabymandi@gmail.com">juegosbabymandi@gmail.com</a></p>
-    <p>
-      Redes: 
-      <a href="https://instagram.com/juegosbabymandi" target="_blank">Instagram</a> | 
-      <a href="https://facebook.com/JuegosBabyMandi" target="_blank">Facebook</a> | 
+    <p>Síguenos:
+      <a href="https://www.instagram.com/juegosbabymandi" target="_blank">Instagram</a> |
+      <a href="https://www.facebook.com/JuegosBabyMandi" target="_blank">Facebook</a> |
       <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">TikTok</a>
     </p>
   </footer>
