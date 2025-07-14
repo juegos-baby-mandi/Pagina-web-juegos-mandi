@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Eventos para Empresas - Juegos Baby Mandi</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header>
+    <h1>Eventos para Empresas</h1>
+  </header>
+
+  <section>
+    <p>En <strong>Juegos Baby Mandi</strong> ofrecemos servicios especiales para empresas, municipalidades, colegios, jardines infantiles, juntas de vecinos y productoras de eventos.</p>
+
+    <p>🎈 Ya sea para celebraciones masivas, días del niño, fiestas de fin de año o actividades de incentivo laboral, contamos con <strong>juegos inflables, toro mecánico, reloj derribador, fiesta de espuma</strong> y más.</p>
+
+    <p>🔒 Contamos con boleta o factura, y todos nuestros juegos son de uso comercial y se entregan limpios y desinfectados.</p>
+
+    <p>📍 Región Metropolitana. Consulta la disponibilidad en tu comuna.</p>
+  </section>
+
+  <section>
+    <h2>Formulario de cotización para empresas</h2>
+    <form action="mailto:juegosbabymandi@gmail.com" method="POST" enctype="text/plain">
+      <label for="empresa">Nombre de la empresa o institución:</label><br>
+      <input type="text" id="empresa" name="empresa" required><br><br>
+
+      <label for="tipo-evento">Tipo de evento:</label><br>
+      <input type="text" id="tipo-evento" name="tipo-evento"><br><br>
+
+      <label for="juegos">Juegos deseados:</label><br>
+      <textarea id="juegos" name="juegos" rows="3" placeholder="Ej: toro mecánico, fiesta de espuma..."></textarea><br><br>
+
+      <label for="asistentes">Cantidad aproximada de asistentes:</label><br>
+      <input type="number" id="asistentes" name="asistentes"><br><br>
+
+      <label for="comuna">Comuna del evento:</label><br>
+      <input type="text" id="comuna" name="comuna"><br><br>
+
+      <label for="fecha">Fecha estimada:</label><br>
+      <input type="date" id="fecha" name="fecha"><br><br>
+
+      <label for="contacto">Correo o teléfono de contacto:</label><br>
+      <input type="text" id="contacto" name="contacto" required><br><br>
+
+      <label for="comentarios">Comentarios adicionales:</label><br>
+      <textarea id="comentarios" name="comentarios" rows="4"></textarea><br><br>
+
+      <button type="submit">Enviar cotización</button>
+    </form>
+
+    <p style="margin-top: 20px;">📲 También puedes escribirnos directamente por WhatsApp: <a href="https://wa.me/56946535784" target="_blank">+56 9 4653 5784</a></p>
+  </section>
+</body>
+</html>
