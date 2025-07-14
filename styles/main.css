@@ -1,108 +1,104 @@
-/* Reset básico */
+/* Estilos base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+body, html {
   font-family: Arial, sans-serif;
-  color: white;
-  background-color: #ffffff;
+  color: #fff;
+  height: 100%;
+  background-color: #000;
+  position: relative;
+  z-index: 1;
 }
 
-/* HEADER */
+#video-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Encabezado */
 header {
-  background-color: #6a1b9a; /* Morado principal */
-  color: white;
-  padding: 20px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
+  background-color: rgba(128, 0, 128, 0.8);
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header img {
-  height: 70px;
-  vertical-align: middle;
-  margin-bottom: 10px;
+  height: 50px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 15px;
-  margin-top: 10px;
 }
 
-nav a {
-  color: white;
+nav ul li a {
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* VIDEO de fondo */
-#video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.4;
-}
-
-/* MAIN */
+/* Secciones */
 main {
-  padding: 20px;
+  padding: 120px 20px 40px;
   text-align: center;
-  z-index: 2;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.3); /* Filtro para que se vea el texto encima del video */
-  color: white;
 }
 
-/* BOTONES */
-a.boton {
+h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+p, ul {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: auto;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+/* Botón catálogo */
+.boton-catalogo {
   display: inline-block;
-  background-color: #9c27b0;
-  color: white;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 8px;
   margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #fff;
+  color: #800080;
+  text-decoration: none;
   font-weight: bold;
-}
-a.boton:hover {
-  background-color: #7b1fa2;
+  border-radius: 8px;
 }
 
-/* FOOTER */
+/* Footer */
 footer {
-  background-color: #6a1b9a;
-  text-align: center;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
   margin-top: 40px;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-  }
-
-  header img {
-    height: 60px;
-  }
-
-  main {
-    font-size: 16px;
-  }
 }
