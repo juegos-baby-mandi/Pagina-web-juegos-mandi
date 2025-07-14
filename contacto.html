@@ -7,15 +7,16 @@
   <link rel="stylesheet" href="styles/main.css" />
   <style>
     header img {
-      height: 80px;
+      height: 70px;
     }
 
     .formulario-contacto {
       max-width: 600px;
       margin: 2rem auto;
-      padding: 1rem;
-      background-color: #f9f9f9;
-      border-radius: 8px;
+      padding: 1.5rem;
+      background-color: #fefefe;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .formulario-contacto form {
@@ -30,7 +31,7 @@
 
     .formulario-contacto input,
     .formulario-contacto textarea {
-      padding: 0.5rem;
+      padding: 0.6rem;
       border-radius: 5px;
       border: 1px solid #ccc;
       margin-top: 0.3rem;
@@ -44,6 +45,7 @@
       padding: 0.8rem;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 1rem;
     }
 
     .formulario-contacto button:hover {
@@ -66,6 +68,7 @@
 
       .formulario-contacto {
         margin: 1rem;
+        padding: 1rem;
       }
     }
   </style>
@@ -95,40 +98,13 @@
   <!-- Formulario de contacto -->
   <main>
     <section class="formulario-contacto">
-      <h1>Contáctanos</h1>
-      <p>Completa el formulario y te responderemos a la brevedad. También puedes escribirnos por <a href="https://wa.me/56946535784" target="_blank">WhatsApp</a>.</p>
+      <h1>¿Tienes dudas o quieres agendar un evento?</h1>
+      <p>📞 Escríbenos directamente por <a href="https://wa.me/56946535784" target="_blank">WhatsApp: +56 9 4653 5784</a><br>
+         ✉️ Correo: <a href="mailto:juegosbabymandi@gmail.com">juegosbabymandi@gmail.com</a>
+      </p>
 
       <form action="https://formsubmit.co/juegosbabymandi@gmail.com" method="POST">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
 
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" required>
-
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono">
-
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-
-        <input type="hidden" name="_next" value="https://pagina-web-juegos-mandi.vercel.app/gracias.html">
-        <input type="hidden" name="_captcha" value="false">
-
-        <button type="submit">Quiero ser contactado</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- Pie de página -->
-  <footer>
-    <p>© 2025 Juegos Baby Mandi | Región Metropolitana</p>
-    <p>Correo: <a href="mailto:juegosbabymandi@gmail.com">juegosbabymandi@gmail.com</a></p>
-    <p>Síguenos:
-      <a href="https://www.instagram.com/juegosbabymandi" target="_blank">Instagram</a> |
-      <a href="https://www.facebook.com/JuegosBabyMandi" target="_blank">Facebook</a> |
-      <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">TikTok</a>
-    </p>
-  </footer>
-
-</body>
-</html>
+        <label for="correo">Correo:</label
