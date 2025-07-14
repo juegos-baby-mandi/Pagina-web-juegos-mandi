@@ -11,45 +11,48 @@
 </head>
 <body>
 
-  <!-- Fondo de video -->
-  <div class="video-background">
-    <video autoplay muted loop playsinline>
-      <source src="videos/fondo.mp4" type="video/mp4">
-      Tu navegador no soporta videos HTML5.
-    </video>
-    <div class="video-overlay"></div>
-  </div>
-  
-<section class="portada">
-  <img src="img/imagen1.png" alt="Diversión con Juegos Baby Mandi" class="imagen-portada">
-</section>
-
   <!-- Encabezado con logo y navegación -->
   <header>
-    <img src="img/logo.png" alt="Juegos Baby Mandi" class="logo" />
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="catalogo.html">Catálogo</a></li>
-        <li><a href="vision-mision.html">Visión y Misión</a></li>
-        <li><a href="experiencias.html">Experiencias</a></li>
-        <li><a href="testimonios.html">Testimonios</a></li>
-        <li><a href="promociones.html">Promociones</a></li>
-        <li><a href="eventos-empresas.html">Eventos Empresas</a></li>
-        <li><a href="consejos.html">Consejos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
+    <div class="logo-nav">
+      <a href="index.html">
+        <img src="img/logo.png" alt="Juegos Baby Mandi" class="logo" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="vision-mision.html">Visión y Misión</a></li>
+          <li><a href="experiencias.html">Experiencias</a></li>
+          <li><a href="testimonios.html">Testimonios</a></li>
+          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="eventos-empresas.html">Eventos Empresas</a></li>
+          <li><a href="consejos.html">Consejos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
+
+  <!-- Video de fondo -->
+  <section class="video-section">
+    <video autoplay muted loop playsinline>
+      <source src="videos/fondo.mp4" type="video/mp4" />
+      Tu navegador no soporta videos.
+    </video>
+    <div class="video-overlay">
+      <h1>Bienvenidos a Juegos Baby Mandi</h1>
+      <p>¡Diversión garantizada para empresas, colegios y familias!</p>
+    </div>
+  </section>
+
+  <!-- Imagen destacada -->
+  <section class="imagen-destacada">
+    <img src="img/imagen1.png" alt="Diversión garantizada con Juegos Baby Mandi">
+  </section>
 
   <!-- Contenido principal -->
   <main>
-    <section class="bienvenida">
-      <h1>Bienvenidos a Juegos Baby Mandi</h1>
-      <p>Especialistas en arriendo de juegos inflables y entretenimiento para todo tipo de eventos. Desde 2018 llevamos alegría a miles de familias, empresas y comunidades en la Región Metropolitana.</p>
-    </section>
-
-    <section class="ofrecemos">
+    <section>
       <h2>¿Qué ofrecemos?</h2>
       <ul>
         <li>🎉 Juegos inflables para cumpleaños</li>
@@ -58,16 +61,15 @@
         <li>💦 Juegos inflables de agua y toboganes</li>
         <li>🎊 Fiestas de espuma</li>
         <li>🎮 Juegos electrónicos y kiddies</li>
-        <li>🎉 Taca Taca, Arcade, ping pong, etc</li>
       </ul>
     </section>
 
-    <section class="disponibilidad">
-      <h2>Consulta disponibilidad para reservar</h2>
+    <section>
+      <h2>Consulta disponibilidad antes de arrendar</h2>
       <p>Todos nuestros productos están sujetos a disponibilidad. Escríbenos por <a href="https://wa.me/56946535784" target="_blank">WhatsApp</a> antes de confirmar.</p>
     </section>
 
-    <section class="ver-catalogo">
+    <section>
       <h2>Ver Catálogo</h2>
       <ul>
         <li><a href="inflables.html">Juegos Inflables</a></li>
@@ -79,7 +81,7 @@
     </section>
   </main>
 
-  <!-- Pie de página -->
+  <!-- Footer -->
   <footer>
     <p>© 2025 Juegos Baby Mandi | Región Metropolitana</p>
     <p>Correo: <a href="mailto:juegosbabymandi@gmail.com">juegosbabymandi@gmail.com</a></p>
