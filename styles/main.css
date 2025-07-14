@@ -38,10 +38,13 @@ header {
   align-items: center;
   padding: 1rem;
   background-color: rgba(80, 0, 120, 0.8);
-}
 
-header .logo {
-  height: 60px;
+}
+.logo {
+  height: 120px;
+  max-width: 100%;
+  object-fit: contain;
+  padding: 5px;
 }
 
 nav ul {
