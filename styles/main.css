@@ -80,3 +80,10 @@ footer {
   padding: 1rem;
   margin-top: 3rem;
 }
+
+.imagen-portada {
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  margin: 20px auto;
+
