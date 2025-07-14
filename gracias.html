@@ -1,47 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>¡Gracias por tu cotización!</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gracias por tu mensaje</title>
+  <link rel="stylesheet" href="styles/main.css" />
   <style>
     .gracias {
-      max-width: 600px;
-      margin: 100px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
       text-align: center;
       padding: 2rem;
-      background-color: #f3f3f3;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     .gracias h1 {
-      color: #7c4dff;
+      color: #6a1b9a;
+      margin-bottom: 1rem;
+    }
+
+    .gracias p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
     }
 
     .gracias a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #7c4dff;
-      color: white;
+      background-color: #6a1b9a;
+      color: #fff;
       text-decoration: none;
+      padding: 0.8rem 1.5rem;
       border-radius: 5px;
+      font-size: 1rem;
     }
 
     .gracias a:hover {
-      background-color: #5e35b1;
+      background-color: #4a148c;
     }
   </style>
 </head>
 <body>
 
-  <div class="gracias">
-    <h1>¡Gracias por tu cotización!</h1>
-    <p>Tu solicitud fue enviada con éxito. Te responderemos lo antes posible al correo o WhatsApp que nos dejaste 💜</p>
-    <a href="index.html">Volver al inicio</a>
-  </div>
+  <!-- Encabezado -->
+  <header>
+    <a href="index.html">
+      <img src="img/logo.png" alt="Logo Juegos Baby Mandi" style="height: 70px;">
+    </a>
+  </header>
+
+  <!-- Mensaje de agradecimiento -->
+  <main>
+    <section class="gracias">
+      <h1>¡Gracias por tu mensaje! 🎉</h1>
+      <p>Hemos recibido tu solicitud. Pronto nos pondremos en contacto contigo.</p>
+      <a href="index.html">Volver al inicio</a>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2025 Juegos Baby Mandi | Región Metropolitana</p>
+  </footer>
 
 </body>
 </html>
