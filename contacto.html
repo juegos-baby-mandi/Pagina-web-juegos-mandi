@@ -5,13 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto - Juegos Baby Mandi</title>
   <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    header img {
+      height: 80px;
+    }
+
+    .formulario-contacto {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    .formulario-contacto form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .formulario-contacto label {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .formulario-contacto input,
+    .formulario-contacto textarea {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-top: 0.3rem;
+    }
+
+    .formulario-contacto button {
+      margin-top: 1.5rem;
+      background-color: #6a1b9a;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .formulario-contacto button:hover {
+      background-color: #4a148c;
+    }
+
+    @media screen and (max-width: 600px) {
+      header img {
+        height: 60px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        padding: 0;
+      }
+
+      nav li {
+        margin: 5px 0;
+      }
+
+      .formulario-contacto {
+        margin: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Encabezado con logo y navegación -->
   <header>
-    <a href="index.html" class="logo">
-      <img src="img/logo.png" alt="Juegos Baby Mandi" />
+    <a href="index.html">
+      <img src="img/logo.png" alt="Juegos Baby Mandi">
     </a>
     <nav>
       <ul>
