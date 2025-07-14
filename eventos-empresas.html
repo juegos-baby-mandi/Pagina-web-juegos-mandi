@@ -2,66 +2,127 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eventos para Empresas - Juegos Baby Mandi</title>
   <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: #7c4dff;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    form button:hover {
+      background-color: #5e35b1;
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <h1>Eventos para Empresas</h1>
+    <img src="img/logo.png" alt="Juegos Baby Mandi" style="height: 80px;" />
     <nav>
-      <a href="index.html">Inicio</a>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="vision-mision.html">Visión y Misión</a></li>
+        <li><a href="experiencias.html">Experiencias</a></li>
+        <li><a href="testimonios.html">Testimonios</a></li>
+        <li><a href="promociones.html">Promociones</a></li>
+        <li><a href="eventos-empresas.html" class="activo">Eventos Empresas</a></li>
+        <li><a href="consejos.html">Consejos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
     <section>
-      <p>Organizamos eventos corporativos inolvidables, con juegos inflables, toro mecánico, reloj derribador y fiestas de espuma. Hemos trabajado con Goodyear, Viña San Pedro Molina y municipalidades de la Región Metropolitana.</p>
-      <p>Ideal para:</p>
+      <h1>Eventos para Empresas</h1>
+      <p>Organiza eventos inolvidables con Juegos Baby Mandi. Ofrecemos arriendo de juegos inflables, toro mecánico, reloj derribador y más para celebraciones corporativas, días del niño, fiestas navideñas, y actividades masivas.</p>
       <ul>
-        <li>Fiestas de fin de año</li>
-        <li>Días del Niño y Navidad</li>
-        <li>Activaciones de marca</li>
-        <li>Celebraciones familiares empresariales</li>
-        <li>Ferias y eventos públicos</li>
+        <li>✅ Experiencia con empresas y productoras de eventos</li>
+        <li>✅ Atención a colegios, jardines, municipalidades y juntas vecinales</li>
+        <li>✅ Boleta o factura disponible</li>
+        <li>✅ Juegos de uso comercial</li>
       </ul>
     </section>
 
     <section>
-      <h2>Solicita una cotización</h2>
-      <form action="mailto:juegosbabymandi@gmail.com" method="post" enctype="text/plain">
-        <label>Nombre de la empresa:</label><br />
-        <input type="text" name="empresa" required /><br /><br />
+      <h2>Formulario de Cotización Directa</h2>
+      <div class="form-container">
+        <form action="https://formsubmit.co/juegosbabymandi@gmail.com" method="POST">
+          <!-- Seguridad para evitar spam -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://pagina-web-juegos-mandi.vercel.app/gracias.html">
 
-        <label>Tipo de evento:</label><br />
-        <input type="text" name="tipo_evento" required /><br /><br />
+          <label>Nombre de la empresa o institución:</label>
+          <input type="text" name="empresa" required>
 
-        <label>Comuna:</label><br />
-        <input type="text" name="comuna" required /><br /><br />
+          <label>Nombre de contacto:</label>
+          <input type="text" name="nombre_contacto" required>
 
-        <label>Fecha del evento:</label><br />
-        <input type="date" name="fecha" required /><br /><br />
+          <label>Correo de contacto:</label>
+          <input type="email" name="correo" required>
 
-        <label>Juegos deseados:</label><br />
-        <textarea name="juegos_deseados" rows="3" required></textarea><br /><br />
+          <label>Teléfono / WhatsApp:</label>
+          <input type="tel" name="telefono">
 
-        <label>Cantidad estimada de asistentes:</label><br />
-        <input type="number" name="asistentes" required /><br /><br />
+          <label>Tipo de evento:</label>
+          <input type="text" name="tipo_evento" placeholder="Día del niño, Navidad, Aniversario, etc.">
 
-        <label>Correo de contacto:</label><br />
-        <input type="email" name="correo" required /><br /><br />
+          <label>Comuna del evento:</label>
+          <input type="text" name="comuna" required>
 
-        <label>Teléfono:</label><br />
-        <input type="tel" name="telefono" /><br /><br />
+          <label>Fecha del evento:</label>
+          <input type="date" name="fecha_evento">
 
-        <button type="submit">Enviar solicitud</button>
-      </form>
-      <p>También puedes escribirnos directo por <a href="https://wa.me/56946535784" target="_blank">WhatsApp</a>.</p>
+          <label>Cantidad estimada de asistentes:</label>
+          <input type="number" name="asistentes">
+
+          <label>Juegos o servicios deseados:</label>
+          <textarea name="juegos_solicitados" rows="4" placeholder="Ejemplo: Toro mecánico, inflables, reloj derribador..."></textarea>
+
+          <button type="submit">Enviar cotización</button>
+        </form>
+      </div>
+
+      <p style="margin-top: 1rem; text-align: center;">También puedes escribirnos directamente por <a href="https://wa.me/56946535784" target="_blank">WhatsApp</a>.</p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Juegos Baby Mandi</p>
+    <p>© 2025 Juegos Baby Mandi | Región Metropolitana</p>
+    <p>Correo: <a href="mailto:juegosbabymandi@gmail.com">juegosbabymandi@gmail.com</a></p>
+    <p>Síguenos:
+      <a href="https://www.instagram.com/juegosbabymandi" target="_blank">Instagram</a> |
+      <a href="https://www.facebook.com/JuegosBabyMandi" target="_blank">Facebook</a> |
+      <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">TikTok</a>
+    </p>
   </footer>
 
 </body>
