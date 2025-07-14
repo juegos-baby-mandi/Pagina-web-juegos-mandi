@@ -2,43 +2,62 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Contacto - Juegos Baby Mandi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Juegos Baby Mandi</title>
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
+
+  <!-- Encabezado con logo y navegación -->
   <header>
-    <h1>Contacto</h1>
+    <div class="navegacion">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/logo.png" alt="Juegos Baby Mandi" />
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="vision-mision.html">Visión y Misión</a></li>
+          <li><a href="experiencias.html">Experiencias</a></li>
+          <li><a href="testimonios.html">Testimonios</a></li>
+          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="eventos-empresas.html">Eventos Empresas</a></li>
+          <li><a href="consejos.html">Consejos</a></li>
+          <li><a href="contacto.html" class="activo">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <p>¿Tienes dudas o quieres agendar un evento?</p>
-    <p>📱 Escríbenos directamente por WhatsApp: <a href="https://wa.me/56946535784" target="_blank">+56 9 4653 5784</a></p>
-    <p>📧 Correo: <a href="mailto:juegosbabymandi@gmail.com">juegosbabymandi@gmail.com</a></p>
-  </section>
+  <main class="formulario-contacto">
+    <h1>Quiero ser contactado</h1>
+    <p>Déjanos tus datos y te escribiremos lo antes posible.</p>
 
-  <section>
-    <h2>Formulario de contacto</h2>
-    <form action="mailto:juegosbabymandi@gmail.com" method="POST" enctype="text/plain">
-      <label for="nombre">Nombre:</label><br />
-      <input type="text" id="nombre" name="nombre" required /><br /><br />
+    <form action="https://formsubmit.co/juegosbabymandi@gmail.com" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" required />
 
-      <label for="email">Correo:</label><br />
-      <input type="email" id="email" name="email" required /><br /><br />
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" name="correo" id="correo" required />
 
-      <label for="tipo-evento">Tipo de evento:</label><br />
-      <input type="text" id="tipo-evento" name="tipo-evento" /><br /><br />
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" name="telefono" id="telefono" required />
 
-      <label for="comuna">Comuna:</label><br />
-      <input type="text" id="comuna" name="comuna" /><br /><br />
+      <label for="mensaje">Mensaje:</label>
+      <textarea name="mensaje" id="mensaje" rows="4" required></textarea>
 
-      <label for="fecha">Fecha del evento:</label><br />
-      <input type="date" id="fecha" name="fecha" /><br /><br />
-
-      <label for="mensaje">Mensaje adicional:</label><br />
-      <textarea id="mensaje" name="mensaje" rows="5"></textarea><br /><br />
-
+      <!-- Redirección luego del envío -->
+      <input type="hidden" name="_next" value="https://pagina-web-juegos-mandi.vercel.app/gracias.html" />
       <button type="submit">Enviar</button>
     </form>
-  </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Juegos Baby Mandi. Todos los derechos reservados.</p>
+  </footer>
+
 </body>
 </html>
