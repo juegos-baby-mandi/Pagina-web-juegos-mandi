@@ -145,30 +145,33 @@ footer {
 .juego-card {
   display: flex;
   flex-wrap: wrap;
-  background: #fff;
   border: 1px solid #ccc;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   margin-bottom: 40px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .juego-img {
-  flex: 1 1 300px;
+  flex: 1 1 40%;
   text-align: center;
   padding: 10px;
 }
 
 .juego-img img {
   width: 100%;
-  max-width: 300px;
+  max-width: 100%;
   height: auto;
-  margin-bottom: 10px;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 .juego-info {
-  flex: 2 1 400px;
+  flex: 1 1 60%;
   padding: 20px;
 }
 
@@ -180,13 +183,27 @@ footer {
 .juego-info p {
   margin: 5px 0;
   font-size: 16px;
-  line-height: 1.4;
 }
 
 .juego-info a {
   display: inline-block;
   margin-top: 10px;
   color: #5f259f;
-  font-weight: bold;
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .juego-card {
+    flex-direction: column;
+  }
+
+  .juego-img, .juego-info {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .juego-img img {
+    max-width: 100%;
+  }
 }
