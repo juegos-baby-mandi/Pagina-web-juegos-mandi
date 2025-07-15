@@ -157,53 +157,16 @@ footer {
 }
 
 .juego-img {
-  flex: 1 1 40%;
+  flex: 1 1 300px;
   text-align: center;
   padding: 10px;
 }
 
 .juego-img img {
   width: 100%;
-  max-width: 100%;
+  max-width: 280px; /* límite más estricto */
   height: auto;
+  margin-bottom: 10px;
   border-radius: 8px;
-  object-fit: cover;
-}
-
-.juego-info {
-  flex: 1 1 60%;
-  padding: 20px;
-}
-
-.juego-info h3 {
-  color: #5f259f;
-  margin-top: 0;
-}
-
-.juego-info p {
-  margin: 5px 0;
-  font-size: 16px;
-}
-
-.juego-info a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #5f259f;
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .juego-card {
-    flex-direction: column;
-  }
-
-  .juego-img, .juego-info {
-    flex: 1 1 100%;
-    max-width: 100%;
-    padding: 10px;
-  }
-
-  .juego-img img {
-    max-width: 100%;
-  }
+  object-fit: contain; /* evita que se deforme o corte */
 }
