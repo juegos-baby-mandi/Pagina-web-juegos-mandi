@@ -1,22 +1,37 @@
-body {
+/* RESET BÁSICO */
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* TIPOGRAFÍA Y FONDO GENERAL */
+body {
+  font-family: Arial, sans-serif;
   background-color: #f9f9f9;
   color: #333;
 }
 
+/* ENCABEZADO CON LOGO Y MENÚ */
 header {
-  background-color: #6a0dad;
+  background-color: #6a1b9a;
+  padding: 10px 0;
   color: white;
-  padding: 10px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
 }
 
-.nav-logo img {
-  height: 100px;
+.logo-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
 }
 
 nav ul {
@@ -24,8 +39,6 @@ nav ul {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  padding: 0;
-  margin: 0;
 }
 
 nav ul li a {
@@ -34,53 +47,143 @@ nav ul li a {
   font-weight: bold;
 }
 
-.video-section {
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* VIDEO DE FONDO */
+.video-fondo {
   position: relative;
   width: 100%;
   height: 300px;
   overflow: hidden;
 }
 
-.video-section video {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.video-overlay {
+.video-fondo video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.texto-video {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
   background-color: rgba(0, 0, 0, 0.4);
-  color: white;
-  text-align: center;
 }
 
-.featured-image {
-  text-align: center;
-  margin: 20px 0;
+.texto-video h1 {
+  font-size: 2rem;
 }
 
-.featured-image img {
-  max-width: 90%;
+.texto-video p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* IMAGEN DESTACADA */
+.imagen-destacada img {
+  width: 100%;
   height: auto;
-  border-radius: 10px;
+  display: block;
 }
 
+/* CONTENIDO PRINCIPAL */
 main {
-  padding: 20px;
-  background-color: #f1e3ff;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
+.intro h2 {
+  font-size: 1.8rem;
+  color: #6a1b9a;
+  margin-bottom: 10px;
+}
+
+.intro ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+/* PIE DE PÁGINA */
 footer {
-  text-align: center;
-  padding: 15px;
-  background-color: #6a0dad;
+  background-color: #6a1b9a;
   color: white;
+  text-align: center;
+  padding: 15px 10px;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* FORMULARIOS */
+form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form input,
+form textarea,
+form select,
+form button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #6a1b9a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #4a1172;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .logo-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .texto-video {
+    padding: 60px 20px;
+  }
+
+  .texto-video h1 {
+    font-size: 1.5rem;
+  }
+
+  .texto-video p {
+    font-size: 1rem;
+  }
+
+  .logo {
+    height: 50px;
+  }
 }
