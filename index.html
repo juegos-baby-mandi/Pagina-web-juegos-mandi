@@ -2,15 +2,29 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juegos Baby Mandi</title>
-  <link rel="stylesheet" href="main.css" />
+  <meta name="description" content="Arriendo de juegos inflables, toro mecánico, reloj derribador, toboganes y fiesta de espuma. Eventos para empresas y particulares.">
+  <meta name="keywords" content="juegos inflables, toro mecánico, reloj derribador, fiesta de espuma, arriendo juegos infantiles, juegos inflables para cumpleaños, juegos para empresas, eventos en Santiago, juegos acuáticos">
+  <meta name="author" content="Juegos Baby Mandi">
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
+
+  <!-- VIDEO DE FONDO -->
+  <div class="video-fondo">
+    <video autoplay muted loop playsinline>
+      <source src="videos/fondo.mp4" type="video/mp4" />
+      Tu navegador no soporta video HTML5.
+    </video>
+  </div>
+
+  <!-- ENCABEZADO -->
   <header>
-    <a href="index.html">
-      <img src="img/logo.png" alt="Logo Juegos Baby Mandi" class="logo">
-    </a>
+    <div class="logo-texto">
+      <img src="img/logo.png" alt="Juegos Baby Mandi" class="logo" />
+      <h1>Juegos Baby Mandi</h1>
+    </div>
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -26,56 +40,44 @@
     </nav>
   </header>
 
-  <!-- VIDEO DE FONDO -->
-  <div class="video-fondo">
-    <video autoplay muted loop playsinline>
-      <source src="videos/fondo.mp4" type="video/mp4" />
-      Tu navegador no soporta video en HTML5.
-    </video>
-  </div>
+  <!-- SECCIÓN PRINCIPAL -->
+  <main>
+    <section class="bienvenida">
+      <h2>Bienvenidos a Juegos Baby Mandi</h2>
+      <p>Especialistas en arriendo de juegos inflables y entretenimiento para todo tipo de eventos. Desde 2018 llevamos alegría a miles de familias, empresas y comunidades en la Región Metropolitana.</p>
+    </section>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <div id="contenido-portada">
-    <div class="portada-grid">
-      
-      <!-- LADO IZQUIERDO -->
-      <div class="portada-izquierda">
-        <h2>Con nosotros encuentras:</h2>
-        <ul class="lista-servicios">
-          <li>🎉 Juegos inflables</li>
-          <li>🤠 Toro mecánico</li>
-          <li>🕜 Reloj derribador</li>
-          <li>🕹️ Juegos electrónicos</li>
-          <li>🌊 Juegos de agua</li>
-          <li>🎈 Fiestas de espuma</li>
-          <li>🇨🇱 Juegos típicos</li>
-          <li>🎮 Taca Taca, Arcade, etc</li>
-        </ul>
-      </div>
+    <!-- ¿QUÉ OFRECEMOS? -->
+    <section class="ofrecemos">
+      <h2>¿Qué ofrecemos?</h2>
+      <ul>
+        <li><a href="inflables.html">🎉 Juegos inflables</a></li>
+        <li><a href="mecanicos.html">🤠 Toro mecánico</a></li>
+        <li><a href="mecanicos.html#reloj">🕜 Reloj derribador</a></li>
+        <li><a href="electronicos.html">🕹️ Juegos electrónicos</a></li>
+        <li><a href="agua.html">🌊 Juegos de agua</a></li>
+        <li><a href="agua.html#espuma">🎈 Fiestas de espuma</a></li>
+        <li><a href="tipicos.html">🇨🇱 Juegos típicos</a></li>
+        <li><a href="electronicos.html#taca">🎮 Taca Taca, Arcade, etc</a></li>
+      </ul>
+    </section>
 
-      <!-- CENTRO -->
-      <div class="portada-centro">
-        <div class="portada-logo-texto">
-          <img src="img/logo.png" alt="Logo Juegos Baby Mandi">
-          <h1>Juegos Baby Mandi</h1>
-        </div>
-        <p>¡Diversión garantizada para cumpleaños, empresas y más!</p>
-        <a href="catalogo.html">
-          <button class="boton-catalogo">Ver Catálogo</button>
-        </a>
-      </div>
+    <!-- BOTÓN CATÁLOGO COMPLETO -->
+    <section class="ver-catalogo">
+      <a href="catalogo.html" class="btn-catalogo">👉 Ver Catálogo Completo</a>
+    </section>
+  </main>
 
-      <!-- LADO DERECHO -->
-      <div class="portada-derecha">
-        <a href="https://wa.me/56946535784" target="_blank">
-          <img src="img/whatsapp.png" alt="WhatsApp" class="icono-whatsapp" />
-        </a>
-      </div>
-    </div>
-  </div>
-
+  <!-- PIE DE PÁGINA -->
   <footer>
-    <p>&copy; 2025 Juegos Baby Mandi. Todos los derechos reservados.</p>
+    <p>© 2025 Juegos Baby Mandi | Región Metropolitana</p>
+    <p>Correo: <a href="mailto:juegosbabymandi@gmail.com">juegosbabymandi@gmail.com</a></p>
+    <p>Síguenos:
+      <a href="https://www.instagram.com/juegosbabymandi" target="_blank">Instagram</a> |
+      <a href="https://www.facebook.com/JuegosBabyMandi" target="_blank">Facebook</a> |
+      <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">TikTok</a>
+    </p>
   </footer>
+
 </body>
 </html>
