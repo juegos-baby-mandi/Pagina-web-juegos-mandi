@@ -145,11 +145,11 @@ footer {
 .juego-card {
   display: flex;
   flex-wrap: wrap;
+  background: #fff;
   border: 1px solid #ccc;
   border-radius: 10px;
-  margin-bottom: 40px;
-  background: #fff;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
   overflow: hidden;
 }
 
@@ -157,15 +157,14 @@ footer {
   flex: 1 1 300px;
   text-align: center;
   padding: 10px;
-  background-color: #f9f9f9;
 }
 
 .juego-img img {
   width: 100%;
   max-width: 300px;
   height: auto;
+  margin-bottom: 10px;
   border-radius: 8px;
-  margin: 5px 0;
 }
 
 .juego-info {
@@ -173,28 +172,21 @@ footer {
   padding: 20px;
 }
 
-.juego-info h2 {
+.juego-info h3 {
   color: #5f259f;
   margin-top: 0;
 }
 
 .juego-info p {
   margin: 5px 0;
-  font-size: 1rem;
+  font-size: 16px;
+  line-height: 1.4;
 }
 
-.boton-whatsapp {
+.juego-info a {
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #25D366;
-  color: white;
-  text-decoration: none;
+  margin-top: 10px;
+  color: #5f259f;
   font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.boton-whatsapp:hover {
-  background-color: #1ebe5d;
+  text-decoration: underline;
 }
