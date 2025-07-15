@@ -6,49 +6,50 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
 }
 
-/* ENCABEZADO FIJO */
+/* Encabezado fijo */
 header {
   background-color: #7b1fa2;
+  padding: 8px 16px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 8px 20px;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-header .logo {
-  height: 45px;
+.logo {
+  height: 40px;
 }
 
-header .redes {
+.redes {
   display: flex;
-  align-items: center;
   gap: 10px;
 }
 
-header .redes a img {
-  height: 26px;
+.redes img {
+  height: 24px;
+  width: 24px;
+  object-fit: contain;
   transition: transform 0.2s ease;
 }
 
-header .redes a img:hover {
+.redes img:hover {
   transform: scale(1.1);
 }
 
-/* HERO */
+/* Sección principal con video */
 .hero {
   position: relative;
   height: 100vh;
-  background: url('video-fondo.jpg') no-repeat center center/cover;
+  overflow: hidden;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
   padding: 20px;
 }
 
@@ -56,47 +57,57 @@ header .redes a img:hover {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(255, 255, 255, 0.75);
-  z-index: 0;
-}
-
-.hero > * {
+  background-color: rgba(255, 255, 255, 0.7);
   z-index: 1;
 }
 
-.hero h1 {
-  font-size: 32px;
-  color: #7b1fa2;
+.hero video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-content {
+  z-index: 2;
+}
+
+.hero-content .logo-central {
+  height: 90px;
   margin-bottom: 10px;
 }
 
-.hero h2 {
+.hero-content h1 {
+  color: #7b1fa2;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.hero-content h2 {
+  color: #333;
   font-size: 18px;
-  color: #444;
   margin-bottom: 20px;
 }
 
-.hero .logo-central {
-  height: 80px;
-  margin-bottom: 10px;
-}
-
+/* Botones de servicios */
 .botones-servicios {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  padding: 10px;
+  z-index: 2;
 }
 
 .botones-servicios a {
   background-color: #7b1fa2;
   color: white;
-  padding: 12px 18px;
+  padding: 10px 14px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  font-size: 14px;
   transition: background 0.3s ease;
 }
 
@@ -104,11 +115,11 @@ header .redes a img:hover {
   background-color: #5e1480;
 }
 
-/* FOOTER */
+/* Footer */
 footer {
   background-color: #7b1fa2;
   color: white;
-  padding: 25px 15px;
+  padding: 30px 20px;
   text-align: center;
   margin-top: 40px;
 }
@@ -121,26 +132,31 @@ footer nav a {
   text-decoration: none;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: 24px;
+  .logo {
+    height: 34px;
   }
 
-  .hero .logo-central {
-    height: 65px;
+  .redes img {
+    height: 20px;
+    width: 20px;
+  }
+
+  .hero-content .logo-central {
+    height: 70px;
+  }
+
+  .hero-content h1 {
+    font-size: 22px;
+  }
+
+  .hero-content h2 {
+    font-size: 16px;
   }
 
   .botones-servicios {
     flex-direction: column;
     align-items: center;
-  }
-
-  header .logo {
-    height: 40px;
-  }
-
-  header .redes a img {
-    height: 22px;
   }
 }
