@@ -187,3 +187,9 @@ form button:hover {
     height: 50px;
   }
 }
+
+header img {
+  max-width: 180px;
+  height: auto;
+}
+
