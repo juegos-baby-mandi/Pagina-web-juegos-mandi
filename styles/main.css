@@ -129,68 +129,72 @@ footer {
   }
 }
 
+.catalogo-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #5f259f;
+}
+
 .juego-card {
   display: flex;
   flex-wrap: wrap;
   border: 1px solid #ccc;
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   background: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
 .juego-img {
   flex: 1 1 300px;
   text-align: center;
   padding: 10px;
+  background-color: #f9f9f9;
 }
+
 .juego-img img {
-  width: 90%;
+  width: 100%;
   max-width: 300px;
-  margin: 5px auto;
+  height: auto;
   border-radius: 8px;
+  margin: 5px 0;
 }
 
 .juego-info {
   flex: 2 1 400px;
-  padding: 15px;
+  padding: 20px;
 }
 
-.juego-info h3 {
-  color: #5d3ea8;
+.juego-info h2 {
+  color: #5f259f;
   margin-top: 0;
 }
 
-.juego-info .precio {
-  font-size: 1.4em;
-  color: #d81b60;
-  font-weight: bold;
+.juego-info p {
+  margin: 5px 0;
+  font-size: 1rem;
 }
 
-.juego-info ul {
-  list-style: none;
-  padding: 0;
-}
-
-.juego-info li {
-  margin-bottom: 4px;
-}
-
-.descripcion {
-  margin-top: 10px;
-  font-size: 0.95em;
-}
-
-.btn-reservar {
+.boton-whatsapp {
   display: inline-block;
-  background-color: #5d3ea8;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 8px;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #25D366;
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
-.btn-reservar:hover {
-  background-color: #4a2f8a;
+
+.boton-whatsapp:hover {
+  background-color: #1ebe5d;
 }
