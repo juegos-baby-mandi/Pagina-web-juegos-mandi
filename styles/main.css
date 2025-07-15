@@ -1,100 +1,122 @@
-body, html {
+body {
   margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
-}
-
-.video-fondo video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  filter: brightness(0.7);
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 header {
-  background-color: #7a0fc9;
-  padding: 10px;
-}
-
-.logo {
-  height: 50px;
-  vertical-align: middle;
-}
-
-nav {
+  background-color: #6a0dad;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
 }
 
-nav .menu {
+header .logo {
+  height: 60px;
+  width: auto;
+}
+
+nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  padding-left: 0;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
 }
 
-nav .menu li a {
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
-main {
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.inicio {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-fondo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.contenido-inicio {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-top: 80px;
-  color: #fff;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7);
 }
 
-.logo-centro {
-  height: 80px;
-  margin-bottom: 10px;
+.imagen-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-.inicio-contenido h1 {
-  font-size: 2em;
-  color: #8b00cc;
-  margin-bottom: 5px;
+.logo-inicio {
+  height: 100px;
+  max-width: 150px;
+  width: auto;
 }
 
-.inicio-contenido p {
-  margin-bottom: 20px;
+h1 {
+  font-size: 2rem;
+  color: #6a0dad;
 }
 
-.boton-principal {
-  background-color: #7a0fc9;
+.boton {
+  margin-top: 15px;
+  display: inline-block;
+  background-color: #6a0dad;
   color: white;
   padding: 10px 20px;
-  border-radius: 5px;
   text-decoration: none;
+  border-radius: 8px;
 }
 
-.ofrecemos {
-  margin-top: 40px;
+.boton:hover {
+  background-color: #4b0082;
 }
 
-.ofrecemos h2 {
-  color: #fff;
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
 }
 
-.botones-ofrecemos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-}
+@media (max-width: 768px) {
+  .logo-inicio {
+    height: 80px;
+  }
 
-.botones-ofrecemos a {
-  background-color: white;
-  color: #7a0fc9;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
+  h1 {
+    font-size: 1.5rem;
+  }
 }
