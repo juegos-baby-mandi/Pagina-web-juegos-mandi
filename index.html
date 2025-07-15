@@ -7,11 +7,49 @@
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
-  <header>
-    <a href="index.html">
-      <img src="img/logo.png" alt="Juegos Baby Mandi" class="logo" />
-    </a>
-    <nav>
+
+  <!-- Encabezado superior con íconos -->
+  <header class="top-header">
+    <div class="logo-header">
+      <img src="img/logo.png" alt="Logo Juegos Baby Mandi" />
+    </div>
+    <div class="contact-links">
+      <a href="https://wa.me/56946535784" target="_blank">📞 WhatsApp</a>
+      <a href="https://www.instagram.com/juegosbabymandi" target="_blank">📷 Instagram</a>
+      <a href="mailto:juegosbabymandi@gmail.com">📧 juegosbabymandi@gmail.com</a>
+      <a href="https://fb.me/JuegosBabyMandi" target="_blank">👍 Facebook</a>
+      <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">🎵 TikTok</a>
+    </div>
+  </header>
+
+  <!-- Inicio con video de fondo -->
+  <section class="inicio">
+    <video autoplay muted loop class="video-fondo">
+      <source src="videos/fondo.mp4" type="video/mp4" />
+      Tu navegador no soporta video.
+    </video>
+    <div class="contenido-inicio">
+      <h1>Juegos Baby Mandi</h1>
+      <img src="img/logo.png" alt="Logo Juegos Baby Mandi" class="logo-inicio" />
+      <p>¡Diversión garantizada para cumpleaños, empresas y más!</p>
+
+      <h2 class="subtitulo">Con nosotros encuentras</h2>
+      <div class="botones-catalogo">
+        <a href="catalogo.html#inflables" class="boton">🎉 Juegos inflables</a>
+        <a href="catalogo.html#mecanicos" class="boton">🤠 Toro mecánico</a>
+        <a href="catalogo.html#mecanicos" class="boton">🕜 Reloj derribador</a>
+        <a href="catalogo.html#electronicos" class="boton">🕹️ Juegos electrónicos</a>
+        <a href="catalogo.html#agua" class="boton">🌊 Juegos de agua</a>
+        <a href="catalogo.html#agua" class="boton">🎈 Fiestas de espuma</a>
+        <a href="catalogo.html#tipicos" class="boton">🇨🇱 Juegos típicos</a>
+        <a href="catalogo.html#electronicos" class="boton">🎮 Taca Taca, Arcade, etc</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer con el menú completo -->
+  <footer>
+    <nav class="footer-nav">
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="catalogo.html">Catálogo</a></li>
@@ -24,37 +62,8 @@
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
-  </header>
-
-  <section class="inicio">
-    <video autoplay muted loop class="video-fondo">
-      <source src="videos/fondo.mp4" type="video/mp4" />
-      Tu navegador no soporta video.
-    </video>
-    <div class="contenido-inicio">
-      <h1 class="titulo-inicio">Juegos Baby Mandi</h1>
-      <img src="img/logo.png" alt="Logo Juegos Baby Mandi" class="logo-inicio" />
-      <p class="eslogan">¡Diversión garantizada para cumpleaños, empresas y más!</p>
-
-      <h2 class="subtitulo">Con nosotros encuentras</h2>
-
-      <div class="botones-servicios">
-        <a href="inflables.html" class="boton">🎉 Juegos inflables</a>
-        <a href="mecanicos.html#toro" class="boton">🤠 Toro mecánico</a>
-        <a href="mecanicos.html#reloj" class="boton">🕜 Reloj derribador</a>
-        <a href="electronicos.html" class="boton">🕹️ Juegos electrónicos</a>
-        <a href="agua.html" class="boton">🌊 Juegos de agua</a>
-        <a href="agua.html#espuma" class="boton">🎈 Fiestas de espuma</a>
-        <a href="juegos-tipicos.html" class="boton">🇨🇱 Juegos típicos</a>
-        <a href="electronicos.html#arcade" class="boton">🎮 Taca Taca, Arcade, etc</a>
-      </div>
-
-      <a href="catalogo.html" class="boton" style="margin-top: 20px;">Ver Catálogo</a>
-    </div>
-  </section>
-
-  <footer>
     <p>&copy; 2025 Juegos Baby Mandi. Todos los derechos reservados.</p>
   </footer>
+
 </body>
 </html>
