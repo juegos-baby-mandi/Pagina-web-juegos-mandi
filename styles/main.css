@@ -1,166 +1,110 @@
-/* RESET BÁSICO */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* TIPOGRAFÍA Y FONDO GENERAL */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+/* Fondo de video */
+#video-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.8;
 }
 
-/* ENCABEZADO CON LOGO Y MENÚ */
+/* Encabezado con logo y menú */
 header {
-  background-color: #6a1b9a;
-  padding: 10px 0;
-  color: white;
-}
-
-.logo-nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  align-items: center;
+  background-color: rgba(128, 0, 128, 0.9); /* morado con transparencia */
+  padding: 10px 20px;
   flex-wrap: wrap;
 }
 
 .logo {
-  height: 60px;
-  width: auto;
+  height: 80px;
+  max-width: 100%;
 }
 
+/* Menú de navegación */
 nav ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  padding: 5px 10px;
+  transition: background 0.3s;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  background-color: #ffffff33;
+  border-radius: 5px;
 }
 
-/* VIDEO DE FONDO */
-.video-fondo {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-}
-
-.video-fondo video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.texto-video {
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.texto-video h1 {
-  font-size: 2rem;
-}
-
-.texto-video p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-/* IMAGEN DESTACADA */
-.imagen-destacada img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* CONTENIDO PRINCIPAL */
+/* Sección principal */
 main {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.intro h2 {
-  font-size: 1.8rem;
-  color: #6a1b9a;
-  margin-bottom: 10px;
-}
-
-.intro ul {
-  list-style: disc;
-  padding-left: 20px;
-}
-
-/* PIE DE PÁGINA */
-footer {
-  background-color: #6a1b9a;
+  padding: 120px 20px 60px;
   color: white;
   text-align: center;
-  padding: 15px 10px;
-  margin-top: 40px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-footer a {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* FORMULARIOS */
+/* Formulario */
 form {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 10px;
   max-width: 500px;
   margin: 30px auto;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-form input,
-form textarea,
-form select,
-form button {
+form input, form textarea, form select {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-bottom: 15px;
-  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-form button {
-  background-color: #6a1b9a;
+form button, form input[type="submit"] {
+  background-color: purple;
   color: white;
   border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
-form button:hover {
-  background-color: #4a1172;
+form button:hover, form input[type="submit"]:hover {
+  background-color: #660066;
 }
 
-/* RESPONSIVE */
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Responsive diseño */
 @media (max-width: 768px) {
-  .logo-nav {
+  header {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -168,28 +112,19 @@ form button:hover {
   nav ul {
     flex-direction: column;
     gap: 10px;
-    margin-top: 10px;
-  }
-
-  .texto-video {
-    padding: 60px 20px;
-  }
-
-  .texto-video h1 {
-    font-size: 1.5rem;
-  }
-
-  .texto-video p {
-    font-size: 1rem;
+    width: 100%;
   }
 
   .logo {
-    height: 50px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+
+  main {
+    padding: 100px 15px 40px;
+  }
+
+  form {
+    width: 90%;
   }
 }
-
-header img {
-  max-width: 180px;
-  height: auto;
-}
-
