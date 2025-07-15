@@ -4,172 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Juegos Baby Mandi</title>
-  <link rel="stylesheet" href="main.css" />
-  <style>
-    /* Si no has cargado tu CSS aún, puedes dejar este bloque en el head */
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      color: #333;
-      background-color: #fff;
-    }
-
-    header {
-      background-color: #7d1fa3;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    header img {
-      height: 60px;
-      vertical-align: middle;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .hero {
-      position: relative;
-      background-image: url("https://i.imgur.com/XtvJQ9n.jpg"); /* Fondo genérico */
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      padding: 100px 20px;
-      color: #fff;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: rgba(255, 255, 255, 0.7);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero h2 {
-      margin: 0;
-      color: #7d1fa3;
-      font-size: 28px;
-      font-weight: normal;
-    }
-
-    .hero img {
-      height: 100px;
-      margin-top: 10px;
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      margin: 10px 0;
-      color: #7d1fa3;
-    }
-
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-
-    .catalog-btn, .category-btn {
-      background-color: #7d1fa3;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 8px;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .catalog-btn:hover, .category-btn:hover {
-      background-color: #5b1581;
-    }
-
-    .category-list {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 20px;
-    }
-
-    footer {
-      text-align: center;
-      background-color: #7d1fa3;
-      color: white;
-      padding: 20px 0;
-    }
-
-    @media screen and (max-width: 768px) {
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        padding: 10px;
-      }
-
-      nav a {
-        margin: 5px 10px;
-      }
-
-      .hero h1 {
-        font-size: 28px;
-      }
-
-      .hero h2 {
-        font-size: 22px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
   <header>
     <a href="index.html">
-      <img src="logo.png" alt="Logo Juegos Baby Mandi" />
+      <img src="img/logo.png" alt="Juegos Baby Mandi" class="logo" />
     </a>
     <nav>
-      <a href="index.html">Inicio</a>
-      <a href="catalogo.html">Catálogo</a>
-      <a href="vision-mision.html">Visión y Misión</a>
-      <a href="experiencias.html">Experiencias</a>
-      <a href="testimonios.html">Testimonios</a>
-      <a href="promociones.html">Promociones</a>
-      <a href="eventos-empresas.html">Eventos Empresas</a>
-      <a href="consejos.html">Consejos</a>
-      <a href="contacto.html">Contacto</a>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="vision-mision.html">Visión y Misión</a></li>
+        <li><a href="experiencias.html">Experiencias</a></li>
+        <li><a href="testimonios.html">Testimonios</a></li>
+        <li><a href="promociones.html">Promociones</a></li>
+        <li><a href="eventos-empresas.html">Eventos Empresas</a></li>
+        <li><a href="consejos.html">Consejos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Con nosotros encuentras</h2>
-      <img src="logo.png" alt="Logo Baby Mandi">
-      <h1>Juegos Baby Mandi</h1>
-      <p>¡Diversión garantizada para cumpleaños, empresas y más!</p>
-
-      <div class="category-list">
-        <a href="catalogo.html#inflables" class="category-btn">🎉 Juegos inflables</a>
-        <a href="catalogo.html#mecanicos" class="category-btn">🤠 Toro mecánico</a>
-        <a href="catalogo.html#mecanicos" class="category-btn">🕜 Reloj derribador</a>
-        <a href="catalogo.html#electronicos" class="category-btn">🕹️ Juegos electrónicos</a>
-        <a href="catalogo.html#agua" class="category-btn">🌊 Juegos de agua</a>
-        <a href="catalogo.html#agua" class="category-btn">🎈 Fiestas de espuma</a>
-        <a href="catalogo.html#tipicos" class="category-btn">🇨🇱 Juegos típicos</a>
-        <a href="catalogo.html#electronicos" class="category-btn">🎮 Taca Taca, Arcade, etc</a>
+  <section class="inicio">
+    <video autoplay muted loop class="video-fondo">
+      <source src="videos/fondo.mp4" type="video/mp4" />
+      Tu navegador no soporta video.
+    </video>
+    <div class="contenido-inicio">
+      <div class="imagen-titulo">
+        <img src="img/logo.png" alt="Logo Juegos Baby Mandi" class="logo-inicio" />
+        <h1>Juegos Baby Mandi</h1>
       </div>
-
-      <br />
-      <a href="catalogo.html" class="catalog-btn">Ver Catálogo</a>
+      <p>¡Diversión garantizada para cumpleaños, empresas y más!</p>
+      <a href="catalogo.html" class="boton">Ver Catálogo</a>
     </div>
   </section>
 
