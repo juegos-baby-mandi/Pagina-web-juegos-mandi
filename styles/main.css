@@ -1,0 +1,127 @@
+/* Fondo de video con filtro blanco semitransparente */
+.video-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-fondo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.1) opacity(0.8);
+}
+
+/* Encabezado */
+.header {
+  background-color: #6a0dad;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 50px;
+}
+
+.menu a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* Contenido central */
+.contenido-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  text-align: center;
+  color: #4b0082;
+}
+
+.logo-central {
+  width: 80px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #6a0dad;
+}
+
+.btn-principal {
+  background-color: #6a0dad;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 25px;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-principal:hover {
+  background-color: #4b0082;
+}
+
+/* Sección: ¿Qué ofrecemos? */
+.que-ofrecemos {
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+}
+
+.que-ofrecemos h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #6a0dad;
+}
+
+.botones-ofrecemos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-ofrece {
+  background-color: #dcb0ff;
+  color: #4b0082;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-ofrece:hover {
+  background-color: #c095f5;
+}
+
+/* Footer */
+.footer {
+  margin-top: 60px;
+  padding: 15px;
+  background-color: #6a0dad;
+  color: white;
+  text-align: center;
+}
