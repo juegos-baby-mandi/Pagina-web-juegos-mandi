@@ -5,126 +5,130 @@
   box-sizing: border-box;
 }
 
-/* Fondo de video */
-#video-fondo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.8;
+/* Fuente y colores generales */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background: #f3f3f3;
 }
 
-/* Encabezado con logo y menú */
-header {
+/* Header */
+.container-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(128, 0, 128, 0.9); /* morado con transparencia */
-  padding: 10px 20px;
-  flex-wrap: wrap;
+  background: #5e0080;
+  padding: 15px;
 }
-
 .logo {
-  height: 80px;
-  max-width: 100%;
+  height: 60px;
 }
-
-/* Menú de navegación */
-nav ul {
+.nav-list {
   list-style: none;
   display: flex;
   gap: 15px;
-  flex-wrap: wrap;
 }
-
-nav ul li a {
-  color: white;
+.nav-list a {
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
-  padding: 5px 10px;
-  transition: background 0.3s;
+}
+.nav-list a:hover {
+  text-decoration: underline;
 }
 
-nav ul li a:hover {
-  background-color: #ffffff33;
-  border-radius: 5px;
+/* Video */
+.video-section {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
 }
-
-/* Sección principal */
-main {
-  padding: 120px 20px 60px;
-  color: white;
-  text-align: center;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* Formulario */
-form {
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 500px;
-  margin: 30px auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-form input, form textarea, form select {
+.video-bg {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  height: 100%;
+  object-fit: cover;
+}
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+.video-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.video-overlay p {
+  font-size: 1.2rem;
 }
 
-form button, form input[type="submit"] {
-  background-color: purple;
-  color: white;
-  border: none;
+/* Imagen hero */
+.hero-image img {
+  width: 100%;
+  display: block;
+}
+
+/* Contenido */
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+.intro h2 {
+  margin-bottom: 10px;
+}
+.intro ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.cta {
+  text-align: center;
+  margin: 20px 0;
+}
+.btn {
+  display: inline-block;
+  background: #5e0080;
+  color: #fff;
   padding: 10px 20px;
+  text-decoration: none;
   border-radius: 5px;
-  cursor: pointer;
 }
-
-form button:hover, form input[type="submit"]:hover {
-  background-color: #660066;
+.btn:hover {
+  background: #460066;
 }
 
 /* Footer */
 footer {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 20px;
+  background: #333;
+  color: #eee;
   text-align: center;
-  font-size: 14px;
+  padding: 15px;
+}
+footer a {
+  color: #ffdd57;
 }
 
-/* Responsive diseño */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
+/* Responsivo */
+@media (max-width: 600px) {
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
   }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
+  .video-overlay h1 {
+    font-size: 1.8rem;
   }
-
-  .logo {
-    height: 60px;
-    margin-bottom: 10px;
-  }
-
-  main {
-    padding: 100px 15px 40px;
-  }
-
-  form {
-    width: 90%;
+  .video-overlay p {
+    font-size: 1rem;
   }
 }
