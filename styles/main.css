@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -8,16 +8,15 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
-  line-height: 1.6;
   color: #333;
 }
 
-/* ENCABEZADO FIJO CON LOGO Y REDES */
+/* ENCABEZADO FIJO CON ICONOS */
 .encabezado-fijo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 8px 16px;
   background-color: #7a2cc4;
   position: fixed;
   top: 0;
@@ -27,24 +26,25 @@ body {
 }
 
 .logo-header {
-  height: 45px;
+  height: 38px;
 }
 
 .iconos-redes img {
-  height: 24px;
-  margin-left: 12px;
-  transition: transform 0.2s;
+  height: 22px;
+  margin-left: 10px;
+  transition: transform 0.2s ease;
 }
 
 .iconos-redes img:hover {
   transform: scale(1.1);
 }
 
-/* SECCIÓN INICIO CON VIDEO Y CONTENIDO CENTRAL */
+/* INICIO */
 .inicio {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  padding-top: 60px;
 }
 
 .video-fondo {
@@ -55,34 +55,36 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  filter: brightness(0.75);
 }
 
 .contenido-inicio {
   position: relative;
   height: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding-top: 60px;
-  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .logo-inicio {
-  height: 100px;
+  height: 90px;
   margin-bottom: 15px;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 2.2rem;
   color: #7a2cc4;
+  margin-bottom: 10px;
 }
 
 p {
   font-size: 1.1rem;
   margin-bottom: 20px;
+  color: #333;
 }
 
 .boton {
@@ -90,38 +92,47 @@ p {
   color: white;
   padding: 12px 24px;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: bold;
   transition: background-color 0.3s;
+  margin-top: 10px;
 }
 
 .boton:hover {
   background-color: #5e21a2;
 }
 
-/* SECCIÓN DE BOTONES DE SERVICIOS */
-.botones-servicios {
+/* SECCIÓN DE SERVICIOS */
+h2 {
+  font-size: 1.6rem;
   margin-top: 20px;
+  color: #333;
+}
+
+.botones-servicios {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
+  margin-top: 20px;
+  padding: 0 20px;
 }
 
 .botones-servicios a {
-  background-color: white;
-  color: #7a2cc4;
-  border: 2px solid #7a2cc4;
+  background-color: #7a2cc4;
+  color: white;
   padding: 10px 16px;
   border-radius: 20px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+  text-align: center;
+  min-width: 140px;
 }
 
 .botones-servicios a:hover {
-  background-color: #7a2cc4;
-  color: white;
+  background-color: #5e21a2;
 }
 
 /* FOOTER */
@@ -136,23 +147,29 @@ footer {
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .logo-header {
-    height: 38px;
+    height: 32px;
   }
 
   .logo-inicio {
-    height: 80px;
+    height: 75px;
   }
 
   h1 {
-    font-size: 1.6rem;
-  }
-
-  .boton {
-    font-size: 1rem;
+    font-size: 1.7rem;
   }
 
   .iconos-redes img {
     height: 20px;
     margin-left: 8px;
+  }
+
+  .botones-servicios {
+    gap: 8px;
+  }
+
+  .botones-servicios a {
+    font-size: 14px;
+    padding: 8px 12px;
+    min-width: 120px;
   }
 }
