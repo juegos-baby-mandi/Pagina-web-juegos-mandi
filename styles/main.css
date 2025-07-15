@@ -120,3 +120,11 @@ footer {
     font-size: 1.5rem;
   }
 }
+
+.botones-servicios {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+  align-items: center;
+}
