@@ -1,162 +1,130 @@
-* {
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fff;
-}
-
-/* Encabezado fijo */
-header {
-  background-color: #7b1fa2;
-  padding: 8px 16px;
+/* Encabezado superior */
+.top-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  align-items: center;
+  background-color: purple;
+  padding: 10px 20px;
+  flex-wrap: wrap;
 }
 
-.logo {
-  height: 10px;
+.logo-header img {
+  height: 60px;
 }
 
-.redes {
+.contact-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+  align-items: center;
 }
 
-.redes img {
-  height: 10px;
-  width: 10px;
-  object-fit: contain;
-  transition: transform 0.2s ease;
+.contact-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-.redes img:hover {
-  transform: scale(1.1);
-}
-
-/* Sección principal con video */
-.hero {
+/* Sección inicio */
+.inicio {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  height: auto;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
+  color: #fff;
 }
 
-.hero::before {
-  content: "";
+.video-fondo {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(255, 255, 255, 0.7);
-  z-index: 1;
-}
-
-.hero video {
-  position: absolute;
-  top: 0; left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.5;
 }
 
-.hero-content {
-  z-index: 2;
+.contenido-inicio {
+  padding: 40px 20px;
+  background-color: rgba(255,255,255,0.2);
+  color: #4a0072;
 }
 
-.hero-content .logo-central {
-  height: 10px;
-  margin-bottom: 10px;
+.logo-inicio {
+  width: 100px;
+  margin: 10px 0;
 }
 
-.hero-content h1 {
-  color: #7b1fa2;
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-.hero-content h2 {
-  color: #333;
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-/* Botones de servicios */
-.botones-servicios {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  z-index: 2;
-}
-
-.botones-servicios a {
-  background-color: #7b1fa2;
-  color: white;
-  padding: 10px 14px;
-  border-radius: 10px;
-  text-decoration: none;
+.subtitulo {
+  font-size: 24px;
   font-weight: bold;
-  font-size: 14px;
-  transition: background 0.3s ease;
+  margin: 30px 0 10px;
+  color: #4a0072;
 }
 
-.botones-servicios a:hover {
-  background-color: #5e1480;
+.botones-catalogo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.boton {
+  background-color: purple;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 16px;
+  width: 90%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 /* Footer */
 footer {
-  background-color: #7b1fa2;
+  background-color: purple;
   color: white;
-  padding: 30px 20px;
+  padding: 20px 10px;
   text-align: center;
-  margin-top: 40px;
 }
 
-footer nav a {
-  display: block;
-  margin: 5px 0;
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer-nav a {
   color: white;
-  font-weight: bold;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
 }
 
-/* Responsive */
-@media (max-width: 60px) {
-  .logo {
-    height: 34px;
+@media (max-width: 600px) {
+  .contact-links {
+    justify-content: center;
+    margin-top: 10px;
   }
 
-  .redes img {
-    height: 20px;
-    width: 20px;
+  .boton {
+    font-size: 14px;
   }
 
-  .hero-content .logo-central {
-    height: 70px;
-  }
-
-  .hero-content h1 {
-    font-size: 22px;
-  }
-
-  .hero-content h2 {
-    font-size: 16px;
-  }
-
-  .botones-servicios {
-    flex-direction: column;
-    align-items: center;
+  .logo-header {
+    text-align: center;
+    width: 100%;
   }
 }
