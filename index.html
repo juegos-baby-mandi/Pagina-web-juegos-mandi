@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Juegos Baby Mandi</title>
-  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body>
   <header>
     <a href="index.html">
-      <img src="img/logo.png" alt="Juegos Baby Mandi" class="logo" />
+      <img src="img/logo.png" alt="Logo Juegos Baby Mandi" class="logo">
     </a>
     <nav>
       <ul>
@@ -26,20 +26,43 @@
     </nav>
   </header>
 
-  <section class="inicio">
-    <video autoplay muted loop class="video-fondo">
+  <!-- VIDEO DE FONDO -->
+  <div class="video-fondo">
+    <video autoplay muted loop playsinline>
       <source src="videos/fondo.mp4" type="video/mp4" />
-      Tu navegador no soporta video.
+      Tu navegador no soporta video en HTML5.
     </video>
-    <div class="contenido-inicio">
-      <div class="imagen-titulo">
-        <img src="img/logo.png" alt="Logo Juegos Baby Mandi" class="logo-inicio" />
-        <h1>Juegos Baby Mandi</h1>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL SOBRE VIDEO -->
+  <div id="contenido-portada">
+    <div class="portada-grid">
+      
+      <!-- Lado izquierdo -->
+      <div class="portada-izquierda">
+        <p class="texto-lateral">Con nosotros encuentras:</p>
       </div>
-      <p>¡Diversión garantizada para cumpleaños, empresas y más!</p>
-      <a href="catalogo.html" class="boton">Ver Catálogo</a>
+
+      <!-- Centro -->
+      <div class="portada-centro">
+        <div class="portada-logo-texto">
+          <img src="img/logo.png" alt="Logo Juegos Baby Mandi">
+          <h1>Juegos Baby Mandi</h1>
+        </div>
+        <p>¡Diversión garantizada para cumpleaños, empresas y más!</p>
+        <a href="catalogo.html">
+          <button class="boton-catalogo">Ver Catálogo</button>
+        </a>
+      </div>
+
+      <!-- Lado derecho -->
+      <div class="portada-derecha">
+        <a href="https://wa.me/56946535784" target="_blank">
+          <img src="img/whatsapp.png" alt="WhatsApp" class="icono-whatsapp" />
+        </a>
+      </div>
     </div>
-  </section>
+  </div>
 
   <footer>
     <p>&copy; 2025 Juegos Baby Mandi. Todos los derechos reservados.</p>
