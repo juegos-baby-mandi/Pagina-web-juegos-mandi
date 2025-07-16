@@ -1,35 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Juegos Mecánicos - Juegos Baby Mandi</title>
-  <link rel="stylesheet" href="../styles/main.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo de Juegos Inflables</title>
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-  <header>
-    <a href="../index.html">
-      <img src="../images/logo.png" alt="Logo Juegos Baby Mandi" class="logo">
-    </a>
-    <h1>Catálogo: Juegos Mecánicos</h1>
-  </header>
 
-  <main class="catalogo">
-    <section class="item">
-      <img src="../images/juegos/mecanicos/toro-mecanico.jpg" alt="Toro Mecánico">
-      <h2>Toro Mecánico</h2>
-      <p>Ideal para eventos de empresa o cumpleaños adultos. Incluye operador profesional.</p>
-    </section>
+<!-- Encabezado superior con íconos -->
+<header class="top-header">
+  <div class="logo-header">
+    <a href="index.html">
+      <img src="img/logo.png" alt="Logo Juegos Baby Mandi" />
+    </a>
+  </div>
+  <div class="contact-links">
+    <a href="https://wa.me/56946535784" target="_blank">📞 WhatsApp</a>
+    <a href="https://www.instagram.com/juegosbabymandi" target="_blank">📷 Instagram</a>
+    <a href="mailto:juegosbabymandi@gmail.com">📧 juegosbabymandi@gmail.com</a>
+    <a href="https://fb.me/JuegosBabyMandi" target="_blank">👍 Facebook</a>
+    <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">🎵 TikTok</a>
+  </div>
+</header>
 
-    <section class="item">
-      <img src="../images/juegos/mecanicos/reloj-derribador.jpg" alt="Reloj Derribador">
-      <h2>Reloj Derribador</h2>
-      <p>Divertido juego de agilidad. ¡Desafía a tus amigos y evita ser derribado!</p>
-    </section>
-  </main>
+<!-- Catálogo - Obstáculos Emoji -->
+<section class="catalogo-section">
+  <h2 class="catalogo-titulo">Obstáculos Emoji</h2>
+  <div class="carousel" data-carousel>
+    <button class="carousel-button prev" data-carousel-button="prev">◀</button>
+    <div class="slides" data-slides>
+      <div class="slide"><img src="img/inflable-obstaculos-emoji1.jpg" alt="Obstáculos Emoji 1"></div>
+      <div class="slide"><img src="img/inflable-obstaculos-emoji2.jpg" alt="Obstáculos Emoji 2"></div>
+    </div>
+    <button class="carousel-button next" data-carousel-button="next">▶</button>
+  </div>
+  <div class="info">
+    <p><strong>Precio:</strong> $125.000</p>
+    <p><strong>Edad:</strong> Hasta 10 años</p>
+    <p><strong>Capacidad:</strong> 15 niños</p>
+    <p><strong>Medidas:</strong> Alto 3.5m x Ancho 4m x Largo 9.5m</p>
+    <p>Se debe considerar entre 0.5 y 1 metro extra para la turbina y que el juego no quede justo en el espacio destinado.</p>
+    <p>Es un hermoso juego con un diseño exclusivo en Chile, muy llamativo para tu hij@ e invitados. ¡Suuuper divertido con una carrera de obstáculos y dos toboganes al final!</p>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2025 Juegos Baby Mandi - Contacto: +569 4653 5784 - juegosbabymandi@gmail.com</p>
-  </footer>
+<!-- JavaScript para carrusel -->
+<script>
+  document.querySelectorAll("[data-carousel]").forEach(carousel => {
+    const slides = carousel.querySelector("[data-slides]");
+    const buttons = carousel.querySelectorAll("[data-carousel-button]");
+    let currIndex = 0;
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const offset = btn.dataset.carouselButton === "next" ? 1 : -1;
+        currIndex = Math.min(Math.max(currIndex + offset, 0), slides.children.length - 1);
+        slides.style.transform = `translateX(-${currIndex * 100}%)`;
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
