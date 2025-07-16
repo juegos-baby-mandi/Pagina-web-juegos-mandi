@@ -3,60 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Catálogo | Juegos Baby Mandi</title>
-  <link rel="stylesheet" href="styles/main.css" />
+  <title>Catálogo de Juegos Inflables</title>
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body>
 
-  <header class="top-header">
-    <a href="index.html"><img src="img/logo.png" alt="Logo" class="logo-header" /></a>
-    <div class="top-links">
+  <header class="encabezado">
+    <img src="img/logo.png" alt="Logo Baby Mandi" class="logo">
+    <div class="redes-header">
       <a href="https://wa.me/56946535784" target="_blank">WhatsApp</a>
       <a href="https://www.instagram.com/juegosbabymandi" target="_blank">Instagram</a>
       <a href="mailto:juegosbabymandi@gmail.com">Gmail</a>
-      <a href="https://www.facebook.com/JuegosBabyMandi" target="_blank">Facebook</a>
-      <a href="#" target="_blank">TikTok</a>
+      <a href="https://fb.me/JuegosBabyMandi" target="_blank">Facebook</a>
+      <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">TikTok</a>
     </div>
   </header>
 
-  <main class="catalogo-contenedor">
+  <section class="catalogo-section">
+    <h2 class="titulo-seccion">Catálogo de Juegos Inflables</h2>
 
-    <h1>Catálogo de Juegos Inflables</h1>
-
-    <div class="juego">
-      <div class="carousel">
-        <img src="img/inflable-mini-lego1.jpg" class="active" />
-        <img src="img/inflable-mini-lego2.jpg" />
+    <!-- Tarjeta de un juego -->
+    <div class="juego-card">
+      <div class="juego-img">
+        <img src="img/castillo-lego.jpg" alt="Castillo Mini Lego" />
       </div>
-      <div class="info">
-        <h2>Castillo Mini Lego</h2>
+      <div class="juego-info">
+        <h3>Castillo Mini Lego</h3>
         <p><strong>Precio:</strong> $70.000</p>
         <p><strong>Edad:</strong> Hasta 5 años</p>
         <p><strong>Capacidad:</strong> 6 niños</p>
         <p><strong>Medidas:</strong> Alto 3m x Ancho 3m x Largo 5m</p>
         <p>Hermoso y exclusivo juego inflable, único en Chile. Los más pequeños merecen juegos acordes a su edad.</p>
+        <a href="https://wa.me/56946535784" target="_blank" class="boton-whatsapp">Reservar por WhatsApp</a>
       </div>
     </div>
 
-    <!-- Repite más bloques .juego como este para cada juego que tengas -->
+    <!-- Puedes duplicar la tarjeta anterior para más juegos -->
+    <div class="juego-card">
+      <div class="juego-img">
+        <img src="img/tobogan-blando.jpg" alt="Tobogán Blando" />
+      </div>
+      <div class="juego-info">
+        <h3>Tobogán Blando</h3>
+        <p><strong>Precio:</strong> $80.000</p>
+        <p><strong>Edad:</strong> Hasta 6 años</p>
+        <p><strong>Capacidad:</strong> 6 niños</p>
+        <p><strong>Medidas:</strong> Alto 3m x Ancho 3m x Largo 6m</p>
+        <p>Perfecto para cumpleaños, seguro y muy entretenido para los más pequeños.</p>
+        <a href="https://wa.me/56946535784" target="_blank" class="boton-whatsapp">Reservar por WhatsApp</a>
+      </div>
+    </div>
 
-  </main>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Juegos Baby Mandi</p>
+  <footer class="footer">
+    <p>&copy; 2025 Juegos Baby Mandi. Todos los derechos reservados.</p>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="vision-mision.html">Visión y Misión</a>
+      <a href="experiencias.html">Experiencias</a>
+      <a href="testimonios.html">Testimonios</a>
+      <a href="promociones.html">Promociones</a>
+      <a href="eventos-empresas.html">Eventos Empresas</a>
+      <a href="consejos.html">Consejos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
   </footer>
 
-  <script>
-    // Carrusel simple
-    document.querySelectorAll('.carousel').forEach(carousel => {
-      let index = 0;
-      const images = carousel.querySelectorAll('img');
-      setInterval(() => {
-        images[index].classList.remove('active');
-        index = (index + 1) % images.length;
-        images[index].classList.add('active');
-      }, 2500);
-    });
-  </script>
 </body>
 </html>
