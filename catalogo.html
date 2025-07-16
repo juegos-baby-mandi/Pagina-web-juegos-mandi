@@ -8,14 +8,17 @@
 </head>
 <body>
 
-  <header class="encabezado">
-    <img src="img/logo.png" alt="Logo Baby Mandi" class="logo">
-    <div class="redes-header">
-      <a href="https://wa.me/56946535784" target="_blank">WhatsApp</a>
-      <a href="https://www.instagram.com/juegosbabymandi" target="_blank">Instagram</a>
-      <a href="mailto:juegosbabymandi@gmail.com">Gmail</a>
-      <a href="https://fb.me/JuegosBabyMandi" target="_blank">Facebook</a>
-      <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">TikTok</a>
+  <!-- Encabezado superior con íconos -->
+  <header class="top-header">
+    <div class="logo-header">
+      <img src="img/logo.png" alt="Logo Juegos Baby Mandi" />
+    </div>
+    <div class="contact-links">
+      <a href="https://wa.me/56946535784" target="_blank">📞 WhatsApp</a>
+      <a href="https://www.instagram.com/juegosbabymandi" target="_blank">📷 Instagram</a>
+      <a href="mailto:juegosbabymandi@gmail.com">📧 juegosbabymandi@gmail.com</a>
+      <a href="https://fb.me/JuegosBabyMandi" target="_blank">👍 Facebook</a>
+      <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">🎵 TikTok</a>
     </div>
   </header>
 
@@ -38,3 +41,32 @@
     <p>Es un hermoso juego con un diseño hermoso y exclusivo en Chile! Muy llamativo para tu hij@ e invitados. ¡Suuuuper divertido con una carrera de obstáculos y 2 toboganes al final!</p>
   </div>
 </div>
+
+  <script>
+  function moverCarrusel(boton, direccion) {
+    const carousel = boton.parentElement.querySelector(".carousel-images");
+    const imagenes = carousel.querySelectorAll("img");
+    const imagenActual = carousel.querySelector("img:not(.oculto)");
+
+    let indice = Array.from(imagenes).indexOf(imagenActual);
+    imagenActual.classList.add("oculto");
+
+    indice = (indice + direccion + imagenes.length) % imagenes.length;
+    imagenes[indice].classList.remove("oculto");
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const todosLosCarruseles = document.querySelectorAll(".carousel-images");
+
+    todosLosCarruseles.forEach((carousel) => {
+      const imagenes = carousel.querySelectorAll("img");
+      imagenes.forEach((img, index) => {
+        if (index !== 0) {
+          img.classList.add("oculto");
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
