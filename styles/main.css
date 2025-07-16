@@ -129,63 +129,71 @@ footer {
   }
 }
 
-.catalogo-contenedor {
-  padding: 30px;
-  max-width: 1200px;
-  margin: auto;
+.catalogo-section {
+  relleno: 40px 20px;
+  ancho máximo: 1200px;
+  margen:auto;
 }
 
-.juego {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #fff;
-  margin-bottom: 30px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+.titulo-seccion {
+  alinear texto: centro;
+  tamaño de fuente: 2.2rem;
+  margen inferior: 40px;
+  color: #5f259f;
 }
 
-.juego .carousel {
+.juego-card {
+  pantalla: flex;
+  flex-wrap: envolver;
+  borde: 1px sólido #ccc;
+  radio del borde: 10px;
+  margen inferior: 40px;
+  fondo: #fff;
+  caja-sombra: 0 0 10px rgba(0, 0, 0, 0.1);
+  desbordamiento: oculto;
+}
+
+.juego-img {
   flex: 1 1 300px;
-  position: relative;
-  max-width: 400px;
-  overflow: hidden;
+  alinear texto: centro;
+  relleno: 10px;
 }
 
-.juego .carousel img {
-  width: 100%;
-  height: auto;
-  display: none;
-  object-fit: cover;
-  transition: opacity 0.5s ease;
-  border-right: 1px solid #ddd;
+.juego-img img {
+  ancho: 100%;
+  ancho máximo: 300px;
+  altura:auto;
+  margen inferior: 10px;
+  radio del borde: 8px;
 }
 
-.juego .carousel img.active {
-  display: block;
+.juego-info {
+  flexión: 2 1 400px;
+  relleno: 20px;
 }
 
-.juego .info {
-  flex: 1 1 300px;
-  padding: 20px;
+.juego-info h3 {
+  color: #5f259f;
+  margen superior: 0;
 }
 
-.juego h2 {
-  margin-top: 0;
-  color: #5f2a8d;
+.juego-info p {
+  margen: 5px 0;
+  tamaño de fuente: 16px;
 }
 
-@media screen and (max-width: 768px) {
-  .juego {
-    flex-direction: column;
-  }
+.boton-whatsapp {
+  pantalla: bloque en línea;
+  margen superior: 10px;
+  relleno: 10px 15px;
+  color de fondo: #25D366;
+  color: blanco;
+  radio del borde: 5px;
+  decoración de texto: ninguna;
+  peso de fuente: negrita;
+  transición: color de fondo 0,3 s;
+}
 
-  .juego .carousel,
-  .juego .info {
-    width: 100%;
-  }
-
-  .juego .info {
-    padding: 15px;
-  }
+.boton-whatsapp:hover {
+  color de fondo: #1ebe5d;
 }
