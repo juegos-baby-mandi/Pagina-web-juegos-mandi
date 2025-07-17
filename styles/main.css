@@ -335,3 +335,50 @@ footer {
     margin: 5px;
   }
 }
+
+.boton-carrito {
+  background-color: #800080;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.boton-carrito:hover {
+  background-color: #a020f0;
+}
+
+.carrito-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  text-align: center;
+}
+
+.carrito-container ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.carrito-container li {
+  font-size: 18px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.boton-whatsapp {
+  background-color: #25d366;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
