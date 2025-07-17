@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrito - Juegos Baby Mandi</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+<header class="top-header">
+  <div class="logo-header">
+    <img src="img/logo.png" alt="Logo Juegos Baby Mandi" />
+  </div>
+  <div class="contact-links">
+    <a href="https://wa.me/56946535784" target="_blank">📞 WhatsApp</a>
+    <a href="https://www.instagram.com/juegosbabymandi" target="_blank">📷 Instagram</a>
+    <a href="mailto:juegosbabymandi@gmail.com">📧 juegosbabymandi@gmail.com</a>
+    <a href="https://fb.me/JuegosBabyMandi" target="_blank">👍 Facebook</a>
+    <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">🎵 TikTok</a>
+  </div>
+</header>
+
+<section class="carrito-container">
+  <h1>🛒 Tu carrito</h1>
+  <ul id="lista-carrito"></ul>
+  <button onclick="enviarPorWhatsApp()" class="boton-whatsapp">Enviar pedido por WhatsApp</button>
+</section>
+
+<footer>
+  <nav class="footer-nav">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+  <p>&copy; 2025 Juegos Baby Mandi</p>
+</footer>
+
+<script>
+  const lista = document.getElementById("lista-carrito");
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  carrito.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item.nombre} - $${item.precio.toLocaleString()}`;
+    lista.appendChild(li);
+  });
+
+  function enviarPorWhatsApp() {
+    if (carrito.length === 0) {
+      alert("Tu carrito está vacío");
+      return;
+    }
+    let mensaje = "Hola! Quiero cotizar los siguientes juegos:%0A";
+    carrito.forEach(item => {
+      mensaje += `• ${item.nombre} - $${item.precio.toLocaleString()}%0A`;
+    });
+    mensaje += "%0APor favor, confirmar disponibilidad 🙏";
+    window.open(`https://wa.me/56946535784?text=${mensaje}`, "_blank");
+  }
+</script>
+
+</body>
+</html>
