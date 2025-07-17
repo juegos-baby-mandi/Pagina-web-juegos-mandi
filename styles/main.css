@@ -417,3 +417,58 @@ footer {
   text-decoration: none;
 }
 
+#carrito {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 250px;
+  background-color: #ffffffee;
+  border: 2px solid #8e44ad;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 9999;
+  font-size: 14px;
+}
+
+#carrito h2 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #8e44ad;
+}
+
+#carrito ul {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-left: 15px;
+  margin: 10px 0;
+}
+
+#carrito li {
+  margin-bottom: 5px;
+}
+
+#total-carrito {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#enviar-carrito,
+#vaciar-carrito {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 5px;
+  background-color: #8e44ad;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#vaciar-carrito {
+  background-color: #888;
+}
+
+
