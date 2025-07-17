@@ -247,7 +247,6 @@
     </div>
   </div>
 </div>
-
 <script>
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   let productoAEliminar = null;
@@ -258,6 +257,33 @@
     mostrarCarrito();
     mostrarMensaje("✅ " + nombre + " fue agregado al carrito.");
   }
+
+  function eliminarProducto(index) {
+    productoAEliminar = index;
+    document.getElementById("modal-confirmacion").style.display = "flex";
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    mostrarCarrito();
+
+    document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
+
+    document.getElementById("confirmar-btn").addEventListener("click", () => {
+      if (productoAEliminar !== null) {
+        carrito.splice(productoAEliminar, 1);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        mostrarCarrito();
+        mostrarMensaje("❌ Producto eliminado del carrito.");
+      }
+      document.getElementById("modal-confirmacion").style.display = "none";
+      productoAEliminar = null;
+    });
+
+    document.getElementById("cancelar-btn").addEventListener("click", () => {
+      document.getElementById("modal-confirmacion").style.display = "none";
+      productoAEliminar = null;
+    });
+  });
 
   function mostrarCarrito() {
     const lista = document.getElementById("carrito-lista");
@@ -271,22 +297,20 @@
     carrito.forEach((item, index) => {
       const li = document.createElement("li");
       li.innerHTML = `
-  ${item.nombre} - $${item.precio.toLocaleString()}
-  <button class="btn-eliminar" data-index="${index}" style="margin-left:10px; background:#ff4d4d; color:white; border:none; padding:2px 6px; border-radius:4px;">❌</button>
-`;
-       lista.appendChild(li);
-      // Activar el botón eliminar para cada ítem
-setTimeout(() => {
-  const botonesEliminar = document.querySelectorAll(".btn-eliminar");
-  botonesEliminar.forEach(boton => {
-    boton.addEventListener("click", function () {
-      const index = parseInt(this.getAttribute("data-index"));
-      eliminarProducto(index);
-    });
-  });
-}, 0);
-
+        ${item.nombre} - $${item.precio.toLocaleString()}
+        <button class="btn-eliminar" data-index="${index}" style="margin-left:10px; background:#ff4d4d; color:white; border:none; padding:2px 6px; border-radius:4px;">❌</button>
+      `;
+      lista.appendChild(li);
       total += item.precio;
+    });
+
+    // Activar botón eliminar
+    const botonesEliminar = document.querySelectorAll(".btn-eliminar");
+    botonesEliminar.forEach(boton => {
+      boton.addEventListener("click", function () {
+        const index = parseInt(this.getAttribute("data-index"));
+        eliminarProducto(index);
+      });
     });
 
     totalElement.innerHTML = `<strong>Total: $${total.toLocaleString()}</strong>`;
@@ -310,37 +334,16 @@ setTimeout(() => {
     carrito = [];
     localStorage.removeItem("carrito");
     mostrarCarrito();
-    mostrarMensaje("🗑 Carrito vaciado.");
+    mostrarMensaje("🗑️ Carrito vaciado.");
   }
-
-  function eliminarProducto(index) {
-    productoAEliminar = index;
-    document.getElementById("modal-confirmacion").style.display = "flex";
-  }
-
-  document.getElementById("confirmar-btn").addEventListener("click", function () {
-    if (productoAEliminar !== null) {
-      carrito.splice(productoAEliminar, 1);
-      localStorage.setItem("carrito", JSON.stringify(carrito));
-      mostrarCarrito();
-      mostrarMensaje("❌ Producto eliminado del carrito.");
-    }
-    document.getElementById("modal-confirmacion").style.display = "none";
-    productoAEliminar = null;
-  });
-
-  document.getElementById("cancelar-btn").addEventListener("click", function () {
-    document.getElementById("modal-confirmacion").style.display = "none";
-    productoAEliminar = null;
-  });
 
   function toggleCarrito() {
-    const carrito = document.getElementById("carrito");
+    const carritoDiv = document.getElementById("carrito");
     const contenido = document.getElementById("carrito-contenido");
     const toggle = document.getElementById("carrito-toggle");
 
-    carrito.classList.toggle("minimizado");
-    if (carrito.classList.contains("minimizado")) {
+    carritoDiv.classList.toggle("minimizado");
+    if (carritoDiv.classList.contains("minimizado")) {
       contenido.style.display = "none";
       toggle.textContent = "🔼";
     } else {
@@ -366,11 +369,6 @@ setTimeout(() => {
       mensaje.remove();
     }, 2500);
   }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    mostrarCarrito();
-    document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
-  });
 </script>
 
 </body>
