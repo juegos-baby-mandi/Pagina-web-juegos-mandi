@@ -247,6 +247,7 @@
     </div>
   </div>
 </div>
+  
 <script>
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   let productoAEliminar = null;
@@ -255,35 +256,8 @@
     carrito.push({ nombre, precio });
     localStorage.setItem("carrito", JSON.stringify(carrito));
     mostrarCarrito();
-    mostrarMensaje("✅ " + nombre + " fue agregado al carrito.");
+    mostrarMensaje("✅ \"" + nombre + "\" fue agregado al carrito.");
   }
-
-  function eliminarProducto(index) {
-    productoAEliminar = index;
-    document.getElementById("modal-confirmacion").style.display = "flex";
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    mostrarCarrito();
-
-    document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
-
-    document.getElementById("confirmar-btn").addEventListener("click", () => {
-      if (productoAEliminar !== null) {
-        carrito.splice(productoAEliminar, 1);
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-        mostrarCarrito();
-        mostrarMensaje("❌ Producto eliminado del carrito.");
-      }
-      document.getElementById("modal-confirmacion").style.display = "none";
-      productoAEliminar = null;
-    });
-
-    document.getElementById("cancelar-btn").addEventListener("click", () => {
-      document.getElementById("modal-confirmacion").style.display = "none";
-      productoAEliminar = null;
-    });
-  });
 
   function mostrarCarrito() {
     const lista = document.getElementById("carrito-lista");
@@ -301,16 +275,9 @@
         <button class="btn-eliminar" data-index="${index}" style="margin-left:10px; background:#ff4d4d; color:white; border:none; padding:2px 6px; border-radius:4px;">❌</button>
       `;
       lista.appendChild(li);
-      // Activar botón eliminar
-const botonesEliminar = document.querySelectorAll(".btn-eliminar");
-botonesEliminar.forEach(boton => {
-  boton.addEventListener("click", function () {
-    const index = parseInt(this.getAttribute("data-index"));
-    eliminarProducto(index);
-  });
-});
-    total += item.precio;
+      total += item.precio;
     });
+
     totalElement.innerHTML = `<strong>Total: $${total.toLocaleString()}</strong>`;
 
     if (carrito.length > 0) {
@@ -326,6 +293,16 @@ botonesEliminar.forEach(boton => {
       boton.style.display = "none";
       vaciarBtn.style.display = "none";
     }
+
+    // ACTIVAR BOTONES ELIMINAR CON EVENTO
+    const botonesEliminar = document.querySelectorAll(".btn-eliminar");
+    botonesEliminar.forEach(boton => {
+      boton.addEventListener("click", function () {
+        const index = parseInt(this.getAttribute("data-index"));
+        productoAEliminar = index;
+        document.getElementById("modal-confirmacion").style.display = "flex";
+      });
+    });
   }
 
   function vaciarCarrito() {
@@ -333,21 +310,6 @@ botonesEliminar.forEach(boton => {
     localStorage.removeItem("carrito");
     mostrarCarrito();
     mostrarMensaje("🗑️ Carrito vaciado.");
-  }
-
-  function toggleCarrito() {
-    const carritoDiv = document.getElementById("carrito");
-    const contenido = document.getElementById("carrito-contenido");
-    const toggle = document.getElementById("carrito-toggle");
-
-    carritoDiv.classList.toggle("minimizado");
-    if (carritoDiv.classList.contains("minimizado")) {
-      contenido.style.display = "none";
-      toggle.textContent = "🔼";
-    } else {
-      contenido.style.display = "block";
-      toggle.textContent = "🔽";
-    }
   }
 
   function mostrarMensaje(texto) {
@@ -362,12 +324,31 @@ botonesEliminar.forEach(boton => {
     mensaje.style.borderRadius = "6px";
     mensaje.style.zIndex = "10000";
     document.body.appendChild(mensaje);
-
-    setTimeout(() => {
-      mensaje.remove();
-    }, 2500);
+    setTimeout(() => mensaje.remove(), 2500);
   }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    mostrarCarrito();
+    document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
+
+    document.getElementById("cancelar-btn").addEventListener("click", () => {
+      document.getElementById("modal-confirmacion").style.display = "none";
+      productoAEliminar = null;
+    });
+
+    document.getElementById("confirmar-btn").addEventListener("click", () => {
+      if (productoAEliminar !== null) {
+        carrito.splice(productoAEliminar, 1);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        mostrarCarrito();
+        mostrarMensaje("❌ Producto eliminado del carrito.");
+      }
+      document.getElementById("modal-confirmacion").style.display = "none";
+      productoAEliminar = null;
+    });
+  });
 </script>
+
 
 </body>
 </html>
