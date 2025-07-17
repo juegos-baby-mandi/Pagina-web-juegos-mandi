@@ -221,28 +221,15 @@
     </nav>
     <p>&copy; 2025 Juegos Baby Mandi. Todos los derechos reservados.</p>
   </footer>
-  <script>
-  function agregarAlCarrito(nombre, precio) {
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    carrito.push({ nombre, precio });
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    alert(`${nombre} fue agregado al carrito`);
-  }
-</script>
+
 <!-- Aquí termina tu catálogo -->
 
-<script>
-  function agregarAlCarrito(nombre, precio) {
-    alert(`¡Has agregado "${nombre}" al carrito!\nPrecio: $${precio.toLocaleString()}\n\nRecuerda confirmar disponibilidad por WhatsApp antes de pagar.`);
-  }
-</script>
-</body>
-</html>
 <script>
   let carrito = [];
 
   function agregarAlCarrito(nombre, precio) {
     carrito.push({ nombre, precio });
+    alert(`✅ "${nombre}" fue agregado al carrito.\n\nRecuerda confirmar disponibilidad por WhatsApp antes de pagar.`);
     mostrarCarrito();
   }
 
