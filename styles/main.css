@@ -383,22 +383,21 @@ footer {
   cursor: pointer;
 }
 
+
 #carrito {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 260px;
-  max-height: 70vh;
-  background-color: #ffffffee;
-  border: 2px solid #8e44ad;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  z-index: 9999;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 260px;
+  background-color: #ffffffee;
+  border: 2px solid #8e44ad;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 9999;
+  font-size: 14px;
 }
+
 
 #carrito h2 {
   margin-top: 0;
