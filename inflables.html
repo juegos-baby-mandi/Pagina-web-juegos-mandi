@@ -242,7 +242,7 @@
   function agregarAlCarrito(nombre, precio) {
     carrito.push({ nombre, precio });
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    alert(`✅ "${nombre}" fue agregado al carrito.\n\nRecuerda confirmar disponibilidad por WhatsApp antes de pagar.`);
+    mostrarMensajeCarrito(`✅ "${nombre}" fue agregado al carrito.`);
     mostrarCarrito();
   }
 
@@ -317,8 +317,19 @@ function toggleCarrito() {
   }
 }
 
+function mostrarMensajeCarrito(texto) {
+  const mensaje = document.getElementById("mensaje-carrito");
+  mensaje.textContent = texto;
+  mensaje.classList.add("mostrar");
+
+  setTimeout(() => {
+    mensaje.classList.remove("mostrar");
+  }, 3000); // Desaparece en 3 segundos
+}
+
+
 </script>
 
-
+<div id="mensaje-carrito" class="mensaje-carrito"></div>
 </body>
 </html>
