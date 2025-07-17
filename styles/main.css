@@ -489,3 +489,21 @@ footer {
   user-select: none;
 }
 
+#carrito ul {
+  max-height: 150px; /* Limita la altura para que no crezca tanto */
+  overflow-y: auto;  /* Activa el scroll vertical si se pasa */
+  padding-left: 15px;
+  margin: 10px 0;
+}
+
+#carrito-contenido {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#carrito-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
