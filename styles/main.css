@@ -382,3 +382,38 @@ footer {
   border-radius: 6px;
   cursor: pointer;
 }
+
+.carrito {
+  background-color: #f8f8f8;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 2px solid #ccc;
+}
+
+.carrito h2 {
+  color: #6a1b9a;
+  margin-bottom: 10px;
+}
+
+.carrito ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 15px;
+}
+
+.carrito ul li {
+  background: #fff;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.boton.verde {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
