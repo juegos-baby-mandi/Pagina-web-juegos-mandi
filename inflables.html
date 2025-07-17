@@ -294,20 +294,6 @@
   document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
 });
 
-  let carrito = [];
-
-  let productoAEliminar = null;
-
-  function eliminarProducto(index) {
-    productoAEliminar = index;
-    document.getElementById("modal-confirmacion").style.display = "flex";
-  }
-
-  document.getElementById("cancelar-btn").addEventListener("click", function () {
-    document.getElementById("modal-confirmacion").style.display = "none";
-    productoAEliminar = null;
-  });
-
   document.getElementById("confirmar-btn").addEventListener("click", function () {
     if (productoAEliminar !== null) {
       carrito.splice(productoAEliminar, 1);
