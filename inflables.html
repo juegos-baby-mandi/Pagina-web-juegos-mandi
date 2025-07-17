@@ -1,66 +1,55 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juegos Inflables</title>
-  <link rel="stylesheet" href="styles/main.css">
-</head>
-<body>
+<!-- Encabezado superior con íconos -->
+<header class="top-header">
+  <div class="logo-header">
+    <img src="img/logo.png" alt="Logo Juegos Baby Mandi" />
+  </div>
+  <div class="contact-links">
+    <a href="https://wa.me/56946535784" target="_blank">📞 WhatsApp</a>
+    <a href="https://www.instagram.com/juegosbabymandi" target="_blank">📷 Instagram</a>
+    <a href="mailto:juegosbabymandi@gmail.com">📧 juegosbabymandi@gmail.com</a>
+    <a href="https://fb.me/JuegosBabyMandi" target="_blank">👍 Facebook</a>
+    <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">🎵 TikTok</a>
+  </div>
+</header>
 
-  <header class="top-header">
-    <div class="logo-header">
-      <a href="index.html"><img src="img/logo.png" alt="Logo Juegos Baby Mandi" /></a>
-    </div>
-  </header>
+<section class="juego-ficha">
+  <div class="juego-img">
+    <img src="img/inflable-mini-lego.jpg" alt="Mini Lego" />
+  </div>
+  <div class="juego-detalle">
+    <h2>Mini Lego</h2>
+    <p>Hermoso y exclusivo juego inflable, único en Chile.<br>
+    ¡Porque los más pequeños merecen divertirse con juegos acorde a su edad!</p>
+    
+    <ul>
+      <li><strong>Hasta:</strong> 5 años</li>
+      <li><strong>Capacidad:</strong> 6 niños</li>
+      <li><strong>Medidas:</strong> Alto 3m x Ancho 3m x Largo 5m</li>
+    </ul>
 
-  <main class="catalogo">
-    <h1 class="titulo-catalogo">Juegos Inflables</h1>
+    <div class="juego-precio">$70.000</div>
+    
+    <div class="botones-contacto">
+      <a href="https://wa.me/56946535784" target="_blank" class="btn-whatsapp">Agendar por WhatsApp</a>
+      <a href="contacto.html" class="btn-contacto">Necesito ser contactado</a>
+    </div>
+  </div>
+</section>
 
-    <!-- Tarjeta de juego -->
-    <div class="juego-card">
-      <div class="carousel" data-carousel>
-        <button class="carousel-button prev" data-carousel-button="prev">❮</button>
-        <div class="slides" data-slides>
-          <img src="img/inflable-obstaculos-emoji1.jpg" alt="Obstáculos Emoji">
-          <img src="img/inflable-obstaculos-emoji2.jpg" alt="Obstáculos Emoji">
-        </div>
-        <button class="carousel-button next" data-carousel-button="next">❯</button>
-      </div>
-      <div class="info">
-        <h2>Obstáculos Emoji</h2>
-        <p><strong>Precio:</strong> $125.000</p>
-        <p><strong>Edad:</strong> Hasta 10 años</p>
-        <p><strong>Capacidad:</strong> 15 niños</p>
-        <p><strong>Medidas:</strong> Alto 3.5m x Ancho 4m x Largo 9.5m</p>
-        <p>Se debe considerar entre 0.5 y 1 metro extra para la turbina.</p>
-        <p>Es un hermoso juego exclusivo en Chile, ¡súper divertido con carrera de obstáculos y 2 toboganes al final!</p>
-      </div>
-    </div>
-
-  </main>
-
-  <footer>
-    <a href="index.html" class="volver-inicio">← Volver al inicio</a>
-  </footer>
-
-  <!-- Script para carrusel -->
-  <script>
-    document.querySelectorAll("[data-carousel]").forEach(carousel => {
-      const slides = carousel.querySelector("[data-slides]");
-      const buttons = carousel.querySelectorAll("[data-carousel-button]");
-      let index = 0;
-
-      buttons.forEach(button => {
-        button.addEventListener("click", () => {
-          const offset = button.dataset.carouselButton === "next" ? 1 : -1;
-          index = (index + offset + slides.children.length) % slides.children.length;
-          slides.style.transform = `translateX(-${index * 100}%)`;
-        });
-      });
-    });
-  </script>
-
-</body>
-</html>
-
+<!-- Footer con el menú completo -->
+<footer>
+  <nav class="footer-nav">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="vision-mision.html">Visión y Misión</a></li>
+      <li><a href="experiencias.html">Experiencias</a></li>
+      <li><a href="testimonios.html">Testimonios</a></li>
+      <li><a href="promociones.html">Promociones</a></li>
+      <li><a href="eventos-empresas.html">Eventos Empresas</a></li>
+      <li><a href="consejos.html">Consejos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+  <p>&copy; 2025 Juegos Baby Mandi. Todos los derechos reservados.</p>
+</footer>
