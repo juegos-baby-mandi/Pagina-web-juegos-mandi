@@ -224,13 +224,19 @@
 
 <!-- Aquí termina tu catálogo -->
 <!-- Sección flotante del carrito -->
-<div id="carrito">
-  <h2>🛒 Carrito</h2>
-  <ul id="carrito-lista"></ul>
-  <p id="total-carrito"><strong>Total: $0</strong></p>
-  <a id="enviar-carrito" href="#" target="_blank" class="boton-carrito" style="display: none;">Cotizar por WhatsApp</a>
-  <button id="vaciar-carrito" onclick="vaciarCarrito()" style="display: none;">Vaciar Carrito</button>
+<div id="carrito" class="expandido">
+  <div id="carrito-header" onclick="toggleCarrito()">
+    <h2>🛒 Carrito</h2>
+    <span id="carrito-toggle">🔽</span>
+  </div>
+  <div id="carrito-contenido">
+    <ul id="carrito-lista"></ul>
+    <p id="total-carrito"><strong>Total: $0</strong></p>
+    <a id="enviar-carrito" href="#" target="_blank" class="boton-carrito" style="display: none;">Cotizar por WhatsApp</a>
+    <button id="vaciar-carrito" onclick="vaciarCarrito()" style="display: none;">Vaciar Carrito</button>
+  </div>
 </div>
+
 <script>
   // Recuperar carrito desde localStorage o iniciar vacío
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -279,12 +285,6 @@
     }
   }
 
-  function eliminarProducto(index) {
-    carrito.splice(index, 1);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    mostrarCarrito();
-  }
-
   function vaciarCarrito() {
     carrito = [];
     localStorage.removeItem("carrito");
@@ -292,6 +292,29 @@
   }
 
   document.addEventListener("DOMContentLoaded", mostrarCarrito);
+function eliminarProducto(index) {
+  if (confirm("¿Estás seguro de eliminar este producto del carrito?")) {
+    carrito.splice(index, 1);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    mostrarCarrito();
+  }
+}
+
+function toggleCarrito() {
+  const carrito = document.getElementById("carrito");
+  const contenido = document.getElementById("carrito-contenido");
+  const toggle = document.getElementById("carrito-toggle");
+  
+  carrito.classList.toggle("minimizado");
+  if (carrito.classList.contains("minimizado")) {
+    contenido.style.display = "none";
+    toggle.textContent = "🔼";
+  } else {
+    contenido.style.display = "block";
+    toggle.textContent = "🔽";
+  }
+}
+
 </script>
 
 
