@@ -224,18 +224,19 @@
 
 <!-- Aquí termina tu catálogo -->
 <!-- Sección flotante del carrito -->
-<div id="carrito" class="expandido">
-  <div id="carrito-header" onclick="toggleCarrito()">
-    <h2>🛒 Carrito</h2>
-    <span id="carrito-toggle">🔽</span>
-  </div>
+  <div id="carrito">
+  <div id="carrito-toggle" onclick="toggleCarrito()">🔼</div>
   <div id="carrito-contenido">
+    <h2>🛒 Carrito</h2>
     <ul id="carrito-lista"></ul>
     <p id="total-carrito"><strong>Total: $0</strong></p>
-    <a id="enviar-carrito" href="#" target="_blank" class="boton-carrito" style="display: none;">Cotizar por WhatsApp</a>
-    <button id="vaciar-carrito" onclick="vaciarCarrito()" style="display: none;">Vaciar Carrito</button>
+  </div>
+  <div id="carrito-botones">
+    <a id="enviar-carrito" href="#" target="_blank" class="boton-carrito">Cotizar por WhatsApp</a>
+    <button id="vaciar-carrito" onclick="vaciarCarrito()">Vaciar Carrito</button>
   </div>
 </div>
+
 
 <script>
   // Recuperar carrito desde localStorage o iniciar vacío
