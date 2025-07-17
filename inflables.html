@@ -271,10 +271,21 @@
     carrito.forEach((item, index) => {
       const li = document.createElement("li");
       li.innerHTML = `
-        ${item.nombre} - $${item.precio.toLocaleString()}
-        <button onclick="eliminarProducto(${index})" style="margin-left:10px; background:#ff4d4d; color:white; border:none; padding:2px 6px; border-radius:4px;">❌</button>
-      `;
-      lista.appendChild(li);
+  ${item.nombre} - $${item.precio.toLocaleString()}
+  <button class="btn-eliminar" data-index="${index}" style="margin-left:10px; background:#ff4d4d; color:white; border:none; padding:2px 6px; border-radius:4px;">❌</button>
+`;
+       lista.appendChild(li);
+      // Activar el botón eliminar para cada ítem
+setTimeout(() => {
+  const botonesEliminar = document.querySelectorAll(".btn-eliminar");
+  botonesEliminar.forEach(boton => {
+    boton.addEventListener("click", function () {
+      const index = parseInt(this.getAttribute("data-index"));
+      eliminarProducto(index);
+    });
+  });
+}, 0);
+
       total += item.precio;
     });
 
