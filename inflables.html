@@ -43,6 +43,10 @@
           <a href="https://wa.me/56946535784" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
           <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
         </div>
+        <button class="boton-carrito" onclick="agregarAlCarrito('Castillo Mini Lego', 70000)">
+  🛒 Agregar al carrito
+</button>
+
       </div>
     </div>
 
@@ -66,6 +70,15 @@
     </nav>
     <p>&copy; 2025 Juegos Baby Mandi. Todos los derechos reservados.</p>
   </footer>
+  <script>
+  function agregarAlCarrito(nombre, precio) {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    carrito.push({ nombre, precio });
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    alert(`${nombre} fue agregado al carrito`);
+  }
+</script>
+
 
 </body>
 </html>
