@@ -222,28 +222,41 @@
 <!-- Aquí termina tu catálogo -->
 <!-- Sección flotante del carrito -->
 <div id="carrito">
-  <div id="carrito-toggle" onclick="toggleCarrito()">🔼</div>
-  <div id="carrito-contenido">
-    <h2>🛒 Carrito</h2>
-    <ul id="carrito-lista"></ul>
-    <p id="total-carrito"><strong>Total: $0</strong></p>
-  </div>
-  <div id="carrito-botones">
-    <a id="enviar-carrito" href="#" target="_blank" class="boton-carrito">Cotizar por WhatsApp</a>
-    <button id="vaciar-carrito" class="boton-vaciar">Vaciar Carrito</button>
-  </div>
+  <div id="carrito-toggle" onclick="toggleCarrito()">🔽</div>
+  <div id="carrito-contenido">
+    <h2>🛒 Carrito</h2>
+    <ul id="carrito-lista"></ul>
+    <p id="total-carrito"><strong>Total: $0</strong></p>
+  </div>
+  <div class="carrito-botones">
+    <a id="enviar-carrito" href="#" target="_blank" class="boton-carrito">Cotizar por WhatsApp</a>
+    <button id="vaciar-carrito" class="boton-vaciar">Vaciar Carrito</button>
+  </div>
 </div>
 
+<!-- Mensaje flotante -->
+<div id="mensaje-carrito" class="mensaje-carrito"></div>
+
+<!-- Modal de confirmación -->
+<div id="modal-confirmacion" class="modal">
+  <div class="modal-contenido">
+    <p id="modal-mensaje">¿Estás seguro que deseas eliminar este juego del carrito?</p>
+    <div class="modal-botones">
+      <button id="cancelar-btn">Cancelar</button>
+      <button id="confirmar-btn">Sí, eliminar</button>
+    </div>
+  </div>
+</div>
 
 <script>
-  // Recuperar carrito desde localStorage o iniciar vacío
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  let productoAEliminar = null;
 
   function agregarAlCarrito(nombre, precio) {
     carrito.push({ nombre, precio });
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    mostrarMensajeCarrito(`✅ "${nombre}" fue agregado al carrito.`);
     mostrarCarrito();
+    mostrarMensaje("✅ " + nombre + " fue agregado al carrito.");
   }
 
   function mostrarCarrito() {
@@ -253,7 +266,6 @@
     const vaciarBtn = document.getElementById("vaciar-carrito");
 
     lista.innerHTML = "";
-
     let total = 0;
 
     carrito.forEach((item, index) => {
@@ -266,7 +278,7 @@
       total += item.precio;
     });
 
-    totalElement.textContent = `Total: $${total.toLocaleString()}`;
+    totalElement.innerHTML = `<strong>Total: $${total.toLocaleString()}</strong>`;
 
     if (carrito.length > 0) {
       const mensaje = carrito
@@ -287,80 +299,68 @@
     carrito = [];
     localStorage.removeItem("carrito");
     mostrarCarrito();
+    mostrarMensaje("🗑 Carrito vaciado.");
+  }
+
+  function eliminarProducto(index) {
+    productoAEliminar = index;
+    document.getElementById("modal-confirmacion").style.display = "flex";
+  }
+
+  document.getElementById("confirmar-btn").addEventListener("click", function () {
+    if (productoAEliminar !== null) {
+      carrito.splice(productoAEliminar, 1);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      mostrarCarrito();
+      mostrarMensaje("❌ Producto eliminado del carrito.");
+    }
+    document.getElementById("modal-confirmacion").style.display = "none";
+    productoAEliminar = null;
+  });
+
+  document.getElementById("cancelar-btn").addEventListener("click", function () {
+    document.getElementById("modal-confirmacion").style.display = "none";
+    productoAEliminar = null;
+  });
+
+  function toggleCarrito() {
+    const carrito = document.getElementById("carrito");
+    const contenido = document.getElementById("carrito-contenido");
+    const toggle = document.getElementById("carrito-toggle");
+
+    carrito.classList.toggle("minimizado");
+    if (carrito.classList.contains("minimizado")) {
+      contenido.style.display = "none";
+      toggle.textContent = "🔼";
+    } else {
+      contenido.style.display = "block";
+      toggle.textContent = "🔽";
+    }
+  }
+
+  function mostrarMensaje(texto) {
+    const mensaje = document.createElement("div");
+    mensaje.textContent = texto;
+    mensaje.style.position = "fixed";
+    mensaje.style.bottom = "20px";
+    mensaje.style.right = "20px";
+    mensaje.style.background = "#8e44ad";
+    mensaje.style.color = "#fff";
+    mensaje.style.padding = "10px 15px";
+    mensaje.style.borderRadius = "6px";
+    mensaje.style.zIndex = "10000";
+    document.body.appendChild(mensaje);
+
+    setTimeout(() => {
+      mensaje.remove();
+    }, 2500);
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-  mostrarCarrito();  
-  document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
-});
-
-function toggleCarrito() {
-  const carrito = document.getElementById("carrito");
-  const contenido = document.getElementById("carrito-contenido");
-  const toggle = document.getElementById("carrito-toggle");
-  
-  carrito.classList.toggle("minimizado");
-  if (carrito.classList.contains("minimizado")) {
-    contenido.style.display = "none";
-    toggle.textContent = "🔼";
-  } else {
-    contenido.style.display = "block";
-    toggle.textContent = "🔽";
-  }
-}
-
-function mostrarMensajeCarrito(texto) {
-  const mensaje = document.getElementById("mensaje-carrito");
-  mensaje.textContent = texto;
-  mensaje.classList.add("mostrar");
-
-  setTimeout(() => {
-    mensaje.classList.remove("mostrar");
-  }, 3000); // Desaparece en 3 segundos
-}
-
-
+    mostrarCarrito();
+    document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
+  });
 </script>
 
-<div id="mensaje-carrito" class="mensaje-carrito"></div>
-
-  <!-- Modal de confirmación -->
-<div id="modal-confirmacion" class="modal">
-  <div class="modal-contenido">
-    <p id="modal-mensaje">¿Estás seguro que deseas eliminar este juego del carrito?</p>
-    <div class="modal-botones">
-      <button id="cancelar-btn">Cancelar</button>
-      <button id="confirmar-btn">Sí, eliminar</button>
-    </div>
-  </div>
-</div>
-<script>
-  let carrito = [];
-
-  let productoAEliminar = null;
-
-  function eliminarProducto(index) {
-    productoAEliminar = index;
-    document.getElementById("modal-confirmacion").style.display = "flex";
-  }
-
-  document.getElementById("cancelar-btn").addEventListener("click", function () {
-    document.getElementById("modal-confirmacion").style.display = "none";
-    productoAEliminar = null;
-  });
-
-  document.getElementById("confirmar-btn").addEventListener("click", function () {
-    if (productoAEliminar !== null) {
-      carrito.splice(productoAEliminar, 1);
-      localStorage.setItem("carrito", JSON.stringify(carrito));
-      mostrarCarrito();
-      mostrarMensaje("❌ Producto eliminado del carrito.");
-    }
-    document.getElementById("modal-confirmacion").style.display = "none";
-    productoAEliminar = null;
-  });
-</script>
-
-  
 </body>
 </html>
