@@ -383,132 +383,123 @@ footer {
   cursor: pointer;
 }
 
-.carrito {
-  background-color: #f8f8f8;
-  padding: 20px;
-  margin-top: 40px;
-  border-top: 2px solid #ccc;
-}
-
-.carrito h2 {
-  color: #6a1b9a;
-  margin-bottom: 10px;
-}
-
-.carrito ul {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 15px;
-}
-
-.carrito ul li {
-  background: #fff;
-  margin-bottom: 8px;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.boton.verde {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 10px 14px;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
 #carrito {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 250px;
-  background-color: #ffffffee;
-  border: 2px solid #8e44ad;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  z-index: 9999;
-  font-size: 14px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 260px;
+  max-height: 70vh;
+  background-color: #ffffffee;
+  border: 2px solid #8e44ad;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 9999;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
 }
 
 #carrito h2 {
-  margin-top: 0;
-  font-size: 16px;
-  color: #8e44ad;
+  margin-top: 0;
+  font-size: 16px;
+  color: #8e44ad;
+  text-align: center;
+}
+
+#carrito-contenido {
+  overflow-y: auto;
+  flex-grow: 1;
+  margin-bottom: 10px;
+  padding-right: 5px;
 }
 
 #carrito ul {
-  max-height: 200px;
-  overflow-y: auto;
-  padding-left: 15px;
-  margin: 10px 0;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 #carrito li {
-  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 6px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+#carrito li button {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 #total-carrito {
-  font-weight: bold;
-  margin-top: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+#carrito-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 #enviar-carrito,
 #vaciar-carrito {
-  display: inline-block;
-  margin-top: 10px;
-  margin-right: 5px;
-  background-color: #8e44ad;
-  color: white;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 6px;
-  text-decoration: none;
-  cursor: pointer;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+#enviar-carrito {
+  background-color: #8e44ad;
+  color: white;
+  text-decoration: none;
 }
 
 #vaciar-carrito {
-  background-color: #888;
-}
-
-#carrito.minimizado {
-  width: 160px;
-  height: auto;
-  overflow: hidden;
-}
-
-#carrito-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
+  background-color: #888;
+  color: white;
 }
 
 #carrito-toggle {
-  font-size: 18px;
-  user-select: none;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #8e44ad;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#carrito ul {
-  max-height: 150px; /* Limita la altura para que no crezca tanto */
-  overflow-y: auto;  /* Activa el scroll vertical si se pasa */
-  padding-left: 15px;
-  margin: 10px 0;
+#carrito.minimizado {
+  height: auto;
+  width: auto;
+  overflow: hidden;
 }
 
-#carrito-contenido {
-  max-height: 200px;
-  overflow-y: auto;
-}
-
-#carrito-botones {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 10px;
-}
-
-#carrito {
-  max-height: 60vh; /* Limita altura al 60% del alto visible */
-  overflow-y: auto; /* Scroll interno */
+#carrito.minimizado #carrito-contenido,
+#carrito.minimizado #carrito-botones,
+#carrito.minimizado #total-carrito {
+  display: none;
 }
