@@ -87,6 +87,42 @@
 </script>
 </body>
 </html>
+<script>
+  let carrito = [];
+
+  function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    mostrarCarrito();
+  }
+
+  function mostrarCarrito() {
+    const lista = document.getElementById("carrito-lista");
+    const boton = document.getElementById("enviar-carrito");
+    lista.innerHTML = "";
+
+    carrito.forEach((item, index) => {
+      const li = document.createElement("li");
+      li.textContent = `${item.nombre} - $${item.precio.toLocaleString()}`;
+      lista.appendChild(li);
+    });
+
+    if (carrito.length > 0) {
+      const mensaje = carrito
+        .map((item) => `- ${item.nombre}: $${item.precio.toLocaleString()}`)
+        .join("\n");
+      const link = `https://wa.me/56946535784?text=Hola! Quiero cotizar los siguientes juegos:%0A${encodeURIComponent(mensaje)}`;
+      boton.href = link;
+      boton.style.display = "inline-block";
+    } else {
+      boton.style.display = "none";
+    }
+  }
+</script>
+<section id="carrito" class="carrito">
+  <h2>🛒 Carrito</h2>
+  <ul id="carrito-lista"></ul>
+  <a id="enviar-carrito" class="boton verde" target="_blank" style="display: none;">Enviar por WhatsApp</a>
+</section>
 
 
 </body>
