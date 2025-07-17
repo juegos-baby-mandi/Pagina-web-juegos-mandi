@@ -301,18 +301,16 @@
         <button class="btn-eliminar" data-index="${index}" style="margin-left:10px; background:#ff4d4d; color:white; border:none; padding:2px 6px; border-radius:4px;">❌</button>
       `;
       lista.appendChild(li);
-      total += item.precio;
+      // Activar botón eliminar
+const botonesEliminar = document.querySelectorAll(".btn-eliminar");
+botonesEliminar.forEach(boton => {
+  boton.addEventListener("click", function () {
+    const index = parseInt(this.getAttribute("data-index"));
+    eliminarProducto(index);
+  });
+});
+    total += item.precio;
     });
-
-    // Activar botón eliminar
-    const botonesEliminar = document.querySelectorAll(".btn-eliminar");
-    botonesEliminar.forEach(boton => {
-      boton.addEventListener("click", function () {
-        const index = parseInt(this.getAttribute("data-index"));
-        eliminarProducto(index);
-      });
-    });
-
     totalElement.innerHTML = `<strong>Total: $${total.toLocaleString()}</strong>`;
 
     if (carrito.length > 0) {
