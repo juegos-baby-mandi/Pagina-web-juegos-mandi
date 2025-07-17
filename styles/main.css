@@ -471,4 +471,21 @@ footer {
   background-color: #888;
 }
 
+#carrito.minimizado {
+  width: 160px;
+  height: auto;
+  overflow: hidden;
+}
+
+#carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+#carrito-toggle {
+  font-size: 18px;
+  user-select: none;
+}
 
