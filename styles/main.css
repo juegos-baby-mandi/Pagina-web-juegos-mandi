@@ -129,96 +129,209 @@ footer {
   }
 }
 
-.juego-ficha {
-  display: flex;
-  flex-wrap: wrap;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  margin: 20px;
-  background: white;
-  overflow: hidden;
-}
-
-.juego-img img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  display: block;
-}
-
-.juego-detalle {
-  flex: 1;
-  padding: 20px;
-}
-
-.juego-detalle h2 {
-  margin-top: 0;
-  font-size: 28px;
-  color: #000;
-}
-
-.juego-detalle p {
-  font-size: 16px;
-  margin: 10px 0;
-}
-
-.juego-detalle ul {
-  list-style: none;
+/* RESET GENERAL */
+* {
+  margin: 0;
   padding: 0;
-  font-size: 15px;
+  box-sizing: border-box;
 }
 
-.juego-detalle ul li {
-  margin-bottom: 5px;
-}
-
-.juego-precio {
-  font-size: 24px;
-  font-weight: bold;
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
   color: #000;
-  margin: 10px 0;
+  line-height: 1.6;
 }
 
-.botones-contacto {
+/* ENCABEZADO SUPERIOR */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #7b2cbf, #9d4edd);
+  padding: 10px 20px;
+  color: white;
+}
+
+.logo-header img {
+  height: 60px;
+}
+
+.contact-links a {
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* TÍTULO PRINCIPAL DE LA SECCIÓN */
+.titulo-seccion {
+  text-align: center;
+  padding: 30px 10px 10px;
+  background-color: #f4f4f4;
+}
+
+.titulo-seccion h1 {
+  font-size: 36px;
+  color: #7b2cbf;
+  font-weight: bold;
+}
+
+/* CATÁLOGO GENERAL */
+.catalogo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* PRODUCTO INDIVIDUAL */
+.producto {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.producto:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.producto-img {
+  max-width: 100%;
+  width: 320px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* DETALLES DEL PRODUCTO */
+.producto-detalle {
+  flex: 1;
+  min-width: 260px;
+}
+
+.producto-detalle h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.producto-detalle p {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.precio {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* BOTONES */
+.botones {
+  margin-top: 15px;
   display: flex;
   gap: 10px;
-  margin-top: 10px;
   flex-wrap: wrap;
 }
 
-.btn-whatsapp {
-  background: #FFD700;
-  color: #000;
+.boton {
   padding: 10px 15px;
   text-decoration: none;
-  border-radius: 20px;
+  border-radius: 5px;
   font-weight: bold;
+  display: inline-block;
+  text-align: center;
 }
 
-.btn-contacto {
-  background: #00d1e4;
+.boton.amarillo {
+  background-color: #ffd60a;
   color: #000;
-  padding: 10px 15px;
-  text-decoration: none;
-  border-radius: 20px;
-  font-weight: bold;
 }
 
+.boton.celeste {
+  background-color: #90e0ef;
+  color: #000;
+}
+
+.boton:hover {
+  opacity: 0.85;
+}
+
+/* FOOTER CON NAVEGACIÓN */
+footer {
+  background-color: #7b2cbf;
+  color: white;
+  padding: 30px 20px 10px;
+  text-align: center;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.footer-nav ul li {
+  margin: 5px 10px;
+}
+
+.footer-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.footer-nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE PARA CELULAR */
 @media (max-width: 768px) {
-  .juego-ficha {
+  .producto {
     flex-direction: column;
     align-items: center;
   }
 
-  .juego-img img {
-    max-width: 100%;
+  .producto:nth-child(even) {
+    flex-direction: column;
   }
 
-  .juego-detalle {
+  .producto-img {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .producto-detalle {
     text-align: center;
   }
 
-  .botones-contacto {
+  .top-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .contact-links a {
+    margin: 5px;
   }
 }
