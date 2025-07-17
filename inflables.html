@@ -294,17 +294,6 @@
   document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
 });
 
-  document.getElementById("confirmar-btn").addEventListener("click", function () {
-    if (productoAEliminar !== null) {
-      carrito.splice(productoAEliminar, 1);
-      localStorage.setItem("carrito", JSON.stringify(carrito));
-      mostrarCarrito();
-      mostrarMensaje("❌ Producto eliminado del carrito.");
-    }
-    document.getElementById("modal-confirmacion").style.display = "none";
-    productoAEliminar = null;
-  });
-
 function toggleCarrito() {
   const carrito = document.getElementById("carrito");
   const contenido = document.getElementById("carrito-contenido");
@@ -345,6 +334,32 @@ function mostrarMensajeCarrito(texto) {
     </div>
   </div>
 </div>
+<script>
+  let carrito = [];
+
+  let productoAEliminar = null;
+
+  function eliminarProducto(index) {
+    productoAEliminar = index;
+    document.getElementById("modal-confirmacion").style.display = "flex";
+  }
+
+  document.getElementById("cancelar-btn").addEventListener("click", function () {
+    document.getElementById("modal-confirmacion").style.display = "none";
+    productoAEliminar = null;
+  });
+
+  document.getElementById("confirmar-btn").addEventListener("click", function () {
+    if (productoAEliminar !== null) {
+      carrito.splice(productoAEliminar, 1);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      mostrarCarrito();
+      mostrarMensaje("❌ Producto eliminado del carrito.");
+    }
+    document.getElementById("modal-confirmacion").style.display = "none";
+    productoAEliminar = null;
+  });
+</script>
 
   
 </body>
