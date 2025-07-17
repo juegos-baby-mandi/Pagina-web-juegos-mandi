@@ -223,12 +223,21 @@
   </footer>
 
 <!-- Aquí termina tu catálogo -->
-
+<!-- Sección flotante del carrito -->
+<div id="carrito">
+  <h2>🛒 Carrito</h2>
+  <ul id="carrito-lista"></ul>
+  <p id="total-carrito"><strong>Total: $0</strong></p>
+  <a id="enviar-carrito" href="#" target="_blank" class="boton-carrito" style="display: none;">Cotizar por WhatsApp</a>
+  <button id="vaciar-carrito" onclick="vaciarCarrito()" style="display: none;">Vaciar Carrito</button>
+</div>
 <script>
-  let carrito = [];
+  // Recuperar carrito desde localStorage o iniciar vacío
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
   function agregarAlCarrito(nombre, precio) {
     carrito.push({ nombre, precio });
+    localStorage.setItem("carrito", JSON.stringify(carrito));
     alert(`✅ "${nombre}" fue agregado al carrito.\n\nRecuerda confirmar disponibilidad por WhatsApp antes de pagar.`);
     mostrarCarrito();
   }
@@ -236,26 +245,55 @@
   function mostrarCarrito() {
     const lista = document.getElementById("carrito-lista");
     const boton = document.getElementById("enviar-carrito");
+    const totalElement = document.getElementById("total-carrito");
+    const vaciarBtn = document.getElementById("vaciar-carrito");
+
     lista.innerHTML = "";
+
+    let total = 0;
 
     carrito.forEach((item, index) => {
       const li = document.createElement("li");
-      li.textContent = `${item.nombre} - $${item.precio.toLocaleString()}`;
+      li.innerHTML = `
+        ${item.nombre} - $${item.precio.toLocaleString()}
+        <button onclick="eliminarProducto(${index})" style="margin-left:10px; background:#ff4d4d; color:white; border:none; padding:2px 6px; border-radius:4px;">❌</button>
+      `;
       lista.appendChild(li);
+      total += item.precio;
     });
+
+    totalElement.textContent = `Total: $${total.toLocaleString()}`;
 
     if (carrito.length > 0) {
       const mensaje = carrito
-        .map((item) => `- ${item.nombre}: $${item.precio.toLocaleString()}`)
+        .map(item => `- ${item.nombre}: $${item.precio.toLocaleString()}`)
         .join("\n");
-      const link = `https://wa.me/56946535784?text=Hola! Quiero cotizar los siguientes juegos:%0A${encodeURIComponent(mensaje)}`;
+
+      const link = `https://wa.me/56946535784?text=Hola! Quiero cotizar los siguientes juegos:%0A${encodeURIComponent(mensaje)}%0A%0ATotal estimado: $${total.toLocaleString()}`;
       boton.href = link;
       boton.style.display = "inline-block";
+      vaciarBtn.style.display = "inline-block";
     } else {
       boton.style.display = "none";
+      vaciarBtn.style.display = "none";
     }
   }
+
+  function eliminarProducto(index) {
+    carrito.splice(index, 1);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    mostrarCarrito();
+  }
+
+  function vaciarCarrito() {
+    carrito = [];
+    localStorage.removeItem("carrito");
+    mostrarCarrito();
+  }
+
+  document.addEventListener("DOMContentLoaded", mostrarCarrito);
 </script>
+
 
 </body>
 </html>
