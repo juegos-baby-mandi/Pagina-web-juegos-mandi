@@ -294,12 +294,10 @@
       vaciarBtn.style.display = "none";
     }
 
-    // ACTIVAR BOTONES ELIMINAR CON EVENTO
-    const botonesEliminar = document.querySelectorAll(".btn-eliminar");
-    botonesEliminar.forEach(boton => {
-      boton.addEventListener("click", function () {
-        const index = parseInt(this.getAttribute("data-index"));
-        productoAEliminar = index;
+    // ACTIVAR BOTONES ELIMINAR
+    document.querySelectorAll(".btn-eliminar").forEach(btn => {
+      btn.addEventListener("click", function () {
+        productoAEliminar = parseInt(this.dataset.index);
         document.getElementById("modal-confirmacion").style.display = "flex";
       });
     });
@@ -329,6 +327,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     mostrarCarrito();
+
     document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
 
     document.getElementById("cancelar-btn").addEventListener("click", () => {
