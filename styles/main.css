@@ -507,3 +507,8 @@ footer {
   gap: 6px;
   margin-top: 10px;
 }
+
+#carrito {
+  max-height: 60vh; /* Limita altura al 60% del alto visible */
+  overflow-y: auto; /* Scroll interno */
+}
