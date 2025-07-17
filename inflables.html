@@ -287,7 +287,11 @@
     mostrarCarrito();
   }
 
-  document.addEventListener("DOMContentLoaded", mostrarCarrito);
+  document.addEventListener("DOMContentLoaded", () => {
+  mostrarCarrito();  
+  document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
+});
+
 function eliminarProducto(index) {
   if (confirm("¿Estás seguro de eliminar este producto del carrito?")) {
     carrito.splice(index, 1);
