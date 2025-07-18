@@ -442,6 +442,18 @@ footer {
   cursor: pointer;
 }
 
+.contact-links img.icono-red {
+  width: 28px;
+  height: 28px;
+  margin: 0 8px;
+  transition: transform 0.2s ease;
+}
+
+.contact-links img.icono-red:hover {
+  transform: scale(1.1);
+}
+
+
 #total-carrito {
   font-weight: bold;
   margin-top: 10px;
