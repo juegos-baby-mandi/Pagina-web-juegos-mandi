@@ -681,3 +681,39 @@ footer {
   margin: 10px 0 0;
   color: #333;
 }
+
+.consejos-section {
+  background-color: #fff7fe;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.consejos-title {
+  text-align: center;
+  font-size: 32px;
+  color: #a259ff;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.consejo-item {
+  background-color: white;
+  border-left: 6px solid #a259ff;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.consejo-icono {
+  font-size: 28px;
+  color: #a259ff;
+}
+
+.consejo-texto {
+  color: #333;
+}
