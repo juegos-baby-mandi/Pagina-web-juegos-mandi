@@ -42,230 +42,187 @@
   </section>
 
   <style>
-  .comentarios {
-    background-color: #f0f8ff;
-    padding: 40px 20px;
-    border-radius: 12px;
-    margin: 40px auto;
-    max-width: 1000px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .comentarios h3 {
-    text-align: center;
-    font-size: 28px;
-    color: #6A1B9A;
-    margin-bottom: 30px;
-  }
-
-  .comentario-carrusel {
-    display: flex;
-    gap: 20px;
-    animation: deslizar 20s linear infinite;
-  }
-
-  .comentario {
-    flex: 0 0 300px;
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-  }
-
-  .comentario:hover {
-    transform: scale(1.03);
-  }
-
-  .comentario p {
-    font-style: italic;
-    color: #444;
-    margin: 0 0 10px;
-  }
-
-  .comentario .autor {
-    font-weight: bold;
-    color: #6A1B9A;
-  }
-
-  .comentario .origen {
-    font-size: 0.85em;
-    color: #999;
-  }
-
-  @keyframes deslizar {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  /* Duplicamos los comentarios para el loop infinito */
-  .comentario-carrusel-wrapper {
-    display: flex;
-    width: max-content;
-  }
-
-  @media (max-width: 768px) {
-    .comentario {
-      flex: 0 0 250px;
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fff;
+      margin: 0;
+      padding: 0;
     }
-  }
-</style>
 
-<div class="comentarios">
-  <h3>🌟 Lo que dicen nuestros clientes</h3>
-  <div class="comentario-carrusel-wrapper">
-    <div class="comentario-carrusel">
-      <!-- Comentarios duplicados para el efecto loop -->
-      <div class="comentario">
-        <p>“Excelente servicio 👏 muy responsable y amable. Los niños encantados con los juegos y mi pequeña lo pasó increíble. Espero volver a verlos, gracias.”</p>
-        <div class="autor">miiichu.alejandraaa</div>
-        <div class="origen">– cliente de Instagram</div>
+    h2.titulo-seccion {
+      text-align: center;
+      font-size: 2rem;
+      color: #7b2cbf;
+      margin-top: 2rem;
+    }
+
+    .carrusel-container {
+      position: relative;
+      max-width: 1200px;
+      margin: 2rem auto;
+      overflow: hidden;
+    }
+
+    .testimonios-slider {
+      display: flex;
+      transition: transform 1s ease;
+    }
+
+    .grupo {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem;
+      box-sizing: border-box;
+      min-width: 100%;
+    }
+
+    .testimonio {
+      flex: 1;
+      background: #f9f1ff;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(123, 44, 191, 0.1);
+      text-align: center;
+    }
+
+    .testimonio p {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .testimonio span {
+      font-weight: bold;
+      color: #7b2cbf;
+    }
+
+    .flecha {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #7b2cbf;
+      color: white;
+      border: none;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      border-radius: 50%;
+    }
+
+    .flecha:hover {
+      background: #5a189a;
+    }
+
+    .flecha.izq { left: 10px; }
+    .flecha.der { right: 10px; }
+
+    @media (max-width: 768px) {
+      .grupo {
+        flex-direction: column;
+      }
+
+      .testimonio {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2 class="titulo-seccion">❤️ Lo que opinan nuestros clientes</h2>
+
+  <div class="carrusel-container">
+    <button class="flecha izq" onclick="mover(-1)">❮</button>
+    <div class="testimonios-slider" id="slider">
+      
+      <!-- Grupo 1 -->
+      <div class="grupo">
+        <div class="testimonio">
+          <p>"Muchas gracias... 100% recomendables y responsables!!! Éxitooo!!!"</p>
+          <span>- Paulina León Sepúlveda</span>
+        </div>
+        <div class="testimonio">
+          <p>"Confiables al 100%!! Recomendables al 1000%!!! Muy buena onda!!"</p>
+          <span>- José Antonio Oyarce Vargas</span>
+        </div>
+        <div class="testimonio">
+          <p>"Súper servicio, hermosos inflables, SÚPER BUEN PRECIO."</p>
+          <span>- Alejandra PeGe</span>
+        </div>
       </div>
-      <div class="comentario">
-        <p>“100% recomendados, limpios, seguros, confiables, primera vez que ocupamos los juegos y muy contentos quedamos.”</p>
-        <div class="autor">Poli Eme</div>
-        <div class="origen">– cliente de Facebook</div>
-      </div>
-      <div class="comentario">
-  <p>“Por cuarta vez con nosotros y en noviembre se viene la quinta jeje... Muy buen servicio. Súper responsables, amables y puntuales, y como siempre los niños felices 😊”</p>
-  <div class="autor">Magda Acevedo Romero</div>
-  <div class="origen">– cliente de Facebook</div>
-</div>
 
-<div class="comentario">
-  <p>“Todo súper 👌 los niños los disfrutaron. Obviamente el próximo año volveremos a preferir sus juegos por 3° año 💙”</p>
-  <div class="autor">Daniela Godoy Aros</div>
-  <div class="origen">– cliente de Facebook</div>
-</div>
-
-<div class="comentario">
-  <p>“Segundo año consecutivo disfrutando de los juegos. Los niños la pasaron increíble y como siempre, puntuales y responsables. 100% recomendado.”</p>
-  <div class="autor">Jessica Hernández</div>
-  <div class="origen">– cliente de Facebook</div>
-</div>
-
-<div class="comentario">
-  <p>“Muy recomendable. La comunicación expedita, respetaron los horarios, excelente atención. Como clienta nueva los recomiendo 100%.”</p>
-  <div class="autor">Tamara Cifuentes</div>
-  <div class="origen">– cliente de Facebook</div>
-</div>
-
-<div class="comentario">
-  <p>“Muy buen servicio, nada que decir!! Por lo demás, súper puntuales. Muchas gracias 😉”</p>
-  <div class="autor">melanie_quezada</div>
-  <div class="origen">– cliente de Instagram</div>
-</div>
-
-<div class="comentario">
-  <p>“Feliz con el servicio, súper responsables!”</p>
-  <div class="autor">Constanza Valentina López H</div>
-  <div class="origen">– cliente de Facebook</div>
-</div>
-
-<div class="comentario">
-  <p>“Los recomiendo 1000%. Se pasaron. Súper confiables, me ayudaron muchísimo. Los niños felices y los adultos también. Muchas gracias.”</p>
-  <div class="autor">Katherine Rivano Aguirre</div>
-  <div class="origen">– cliente de Facebook</div>
-</div>
-
-<div class="comentario">
-  <p>“Excelente servicio y muy buena calidad de los juegos. 100% recomendado 👍🏼”</p>
-  <div class="autor">Verónica Cerda</div>
-  <div class="origen">– cliente de Facebook</div>
-</div>
-
-      <div class="comentario">
-        <p>“excelente servicio 👏 muy responsable y amable. los niños encantados con los juegos y mi pequeña lo paso increible. espero volver a verlos, gracias.”</p>
-        <div class="autor">miichu.alejandraaa</div>
-        <div class="origen">– cliente de Instagram</div>
-      </div>
-      <div class="comentario">
-        <p>“Maravillosa atención segundo año consecutivo arrendándoles juegos este año …sus dueños preocupados siempre de entregar un gran servicio muchas gracias y muy recomendados.”</p>
-        <div class="autor">Rocío Cararo Ortiz</div>
-        <div class="origen">– cliente de Facebook</div>
+      <!-- Grupo 2 -->
+      <div class="grupo">
+        <div class="testimonio">
+          <p>"Muy puntuales y atentos a que todo marche bien durante el uso."</p>
+          <span>- Graciela Caroca</span>
+        </div>
+        <div class="testimonio">
+          <p>"Excelente atención y servicio. 100% recomendado 👌💕"</p>
+          <span>- Joselyn Poblete</span>
+        </div>
+        <div class="testimonio">
+          <p>"Gracias por el juego, excelente 100% recomendable."</p>
+          <span>- Valeri Villarroel</span>
+        </div>
       </div>
 
-      <!-- Duplicación para efecto infinito -->
-      <div class="comentario">
-        <p>“Excelente servicio 👏 muy responsable y amable. Los niños encantados con los juegos y mi pequeña lo pasó increíble. Espero volver a verlos, gracias.”</p>
-        <div class="autor">miiichu.alejandraaa</div>
-        <div class="origen">– cliente de Instagram</div>
+      <!-- Grupo 3 -->
+      <div class="grupo">
+        <div class="testimonio">
+          <p>"Muy buen servicio 👏😃😃. 100% recomendable."</p>
+          <span>- Marcia Uribe</span>
+        </div>
+        <div class="testimonio">
+          <p>"Muy buena atención, llegan en el tiempo acordado."</p>
+          <span>- María Isabel Fuentealba</span>
+        </div>
+        <div class="testimonio">
+          <p>"Excelente servicio, muy puntuales y confiables. Garantizado 😄"</p>
+          <span>- Carmen Nahuelquié Riquelme</span>
+        </div>
       </div>
-      <div class="comentario">
-        <p>“100% recomendados, limpios, seguros, confiables, primera vez que ocupamos los juegos y muy contentos quedamos.”</p>
-        <div class="autor">Poli Eme</div>
-        <div class="origen">– cliente de Facebook</div>
+
+      <!-- Grupo 4 -->
+      <div class="grupo">
+        <div class="testimonio">
+          <p>"Todo súper 👌. Los niños lo disfrutaron mucho."</p>
+          <span>- Daniela Godoy Aros</span>
+        </div>
+        <div class="testimonio">
+          <p>"Los niños felices. Todo impecable, muy profesionales."</p>
+          <span>- Testimonio Instagram</span>
+        </div>
+        <div class="testimonio">
+          <p>"Puntuales, cordiales y los juegos en perfectas condiciones."</p>
+          <span>- Testimonio Instagram</span>
+        </div>
       </div>
-      <div class="comentario">
-        <p>“Excelente servicio 👏muy responsable y amable. Los niños encantados con los juegos y mi pequeña lo pasó increíble. Espero volver a verlos, gracias.”</p>
-        <div class="autor">miichu.alejandraaa</div>
-        <div class="origen">– cliente de Instagram</div>
-      </div>
-      <div class="comentario">
-  <p>“Por cuarta vez con nosotros y en noviembre se viene la quinta jeje... Muy buen servicio. Súper responsables, amables y puntuales, y como siempre los niños felices 😊”</p>
-  <div class="autor">Magda Acevedo Romero</div>
-  <div class="origen">– cliente de Facebook</div>
-</div>
 
-<div class="comentario">
-  <p>“Todo súper 👌 los niños los disfrutaron. Obviamente el próximo año volveremos a preferir sus juegos por 3° año 💙”</p>
-  <div class="autor">Daniela Godoy Aros</div>
-  <div class="origen">– cliente de Facebook</div>
-</div>
-
-<div class="comentario">
-  <p>“Segundo año consecutivo disfrutando de los juegos. Los niños la pasaron increíble y como siempre, puntuales y responsables. 100% recomendado.”</p>
-  <div class="autor">Jessica Hernández</div>
-  <div class="origen">– cliente de Facebook</div>
-</div>
-
-<div class="comentario">
-  <p>“Muy recomendable. La comunicación expedita, respetaron los horarios, excelente atención. Como clienta nueva los recomiendo 100%.”</p>
-  <div class="autor">Tamara Cifuentes</div>
-  <div class="origen">– cliente de Facebook</div>
-</div>
-
-<div class="comentario">
-  <p>“Muy buen servicio, nada que decir!! Por lo demás, súper puntuales. Muchas gracias 😉”</p>
-  <div class="autor">melanie_quezada</div>
-  <div class="origen">– cliente de Instagram</div>
-</div>
-
-<div class="comentario">
-  <p>“Feliz con el servicio, súper responsables!”</p>
-  <div class="autor">Constanza Valentina López H</div>
-  <div class="origen">– cliente de Facebook</div>
-</div>
-
-<div class="comentario">
-  <p>“Los recomiendo 1000%. Se pasaron. Súper confiables, me ayudaron muchísimo. Los niños felices y los adultos también. Muchas gracias.”</p>
-  <div class="autor">Katherine Rivano Aguirre</div>
-  <div class="origen">– cliente de Facebook</div>
-</div>
-
-<div class="comentario">
-  <p>“Excelente servicio y muy buena calidad de los juegos. 100% recomendado 👍🏼”</p>
-  <div class="autor">Verónica Cerda</div>
-  <div class="origen">– cliente de Facebook</div>
-</div>
-
-      <div class="comentario">
-        <p>“Maravillosa atención segundo año consecutivo arrendándoles juegos este año …sus dueños preocupados siempre de entregar un gran servicio muchas gracias y muy recomendados.”</p>
-        <div class="autor">Rocío Cararo Ortiz</div>
-        <div class="origen">– cliente de Facebook</div>
-      </div>
     </div>
+    <button class="flecha der" onclick="mover(1)">❯</button>
   </div>
-</div>
 
-<section class="ventajas">
-  <h2 style="text-align:center; color:#6A1B9A; font-size:28px; margin-bottom:30px;">💜 ¿Por qué elegir Juegos Baby Mandi?</h2>
-  <div style="text-align: center;">
-    <img src="img/experiencias.png" alt="Ventajas de Juegos Baby Mandi" style="max-width: 100%; height: auto; border-radius: 20px;">
-  </div>
-</section>
+  <script>
+    const slider = document.getElementById("slider");
+    let indice = 0;
 
+    function mover(direccion) {
+      const totalGrupos = slider.children.length;
+      indice += direccion;
+      if (indice < 0) indice = totalGrupos - 1;
+      if (indice >= totalGrupos) indice = 0;
+      slider.style.transform = `translateX(-${indice * 100}%)`;
+    }
+
+    // Movimiento automático cada 8 segundos
+    setInterval(() => mover(1), 8000);
+  </script>
+
+</body>
+</html>
 
 
   <!-- Footer con el menú completo -->
