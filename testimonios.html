@@ -41,93 +41,33 @@
     <h1>Testimonios Clientes</h1>
   </section>
 
+  
+    
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #fff;
-      margin: 0;
-      padding: 0;
-    }
+  .grupo {
+    display: flex;
+    flex-direction: column; /* Mostrar verticalmente */
+    gap: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    min-width: 100%;
+  }
 
-    h2.titulo-seccion {
-      text-align: center;
-      font-size: 2rem;
-      color: #7b2cbf;
-      margin-top: 2rem;
-    }
+  .testimonio {
+    background: #f9f1ff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(123, 44, 191, 0.1);
+    text-align: center;
+  }
 
-    .carrusel-container {
-      position: relative;
-      max-width: 1200px;
-      margin: 2rem auto;
-      overflow: hidden;
-    }
-
-    .testimonios-slider {
-      display: flex;
-      transition: transform 1s ease;
-    }
-
+  @media (max-width: 768px) {
     .grupo {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem;
-      box-sizing: border-box;
-      min-width: 100%;
+      flex-direction: column;
     }
+  }
+</style>
 
-    .testimonio {
-      flex: 1;
-      background: #f9f1ff;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 10px rgba(123, 44, 191, 0.1);
-      text-align: center;
-    }
-
-    .testimonio p {
-      font-size: 1rem;
-      color: #333;
-      margin-bottom: 1rem;
-    }
-
-    .testimonio span {
-      font-weight: bold;
-      color: #7b2cbf;
-    }
-
-    .flecha {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #7b2cbf;
-      color: white;
-      border: none;
-      padding: 1rem;
-      cursor: pointer;
-      font-size: 1.2rem;
-      border-radius: 50%;
-    }
-
-    .flecha:hover {
-      background: #5a189a;
-    }
-
-    .flecha.izq { left: 10px; }
-    .flecha.der { right: 10px; }
-
-    @media (max-width: 768px) {
-      .grupo {
-        flex-direction: column;
-      }
-
-      .testimonio {
-        margin-bottom: 1rem;
-      }
-    }
-  </style>
 </head>
 <body>
 
