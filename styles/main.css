@@ -646,3 +646,38 @@ footer {
   background-color: #8d3aff; /* Un poco más oscuro al pasar el mouse */
   transform: scale(1.05);
 }
+
+.faq-section {
+  background-color: #f9f5ff;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 32px;
+  color: #a259ff;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.faq-item {
+  background-color: white;
+  border-left: 6px solid #a259ff;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.faq-item h3 {
+  margin-top: 0;
+  color: #4a148c;
+  font-size: 20px;
+}
+
+.faq-item p {
+  margin: 10px 0 0;
+  color: #333;
+}
