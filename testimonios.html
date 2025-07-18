@@ -28,39 +28,128 @@
     <h1>Testimonios Clientes</h1>
   </section>
 
-  <main>
-    <section>
-      <h2>Experiencias de nuestros clientes</h2>
-      <p>Estos son algunos testimonios reales de quienes han confiado en Juegos Baby Mandi para sus eventos:</p>
+  <style>
+  .comentarios {
+    background-color: #f0f8ff;
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin: 40px auto;
+    max-width: 1000px;
+    overflow: hidden;
+    position: relative;
+  }
 
-      <div class="testimonio">
-        <blockquote>
-          "Excelente servicio, muy puntuales y atentos. Los niños lo pasaron increíble con el inflable. ¡Gracias Baby Mandi!"
-        </blockquote>
-        <p>— Testimonio desde Instagram</p>
+  .comentarios h3 {
+    text-align: center;
+    font-size: 28px;
+    color: #6A1B9A;
+    margin-bottom: 30px;
+  }
+
+  .comentario-carrusel {
+    display: flex;
+    gap: 20px;
+    animation: deslizar 20s linear infinite;
+  }
+
+  .comentario {
+    flex: 0 0 300px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .comentario:hover {
+    transform: scale(1.03);
+  }
+
+  .comentario p {
+    font-style: italic;
+    color: #444;
+    margin: 0 0 10px;
+  }
+
+  .comentario .autor {
+    font-weight: bold;
+    color: #6A1B9A;
+  }
+
+  .comentario .origen {
+    font-size: 0.85em;
+    color: #999;
+  }
+
+  @keyframes deslizar {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Duplicamos los comentarios para el loop infinito */
+  .comentario-carrusel-wrapper {
+    display: flex;
+    width: max-content;
+  }
+
+  @media (max-width: 768px) {
+    .comentario {
+      flex: 0 0 250px;
+    }
+  }
+</style>
+
+<div class="comentarios">
+  <h3>🌟 Lo que dicen nuestros clientes</h3>
+  <div class="comentario-carrusel-wrapper">
+    <div class="comentario-carrusel">
+      <!-- Comentarios duplicados para el efecto loop -->
+      <div class="comentario">
+        <p>“Excelente servicio 👏 muy responsable y amable. Los niños encantados con los juegos y mi pequeña lo pasó increíble. Espero volver a verlos, gracias.”</p>
+        <div class="autor">miiichu.alejandraaa</div>
+        <div class="origen">– cliente de Instagram</div>
+      </div>
+      <div class="comentario">
+        <p>“100% recomendados, limpios, seguros, confiables, primera vez que ocupamos los juegos y muy contentos quedamos.”</p>
+        <div class="autor">Poli Eme</div>
+        <div class="origen">– cliente de Facebook</div>
+      </div>
+      <div class="comentario">
+        <p>“Hoy nuestro tobogán doble instalado en Pudahuel!!!! gracias por la preferencia!!!”</p>
+        <div class="autor">miichu.alejandraaa</div>
+        <div class="origen">– cliente de Instagram</div>
+      </div>
+      <div class="comentario">
+        <p>“Maravillosa atención segundo año consecutivo arrendándoles juegos este año …sus dueños preocupados siempre de entregar un gran servicio muchas gracias y muy recomendados.”</p>
+        <div class="autor">Rocío Cararo Ortiz</div>
+        <div class="origen">– cliente de Facebook</div>
       </div>
 
-      <div class="testimonio">
-        <blockquote>
-          "Arrendamos el toro mecánico para una fiesta de empresa y fue todo un éxito. Recomendadísimo."
-        </blockquote>
-        <p>— Opinión en Facebook</p>
+      <!-- Duplicación para efecto infinito -->
+      <div class="comentario">
+        <p>“Excelente servicio 👏 muy responsable y amable. Los niños encantados con los juegos y mi pequeña lo pasó increíble. Espero volver a verlos, gracias.”</p>
+        <div class="autor">miiichu.alejandraaa</div>
+        <div class="origen">– cliente de Instagram</div>
       </div>
-
-      <div class="testimonio">
-        <blockquote>
-          "La fiesta de espuma fue lo mejor del cumpleaños. ¡100% confiables!"
-        </blockquote>
-        <p>— Historia destacada en Instagram</p>
+      <div class="comentario">
+        <p>“100% recomendados, limpios, seguros, confiables, primera vez que ocupamos los juegos y muy contentos quedamos.”</p>
+        <div class="autor">Poli Eme</div>
+        <div class="origen">– cliente de Facebook</div>
       </div>
+      <div class="comentario">
+        <p>“Hoy nuestro tobogán doble instalado en Pudahuel!!!! gracias por la preferencia!!!”</p>
+        <div class="autor">miichu.alejandraaa</div>
+        <div class="origen">– cliente de Instagram</div>
+      </div>
+      <div class="comentario">
+        <p>“Maravillosa atención segundo año consecutivo arrendándoles juegos este año …sus dueños preocupados siempre de entregar un gran servicio muchas gracias y muy recomendados.”</p>
+        <div class="autor">Rocío Cararo Ortiz</div>
+        <div class="origen">– cliente de Facebook</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <p>📲 Puedes ver más comentarios y experiencias en nuestras redes sociales:</p>
-      <ul>
-        <li><a href="https://www.instagram.com/juegosbabymandi" target="_blank">Instagram</a></li>
-        <li><a href="https://www.facebook.com/JuegosBabyMandi" target="_blank">Facebook</a></li>
-      </ul>
-    </section>
-  </main>
 
   <!-- Footer con el menú completo -->
   <footer>
