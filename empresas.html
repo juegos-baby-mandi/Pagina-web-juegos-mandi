@@ -1,16 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Eventos para Empresas - Juegos Baby Mandi</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario Empresas - Juegos Baby Mandi</title>
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
-  <header>
-    <h1>Eventos para Empresas</h1>
+  
+  <!-- Encabezado superior con íconos -->
+  <header class="top-header">
+    <div class="logo-header">
+  <a href="index.html">
+    <img src="img/logo.png" alt="Logo Juegos Baby Mandi" />
+  </a>
+</div>
+    <div class="contact-links">
+      <a href="https://wa.me/56946535784" target="_blank">📞 WhatsApp</a>
+      <a href="https://www.instagram.com/juegosbabymandi" target="_blank">📷 Instagram</a>
+      <a href="mailto:juegosbabymandi@gmail.com">📧 juegosbabymandi@gmail.com</a>
+      <a href="https://fb.me/JuegosBabyMandi" target="_blank">👍 Facebook</a>
+      <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">🎵 TikTok</a>
+    </div>
   </header>
+  <!-- Título de la sección -->
+  <section class="titulo-seccion">
+    <h1>Formulario Empresas</h1>
+  </section>
+  
+  <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    header img {
+      height: 70px;
+    }
 
-  <section>
+    .formulario-contacto {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background-color: #fefefe;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .formulario-contacto form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .formulario-contacto label {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .formulario-contacto input,
+    .formulario-contacto textarea {
+      padding: 0.6rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-top: 0.3rem;
+    }
+
+    .formulario-contacto button {
+      margin-top: 1.5rem;
+      background-color: #6a1b9a;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .formulario-contacto button:hover {
+      background-color: #4a148c;
+    }
+
+    @media screen and (max-width: 600px) {
+      header img {
+        height: 60px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        padding: 0;
+      }
+
+      nav li {
+        margin: 5px 0;
+      }
+
+      .formulario-contacto {
+        margin: 1rem;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- Formulario de contacto -->
+
+
+  <main>
+    <section>
     <p>En <strong>Juegos Baby Mandi</strong> ofrecemos servicios especiales para empresas, municipalidades, colegios, jardines infantiles, juntas de vecinos y productoras de eventos.</p>
 
     <p>🎈 Ya sea para celebraciones masivas, días del niño, fiestas de fin de año o actividades de incentivo laboral, contamos con <strong>juegos inflables, toro mecánico, reloj derribador, fiesta de espuma</strong> y más.</p>
@@ -18,39 +112,55 @@
     <p>🔒 Contamos con boleta o factura, y todos nuestros juegos son de uso comercial y se entregan limpios y desinfectados.</p>
 
     <p>📍 Región Metropolitana. Consulta la disponibilidad en tu comuna.</p>
-  </section>
-
-  <section>
-    <h2>Formulario de cotización para empresas</h2>
-    <form action="mailto:juegosbabymandi@gmail.com" method="POST" enctype="text/plain">
-      <label for="empresa">Nombre de la empresa o institución:</label><br>
+    </section>
+    
+      <form action="https://formsubmit.co/juegosbabymandi@gmail.com" method="POST">
+        <label for="empresa">Nombre de la empresa o institución:</label><br>
       <input type="text" id="empresa" name="empresa" required><br><br>
 
-      <label for="tipo-evento">Tipo de evento:</label><br>
-      <input type="text" id="tipo-evento" name="tipo-evento"><br><br>
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" required>
 
-      <label for="juegos">Juegos deseados:</label><br>
-      <textarea id="juegos" name="juegos" rows="3" placeholder="Ej: toro mecánico, fiesta de espuma..."></textarea><br><br>
+        <label for="evento">Tipo de evento:</label>
+        <input type="text" id="evento" name="evento" required>
 
-      <label for="asistentes">Cantidad aproximada de asistentes:</label><br>
-      <input type="number" id="asistentes" name="asistentes"><br><br>
+        <label for="asistentes">Cantidad aproximada de asistentes:</label><br>
+        <input type="number" id="asistentes" name="asistentes"><br><br>
 
-      <label for="comuna">Comuna del evento:</label><br>
-      <input type="text" id="comuna" name="comuna"><br><br>
+        <label for="comuna">Comuna:</label>
+        <input type="text" id="comuna" name="comuna" required>
 
-      <label for="fecha">Fecha estimada:</label><br>
-      <input type="date" id="fecha" name="fecha"><br><br>
+        <label for="fecha">Fecha del evento:</label>
+        <input type="date" id="fecha" name="fecha">
 
-      <label for="contacto">Correo o teléfono de contacto:</label><br>
-      <input type="text" id="contacto" name="contacto" required><br><br>
+        <label for="mensaje">Mensaje adicional:</label>
+        <textarea id="mensaje" name="mensaje" rows="4"></textarea>
 
-      <label for="comentarios">Comentarios adicionales:</label><br>
-      <textarea id="comentarios" name="comentarios" rows="4"></textarea><br><br>
+        <input type="hidden" name="_next" value="https://pagina-web-juegos-mandi.vercel.app/gracias.html">
+        <input type="hidden" name="_captcha" value="false">
 
-      <button type="submit">Enviar cotización</button>
-    </form>
+        <button type="submit">Quiero ser contactado</button>
+      </form>
+    </section>
+  </main>
 
-    <p style="margin-top: 20px;">📲 También puedes escribirnos directamente por WhatsApp: <a href="https://wa.me/56946535784" target="_blank">+56 9 4653 5784</a></p>
-  </section>
+  <!-- Footer con el menú completo -->
+  <footer>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="vision-mision.html">Visión y Misión</a></li>
+        <li><a href="experiencias.html">Experiencias</a></li>
+        <li><a href="testimonios.html">Testimonios</a></li>
+        <li><a href="promociones.html">Promociones</a></li>
+        <li><a href="eventos-empresas.html">Eventos Empresas</a></li>
+        <li><a href="consejos.html">Consejos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2025 Juegos Baby Mandi. Todos los derechos reservados.</p>
+  </footer>
+
 </body>
 </html>
