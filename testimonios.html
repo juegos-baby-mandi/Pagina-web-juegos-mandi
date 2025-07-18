@@ -40,194 +40,124 @@
   <section class="titulo-seccion">
     <h1>Testimonios Clientes</h1>
   </section>
+<style>
+  .testimonio {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 10px;
+    width: 300px;
+    flex: 0 0 auto;
+    font-family: 'Segoe UI', sans-serif;
+  }
 
+  .comentario {
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: oblique;
+    color: #444;
+    margin-bottom: 10px;
+  }
 
-  <!-- Fuente cursiva Dancing Script -->
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  .autor {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #6A1B9A;
+    margin-bottom: 4px;
+  }
 
-  <!-- Estilos del carrusel -->
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-    }
+  .origen {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #555;
+    text-decoration: underline;
+  }
 
-    h2.titulo-seccion {
-      text-align: center;
-      font-size: 2rem;
-      color: #7b2cbf;
-      margin-top: 2rem;
-    }
+  .fila-testimonios {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding-bottom: 15px;
+  }
 
-    .carrusel-container {
-      position: relative;
-      max-width: 800px;
-      margin: 2rem auto;
-      overflow: hidden;
-    }
+  .testimonio {
+    scroll-snap-align: start;
+  }
 
-    .testimonios-slider {
-      display: flex;
-      transition: transform 1s ease;
-      width: 100%;
-    }
+  .carrusel-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
+  }
+</style>
 
-    .grupo {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 1rem;
-      padding: 1rem;
-      box-sizing: border-box;
-      min-width: 100%;
-    }
+<div class="carrusel-container">
 
-    .testimonio {
-      background: #f9f1ff;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 10px rgba(123, 44, 191, 0.1);
-      text-align: center;
-    }
-
-    .testimonio p {
-      font-size: 1.2rem;
-      font-family: 'Dancing Script', cursive;
-      color: #333;
-      margin-bottom: 1rem;
-    }
-
-    .testimonio span {
-      font-weight: bold;
-      color: #7b2cbf;
-    }
-
-    .flecha {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #7b2cbf;
-      color: white;
-      border: none;
-      padding: 0.8rem;
-      cursor: pointer;
-      font-size: 1.2rem;
-      border-radius: 50%;
-      z-index: 1;
-    }
-
-    .flecha:hover {
-      background: #5a189a;
-    }
-
-    .flecha.izq { left: 10px; }
-    .flecha.der { right: 10px; }
-
-    @media (max-width: 768px) {
-      .grupo {
-        padding: 0.5rem;
-      }
-
-      .flecha {
-        padding: 0.6rem;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <h2 class="titulo-seccion">💬 Lo que opinan nuestros clientes</h2>
-
-  <div class="carrusel-container">
-    <button class="flecha izq" onclick="mover(-1)">❮</button>
-    <div class="testimonios-slider" id="slider">
-
-      <!-- Grupo 1 -->
-      <div class="grupo">
-        <div class="testimonio">
-          <p>"Muchas gracias... 100% recomendables y responsables!!! Éxitooo!!!"</p>
-          <span>- Paulina León Sepúlveda</span>
-        </div>
-        <div class="testimonio">
-          <p>"Confiables al 100%!! Recomendables al 1000%!!! Muy buena onda!!"</p>
-          <span>- José Antonio Oyarce Vargas</span>
-        </div>
-        <div class="testimonio">
-          <p>"Súper servicio, hermosos inflables, SÚPER BUEN PRECIO."</p>
-          <span>- Alejandra PeGe</span>
-        </div>
-      </div>
-
-      <!-- Grupo 2 -->
-      <div class="grupo">
-        <div class="testimonio">
-          <p>"Muy puntuales y atentos a que todo marche bien durante el uso."</p>
-          <span>- Graciela Caroca</span>
-        </div>
-        <div class="testimonio">
-          <p>"Excelente atención y servicio. 100% recomendado 👌💕"</p>
-          <span>- Joselyn Poblete</span>
-        </div>
-        <div class="testimonio">
-          <p>"Gracias por el juego, excelente 100% recomendable."</p>
-          <span>- Valeri Villarroel</span>
-        </div>
-      </div>
-
-      <!-- Grupo 3 -->
-      <div class="grupo">
-        <div class="testimonio">
-          <p>"Muy buen servicio 👏😃😃. 100% recomendable."</p>
-          <span>- Marcia Uribe</span>
-        </div>
-        <div class="testimonio">
-          <p>"Muy buena atención, llegan en el tiempo acordado."</p>
-          <span>- María Isabel Fuentealba</span>
-        </div>
-        <div class="testimonio">
-          <p>"Excelente servicio, muy puntuales y confiables. Garantizado 😄"</p>
-          <span>- Carmen Nahuelquié Riquelme</span>
-        </div>
-      </div>
-
-      <!-- Grupo 4 -->
-      <div class="grupo">
-        <div class="testimonio">
-          <p>"Todo súper 👌. Los niños lo disfrutaron mucho."</p>
-          <span>- Daniela Godoy Aros</span>
-        </div>
-        <div class="testimonio">
-          <p>"Los niños felices. Todo impecable, muy profesionales."</p>
-          <span>- Cliente de Instagram</span>
-        </div>
-        <div class="testimonio">
-          <p>"Puntuales, cordiales y los juegos en perfectas condiciones."</p>
-          <span>- Cliente de Instagram</span>
-        </div>
-      </div>
-
+  <!-- Fila 1 -->
+  <div class="fila-testimonios">
+    <div class="testimonio">
+      <div class="comentario">"100% recomendables y responsables. Éxitooo!!!"</div>
+      <div class="autor">Paulina León Sepúlveda</div>
+      <div class="origen">– comentario de Facebook</div>
     </div>
-    <button class="flecha der" onclick="mover(1)">❯</button>
+    <div class="testimonio">
+      <div class="comentario">"Excelente atención y servicio, 100% recomendado 👌💕"</div>
+      <div class="autor">Joselyn Poblete</div>
+      <div class="origen">– comentario de Facebook</div>
+    </div>
+    <div class="testimonio">
+      <div class="comentario">"Todo super 👌🏻 los niños lo disfrutaron. Volveremos a preferir sus juegos!"</div>
+      <div class="autor">Daniela Godoy Aros</div>
+      <div class="origen">– comentario de Facebook</div>
+    </div>
   </div>
 
-  <!-- Script de navegación -->
-  <script>
-    const slider = document.getElementById("slider");
-    let indice = 0;
+  <!-- Fila 2 -->
+  <div class="fila-testimonios">
+    <div class="testimonio">
+      <div class="comentario">"Súper servicio, llegada a la hora, hermosos inflables y súper buen precio."</div>
+      <div class="autor">Alejandra PeGe</div>
+      <div class="origen">– comentario de Facebook</div>
+    </div>
+    <div class="testimonio">
+      <div class="comentario">"Muy buena atención, llegan en el tiempo acordado. Lo recomiendo al 100%."</div>
+      <div class="autor">María Isabel Fuentealba</div>
+      <div class="origen">– comentario de Facebook</div>
+    </div>
+    <div class="testimonio">
+      <div class="comentario">"Gracias por el juego, excelente, 100% recomendable."</div>
+      <div class="autor">Valeri Villarroel</div>
+      <div class="origen">– comentario de Facebook</div>
+    </div>
+  </div>
 
-    function mover(direccion) {
-      const totalGrupos = slider.children.length;
-      indice += direccion;
-      if (indice < 0) indice = totalGrupos - 1;
-      if (indice >= totalGrupos) indice = 0;
-      slider.style.transform = `translateX(-${indice * 100}%)`;
-    }
+  <!-- Fila 3 -->
+  <div class="fila-testimonios">
+    <div class="testimonio">
+      <div class="comentario">"Juegos Baby Mandi... Son lo mejor, muy buena onda!"</div>
+      <div class="autor">Jose Antonio Oyarce</div>
+      <div class="origen">– comentario de Facebook</div>
+    </div>
+    <div class="testimonio">
+      <div class="comentario">"Excelente servicio, muy puntuales y confiables. Servicio garantizado 😄"</div>
+      <div class="autor">Carmen Nahuelquié</div>
+      <div class="origen">– comentario de Facebook</div>
+    </div>
+    <div class="testimonio">
+      <div class="comentario">"Hermosos juegos, todo limpio y seguro. ¡Gracias por todo!"</div>
+      <div class="autor">Cliente IG</div>
+      <div class="origen">– comentario de Instagram</div>
+    </div>
+  </div>
 
-    // Movimiento automático
-    setInterval(() => mover(1), 8000);
-  </script>
+</div>
+
+
+
 
 </body>
 </html>
