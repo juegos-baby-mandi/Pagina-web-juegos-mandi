@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Formulario Empresas - Juegos Baby Mandi</title>
+  <title>Formulario de contacto - Juegos Baby Mandi</title>
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
@@ -25,7 +25,7 @@
   </header>
   <!-- Título de la sección -->
   <section class="titulo-seccion">
-    <h1>Formulario Empresas</h1>
+    <h1>Formulario de Contacto</h1>
   </section>
   
   <link rel="stylesheet" href="styles/main.css" />
@@ -101,10 +101,10 @@
 
 
   <!-- Formulario de contacto -->
-
-
   <main>
-    <section>
+    <section class="formulario-contacto">
+      <h1>¿Tienes dudas o quieres agendar un evento?</h1>
+      <section>
     <p>En <strong>Juegos Baby Mandi</strong> ofrecemos servicios especiales para empresas, municipalidades, colegios, jardines infantiles, juntas de vecinos y productoras de eventos.</p>
 
     <p>🎈 Ya sea para celebraciones masivas, días del niño, fiestas de fin de año o actividades de incentivo laboral, contamos con <strong>juegos inflables, toro mecánico, reloj derribador, fiesta de espuma</strong> y más.</p>
@@ -112,20 +112,18 @@
     <p>🔒 Contamos con boleta o factura, y todos nuestros juegos son de uso comercial.</p>
 
     <p>📍 Región Metropolitana. Consulta la disponibilidad en tu comuna.</p>
-    </section>
-    
+      </section>
+         
+
       <form action="https://formsubmit.co/juegosbabymandi@gmail.com" method="POST">
-        <label for="empresa">Nombre de la empresa o institución:</label><br>
-      <input type="text" id="empresa" name="empresa" required><br><br>
+        <label for="nombre">Nombre empresa:</label>
+        <input type="text" id="nombre" name="nombre" required>
 
         <label for="correo">Correo:</label>
         <input type="email" id="correo" name="correo" required>
 
-        <label for="evento">Tipo de evento:</label>
-        <input type="text" id="evento" name="evento" required>
-
-        <label for="asistentes">Cantidad aproximada de asistentes:</label><br>
-        <input type="number" id="asistentes" name="asistentes"><br><br>
+        <label for="asistentes">Cantidad de asistentes:</label>
+        <input type="text" id="asistentes" name="asistentes" required>
 
         <label for="comuna">Comuna:</label>
         <input type="text" id="comuna" name="comuna" required>
