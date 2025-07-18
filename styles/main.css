@@ -647,6 +647,29 @@ footer {
   transform: scale(1.05);
 }
 
+.boton-catalogo-flotante {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background-color: #a259ff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 14px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-decoration: none;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.boton-catalogo-flotante:hover {
+  background-color: #8a3cf0;
+  transform: scale(1.05);
+}
+
+
 .faq-section {
   background-color: #f9f5ff;
   padding: 40px 20px;
