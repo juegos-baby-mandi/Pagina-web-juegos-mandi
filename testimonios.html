@@ -41,93 +41,109 @@
     <h1>Testimonios Clientes</h1>
   </section>
 
-  
-    
-<style>
-  .carrusel-container {
-    position: relative;
-    max-width: 800px;
-    margin: 2rem auto;
-    overflow: hidden;
-  }
 
-  .testimonios-slider {
-    display: flex;
-    transition: transform 1s ease;
-    width: 100%;
-  }
+  <!-- Fuente cursiva Dancing Script -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
-  .grupo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-    box-sizing: border-box;
-    min-width: 100%;
-  }
+  <!-- Estilos del carrusel -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
 
-  .testimonio {
-    background: #f9f1ff;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(123, 44, 191, 0.1);
-    text-align: center;
-  }
+    h2.titulo-seccion {
+      text-align: center;
+      font-size: 2rem;
+      color: #7b2cbf;
+      margin-top: 2rem;
+    }
 
-  .testimonio p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 1rem;
-  }
+    .carrusel-container {
+      position: relative;
+      max-width: 800px;
+      margin: 2rem auto;
+      overflow: hidden;
+    }
 
-  .testimonio span {
-    font-weight: bold;
-    color: #7b2cbf;
-  }
+    .testimonios-slider {
+      display: flex;
+      transition: transform 1s ease;
+      width: 100%;
+    }
 
-  .flecha {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #7b2cbf;
-    color: white;
-    border: none;
-    padding: 0.8rem;
-    cursor: pointer;
-    font-size: 1.2rem;
-    border-radius: 50%;
-    z-index: 1;
-  }
-
-  .flecha:hover {
-    background: #5a189a;
-  }
-
-  .flecha.izq { left: 10px; }
-  .flecha.der { right: 10px; }
-
-  @media (max-width: 768px) {
     .grupo {
-      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+      box-sizing: border-box;
+      min-width: 100%;
+    }
+
+    .testimonio {
+      background: #f9f1ff;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(123, 44, 191, 0.1);
+      text-align: center;
+    }
+
+    .testimonio p {
+      font-size: 1.2rem;
+      font-family: 'Dancing Script', cursive;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .testimonio span {
+      font-weight: bold;
+      color: #7b2cbf;
     }
 
     .flecha {
-      padding: 0.6rem;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #7b2cbf;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      z-index: 1;
     }
-  }
-</style>
 
+    .flecha:hover {
+      background: #5a189a;
+    }
 
+    .flecha.izq { left: 10px; }
+    .flecha.der { right: 10px; }
+
+    @media (max-width: 768px) {
+      .grupo {
+        padding: 0.5rem;
+      }
+
+      .flecha {
+        padding: 0.6rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <h2 class="titulo-seccion">❤️ Lo que opinan nuestros clientes</h2>
+  <h2 class="titulo-seccion">💬 Lo que opinan nuestros clientes</h2>
 
   <div class="carrusel-container">
     <button class="flecha izq" onclick="mover(-1)">❮</button>
     <div class="testimonios-slider" id="slider">
-      
+
       <!-- Grupo 1 -->
       <div class="grupo">
         <div class="testimonio">
@@ -184,11 +200,11 @@
         </div>
         <div class="testimonio">
           <p>"Los niños felices. Todo impecable, muy profesionales."</p>
-          <span>- Testimonio Instagram</span>
+          <span>- Cliente de Instagram</span>
         </div>
         <div class="testimonio">
           <p>"Puntuales, cordiales y los juegos en perfectas condiciones."</p>
-          <span>- Testimonio Instagram</span>
+          <span>- Cliente de Instagram</span>
         </div>
       </div>
 
@@ -196,6 +212,7 @@
     <button class="flecha der" onclick="mover(1)">❯</button>
   </div>
 
+  <!-- Script de navegación -->
   <script>
     const slider = document.getElementById("slider");
     let indice = 0;
@@ -208,12 +225,13 @@
       slider.style.transform = `translateX(-${indice * 100}%)`;
     }
 
-    // Movimiento automático cada 8 segundos
+    // Movimiento automático
     setInterval(() => mover(1), 8000);
   </script>
 
 </body>
 </html>
+
 
 
   <!-- Footer con el menú completo -->
