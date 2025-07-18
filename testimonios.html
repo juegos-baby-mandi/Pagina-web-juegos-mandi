@@ -43,10 +43,24 @@
 
   
     
-  <style>
+<style>
+  .carrusel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+    overflow: hidden;
+  }
+
+  .testimonios-slider {
+    display: flex;
+    transition: transform 1s ease;
+    width: 100%;
+  }
+
   .grupo {
     display: flex;
-    flex-direction: column; /* Mostrar verticalmente */
+    flex-direction: column;
+    justify-content: center;
     gap: 1rem;
     padding: 1rem;
     box-sizing: border-box;
@@ -61,12 +75,49 @@
     text-align: center;
   }
 
+  .testimonio p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .testimonio span {
+    font-weight: bold;
+    color: #7b2cbf;
+  }
+
+  .flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #7b2cbf;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .flecha:hover {
+    background: #5a189a;
+  }
+
+  .flecha.izq { left: 10px; }
+  .flecha.der { right: 10px; }
+
   @media (max-width: 768px) {
     .grupo {
-      flex-direction: column;
+      padding: 0.5rem;
+    }
+
+    .flecha {
+      padding: 0.6rem;
     }
   }
 </style>
+
 
 </head>
 <body>
