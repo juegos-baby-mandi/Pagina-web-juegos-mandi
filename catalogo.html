@@ -1,65 +1,615 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Catálogo de Juegos Inflables</title>
-  <link rel="stylesheet" href="main.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juegos Inflables - Juegos Baby Mandi</title>
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
+  
+  <!-- Encabezado superior con íconos -->
+  <header class="top-header">
+    <div class="logo-header">
+  <a href="index.html">
+    <img src="img/logo.png" alt="Logo Juegos Baby Mandi" />
+  </a>
+</div>
+    <div class="contact-links">
+      <a href="https://wa.me/56946535784" target="_blank">📞 WhatsApp</a>
+      <a href="https://www.instagram.com/juegosbabymandi" target="_blank">📷 Instagram</a>
+      <a href="mailto:juegosbabymandi@gmail.com">📧 juegosbabymandi@gmail.com</a>
+      <a href="https://fb.me/JuegosBabyMandi" target="_blank">👍 Facebook</a>
+      <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">🎵 TikTok</a>
+    </div>
+  </header>
+  <!-- Título de la sección -->
+  <section class="titulo-seccion">
+    <h1>Juegos Inflables</h1>
+  </section>
 
-<!-- Encabezado superior con íconos -->
-<header class="top-header">
-  <div class="logo-header">
-    <a href="index.html">
-      <img src="img/logo.png" alt="Logo Juegos Baby Mandi" />
-    </a>
-  </div>
-  <div class="contact-links">
-    <a href="https://wa.me/56946535784" target="_blank">📞 WhatsApp</a>
-    <a href="https://www.instagram.com/juegosbabymandi" target="_blank">📷 Instagram</a>
-    <a href="mailto:juegosbabymandi@gmail.com">📧 juegosbabymandi@gmail.com</a>
-    <a href="https://fb.me/JuegosBabyMandi" target="_blank">👍 Facebook</a>
-    <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">🎵 TikTok</a>
-  </div>
-</header>
+  <!-- Catálogo de inflables -->
+  <section class="catalogo">
+    <div class="producto">
+      <img src="img/inflable-mini-lego1.jpg" alt="Mini Lego" class="producto-img" />
+      <div class="producto-detalle">
+        <h2>Mini Lego</h2>
+        <p>Hermoso y exclusivo juego inflable, ¡único en Chile!<br>
+        ¡Porque los más pequeños merecen divertirse con juegos acorde a su edad!</p>
+        <p><strong>Hasta:</strong> 5 años<br>
+           <strong>Capacidad:</strong> 6 niños<br>
+           <strong>Medidas:</strong> Alto 3m x Ancho 3m x Largo 5m</p>
+        <p class="precio">$ 70.000</p>
+        <div class="botones">
+          <a href="https://wa.me/56946535784?text=Hola! Estaba viendo tu página web y me gustaría agendar" class="boton amarillo" target="_blank">
+  Agendar por WhatsApp
+</a>
+          <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+        </div>
+        <button class="boton-carrito" onclick="agregarAlCarrito('Castillo Mini Lego', 70000)">
+  🛒 Agregar al carrito
+</button>
+        
 
-<!-- Catálogo - Obstáculos Emoji -->
-<section class="catalogo-section">
-  <h2 class="catalogo-titulo">Obstáculos Emoji</h2>
-  <div class="carousel" data-carousel>
-    <button class="carousel-button prev" data-carousel-button="prev">◀</button>
-    <div class="slides" data-slides>
-      <div class="slide"><img src="img/inflable-obstaculos-emoji1.jpg" alt="Obstáculos Emoji 1"></div>
-      <div class="slide"><img src="img/inflable-obstaculos-emoji2.jpg" alt="Obstáculos Emoji 2"></div>
-    </div>
-    <button class="carousel-button next" data-carousel-button="next">▶</button>
-  </div>
-  <div class="info">
-    <p><strong>Precio:</strong> $125.000</p>
-    <p><strong>Edad:</strong> Hasta 10 años</p>
-    <p><strong>Capacidad:</strong> 15 niños</p>
-    <p><strong>Medidas:</strong> Alto 3.5m x Ancho 4m x Largo 9.5m</p>
-    <p>Se debe considerar entre 0.5 y 1 metro extra para la turbina y que el juego no quede justo en el espacio destinado.</p>
-    <p>Es un hermoso juego con un diseño exclusivo en Chile, muy llamativo para tu hij@ e invitados. ¡Suuuper divertido con una carrera de obstáculos y dos toboganes al final!</p>
-  </div>
-</section>
+      </div>
+    </div>
+<div class="producto">
+  <img src="img/inflable-mini-arco1.jpg" alt="Castillo Mini Arco" class="producto-img" />
+  <div class="producto-detalle">
+    <h2>Castillo Mini Arco</h2>
+    <p>Hermoso tobogán con dos puchis, una dona, resbalín y escalada.<br>
+    ¡Porque los más pequeños merecen divertirse con juegos acorde a su edad!<br>
+    Ideal si tienes espacios reducidos ya que su altura es de solo 3 mts.</p>
+    <p><strong>Hasta:</strong> 7 años<br>
+       <strong>Capacidad:</strong> 6 niños<br>
+       <strong>Medidas:</strong> Alto 3m x Ancho 3m x Largo 4m</p>
+    <p class="precio">$ 70.000</p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Estaba viendo tu página web y me gustaría agendar" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Castillo Mini Arco', 70000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
 
-<!-- JavaScript para carrusel -->
-<script>
-  document.querySelectorAll("[data-carousel]").forEach(carousel => {
-    const slides = carousel.querySelector("[data-slides]");
-    const buttons = carousel.querySelectorAll("[data-carousel-button]");
-    let currIndex = 0;
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const offset = btn.dataset.carouselButton === "next" ? 1 : -1;
-        currIndex = Math.min(Math.max(currIndex + offset, 0), slides.children.length - 1);
-        slides.style.transform = `translateX(-${currIndex * 100}%)`;
-      });
-    });
-  });
+    <div class="producto">
+  <img src="img/tobogan-lego1.jpg" alt="Tobogán Lego" class="producto-img" />
+  <div class="producto-detalle">
+    <h2>Tobogán Lego</h2>
+    <p>Con un hermoso diseño para llevar la imaginación a otro nivel, con entrada y salida por el centro, área de salto y obstáculos.<br>
+    ¡Es uno de los juegos más solicitados por nuestros clientes!<br>
+    Te recomendamos agendar con anticipación este juego.</p>
+    <p><strong>Hasta:</strong> 5 años<br>
+       <strong>Capacidad:</strong> 6 niños<br>
+       <strong>Medidas:</strong> Alto 3m x Ancho 3m x Largo 5m</p>
+    <p class="precio">$ 75.000</p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Estaba viendo tu página web y me gustaría agendar" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Tobogán Lego', 75000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+    <div class="producto">
+  <img src="img/tobogan-unicornio1.jpg" alt="Tobogán Unicornio" class="producto-img" />
+  <div class="producto-detalle">
+    <h2>Tobogán Unicornio</h2>
+    <p>Hermoso y atractivo Tobogán diseñado con amor para invitar a nuestros niños a entrar a un mágico mundo.<br>
+    Es una excelente opción para entretener y decorar las fiestas.</p>
+    <p><strong>Hasta:</strong> 10 años<br>
+       <strong>Capacidad:</strong> 10 niños<br>
+       <strong>Medidas:</strong> Alto 3m x Ancho 3m x Largo 5m</p>
+    <p class="precio">$ 80.000</p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Estaba viendo tu página web y me gustaría agendar" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Tobogán Unicornio', 80000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+    <div class="producto">
+  <img src="img/tobogan-inflable-paletitas1.jpg" alt="Tobogán Paletitas" class="producto-img" />
+  <div class="producto-detalle">
+    <h2>Tobogán Paletitas</h2>
+    <p>Es un hermoso tobogán, un diseño único que encantará a tu hijo o hija y a todos los invitados.<br>
+    Tiene zona de salto al final.</p>
+    <p><strong>Hasta:</strong> 10 años<br>
+       <strong>Capacidad:</strong> 12 niños<br>
+       <strong>Medidas:</strong> Alto 5.5m x Ancho 3.5m x Largo 9m</p>
+    <p class="precio">$ 90.000</p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Estaba viendo tu página web y me gustaría agendar" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Tobogán Paletitas', 90000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+    <div class="producto">
+  <img src="img/castillo-inflable-doble1.jpg" alt="Castillo Doble Caída" class="producto-img" />
+  <div class="producto-detalle">
+    <h2>Castillo Doble</h2>
+    <p>Hermoso juego con diseño exclusivo, con doble caída y zona de salto en el medio con puchis.</p>
+    <p><strong>Hasta:</strong> 10 años<br>
+       <strong>Capacidad:</strong> 12 niños<br>
+       <strong>Medidas:</strong> Alto 3.8m x Ancho 5m x Largo 5m</p>
+    <p class="precio">$ 90.000</p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Estaba viendo tu página web y me gustaría agendar" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Castillo Doble Caída', 90000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+    <div class="producto">
+  <img src="img/tobogan-inflable-doble1.jpg" alt="Tobogán Doble" class="producto-img" />
+  <div class="producto-detalle">
+    <h2>Tobogán Doble</h2>
+    <p>Hermoso tobogán con diseño único de ola. A los niños les encanta deslizarse junto a sus amigos por sus dos toboganes.</p>
+    <p><strong>Hasta:</strong> 12 años<br>
+       <strong>Capacidad:</strong> 12 niños<br>
+       <strong>Medidas:</strong> Alto 5.5m x Ancho 4m x Largo 7m</p>
+    <p class="precio">$ 95.000</p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Estaba viendo tu página web y me gustaría agendar" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Tobogán Doble Ola', 95000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+    <div class="producto">
+  <img src="img/castillo-inflable-circo1.jpg" alt="Doble Circus" class="producto-img" />
+  <div class="producto-detalle">
+    <h2>Doble Circus</h2>
+    <p>Hermoso inflable con diseño exclusivo y perfecto para acompañar tu decoración.<br>
+    Altura de casi 6 metros, dos toboganes, zona de salto y puchis.</p>
+    <p><strong>Hasta:</strong> 10 años<br>
+       <strong>Capacidad:</strong> 12 niños<br>
+       <strong>Medidas:</strong> Alto 6m x Ancho 5m x Largo 6.5m</p>
+    <p class="precio">$ 110.000</p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Estaba viendo tu página web y me gustaría agendar" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Doble Circus', 110000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+    <div class="producto">
+  <img src="img/inflable-obstaculos-emoji1.jpg" alt="Obstáculos Emoji" class="producto-img" />
+  <div class="producto-detalle">
+    <h2>Obstáculos Emoji</h2>
+    <p>Hermoso juego con diseño exclusivo en Chile, muy llamativo para tu hij@ e invitados.<br>
+    ¡Súper divertido! Con carrera de obstáculos y dos toboganes al final.</p>
+    <p><strong>Hasta:</strong> 10 años<br>
+       <strong>Capacidad:</strong> 15 niños<br>
+       <strong>Medidas:</strong> Alto 3.5m x Ancho 4m x Largo 9.5m</p>
+    <p class="precio">$ 125.000</p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Estaba viendo tu página web y me gustaría agendar" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Obstáculos Emoji', 125000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+    <!-- Piscina de Pelotas -->
+<div class="producto" style="background-color: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  <img src="img/piscina-de-pelotas.jpg" alt="Piscina de Pelotas" class="producto-img" />
+  <div class="producto-detalle">
+    <h3>Piscina de Pelotas</h3>
+    <p><strong>Precio:</strong> $55.000</p>
+    <p><strong>Edad:</strong> Hasta 6 años</p>
+    <p><strong>Capacidad:</strong> 3 niños</p>
+    <p><strong>Medidas:</strong> Alto 0.60m x Ancho 1.5m x Largo 1.5m</p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Me interesa arrendar la piscina de pelotas" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Piscina de Pelotas', 55000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+<!-- Simulador de Disparos -->
+<div class="producto" style="background-color: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  <img src="img/simulador-de-disparos.jpg" alt="Simulador de Disparos" class="producto-img" />
+  <div class="producto-detalle">
+    <h3>Simulador de Disparos</h3>
+    <p><strong>Precio:</strong> <span style="text-decoration: line-through;">$55.000</span> <strong style="color: red;">$40.000 (oferta)</strong></p>
+    <p><strong>Edad:</strong> Hasta 99 años</p>
+    <p><strong>Capacidad:</strong> 2 jugadores</p>
+    <p><strong>Funcionamiento:</strong> Free Pass (no requiere fichas)</p>
+    <p>● Necesita <strong>corriente eléctrica constante</strong><br>
+       ● Se arriendan mínimo <strong>2 unidades</strong></p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Me interesa el Simulador de Disparos" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Simulador de Disparos', 40000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+<!-- Simulador de Pesca -->
+<div class="producto" style="background-color: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  <img src="img/simulador-de-pesca.jpg" alt="Simulador de Pesca" class="producto-img" />
+  <div class="producto-detalle">
+    <h3>Simulador de Pesca</h3>
+    <p><strong>Precio:</strong> <span style="text-decoration: line-through;">$55.000</span> <strong style="color: red;">$40.000 (oferta)</strong></p>
+    <p><strong>Edad:</strong> Hasta 99 años</p>
+    <p><strong>Capacidad:</strong> 2 jugadores</p>
+    <p><strong>Funcionamiento:</strong> Free Pass (no requiere fichas)</p>
+    <p>● Necesita <strong>corriente eléctrica constante</strong><br>
+       ● Se arriendan mínimo <strong>2 unidades</strong></p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Me interesa el Simulador de Pesca" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Simulador de Pesca', 40000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+<!-- Simulador de Manubrio -->
+<div class="producto" style="background-color: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  <img src="img/simulador-de-manubrio.jpg" alt="Simulador de Manubrio" class="producto-img" />
+  <div class="producto-detalle">
+    <h3>Simulador de Manubrio</h3>
+    <p><strong>Precio:</strong> <span style="text-decoration: line-through;">$55.000</span> <strong style="color: red;">$40.000 (oferta)</strong></p>
+    <p><strong>Edad:</strong> Hasta 99 años</p>
+    <p><strong>Capacidad:</strong> 1 jugador</p>
+    <p><strong>Funcionamiento:</strong> Free Pass (no requiere fichas)</p>
+    <p>● Necesita <strong>corriente eléctrica constante</strong><br>
+       ● Se arriendan mínimo <strong>2 unidades</strong></p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Me interesa el Simulador de Manubrio" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Simulador de Manubrio', 40000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+<!-- Simulador Parkour -->
+<div class="producto" style="background-color: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  <img src="img/simulador-parkour.jpg" alt="Simulador Parkour" class="producto-img" />
+  <div class="producto-detalle">
+    <h3>Simulador Parkour</h3>
+    <p><strong>Precio:</strong> <span style="text-decoration: line-through;">$55.000</span> <strong style="color: red;">$40.000 (oferta)</strong></p>
+    <p><strong>Edad:</strong> Hasta 99 años</p>
+    <p><strong>Capacidad:</strong> 1 jugador</p>
+    <p><strong>Funcionamiento:</strong> Free Pass (no requiere fichas)</p>
+    <p>● Necesita <strong>corriente eléctrica constante</strong><br>
+       ● Se arriendan mínimo <strong>2 unidades</strong></p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Me interesa el Simulador Parkour" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Simulador Parkour', 40000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+<!-- Simulador de Moto -->
+<div class="producto" style="background-color: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  <img src="img/simulador-de-moto.jpg" alt="Simulador de Moto" class="producto-img" />
+  <div class="producto-detalle">
+    <h3>Simulador de Moto</h3>
+    <p><strong>Precio:</strong> <span style="text-decoration: line-through;">$55.000</span> <strong style="color: red;">$40.000 (oferta)</strong></p>
+    <p><strong>Edad:</strong> Hasta 10 años</p>
+    <p><strong>Peso máximo:</strong> 40 kilos</p>
+    <p><strong>Capacidad:</strong> 1 jugador</p>
+    <p><strong>Funcionamiento:</strong> Free Pass (no requiere fichas)</p>
+    <p>● Necesita <strong>corriente eléctrica constante</strong><br>
+       ● Se arriendan mínimo <strong>2 unidades</strong></p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Me interesa el Simulador de Moto" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Simulador de Moto', 40000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+    <!-- Peluchera Mini -->
+<div class="producto" style="background-color: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  <img src="img/peluchera-mini.jpg" alt="Peluchera Mini" class="producto-img" />
+  <div class="producto-detalle">
+    <h3>Peluchera Mini</h3>
+    <p><strong>Precio:</strong> <span style="text-decoration: line-through;">$55.000</span> <strong style="color: red;">$40.000 (oferta)</strong></p>
+    <p><strong>Edad:</strong> Hasta 99 años</p>
+    <p><strong>Incluye:</strong> 10 peluches</p>
+    <p>Agrega 15 peluches por <strong>$7.000</strong></p>
+    <p><strong>Funcionamiento:</strong> Free Pass (no requiere fichas)</p>
+    <p>● Necesita <strong>corriente eléctrica constante</strong><br>
+       ● Se arriendan mínimo <strong>2 unidades</strong></p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Me interesa la Peluchera Mini" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Peluchera Mini', 40000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+<!-- Mata la Rana -->
+<div class="producto" style="background-color: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  <img src="img/mata-la-rana.jpg" alt="Mata la Rana" class="producto-img" />
+  <div class="producto-detalle">
+    <h3>Mata la Rana</h3>
+    <p><strong>Precio:</strong> <span style="text-decoration: line-through;">$55.000</span> <strong style="color: red;">$40.000 (oferta)</strong></p>
+    <p><strong>Edad:</strong> Hasta 99 años</p>
+    <p><strong>Capacidad:</strong> 1 jugador</p>
+    <p><strong>Funcionamiento:</strong> Free Pass (no requiere fichas)</p>
+    <p>● Necesita <strong>corriente eléctrica constante</strong><br>
+       ● Se arriendan mínimo <strong>2 unidades</strong></p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Me interesa el juego Mata la Rana" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Mata la Rana', 40000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+<!-- Pégale al Topo -->
+<div class="producto" style="background-color: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  <img src="img/pegale-al-topo.jpg" alt="Pégale al Topo" class="producto-img" />
+  <div class="producto-detalle">
+    <h3>Pégale al Topo</h3>
+    <p><strong>Precio:</strong> <span style="text-decoration: line-through;">$45.000</span> <strong style="color: red;">$30.000 (oferta)</strong></p>
+    <p><strong>Edad:</strong> Hasta 4 años</p>
+    <p><strong>Capacidad:</strong> 1 jugador</p>
+    <p><strong>Funcionamiento:</strong> Free Pass (no requiere fichas)</p>
+    <p>● Necesita <strong>corriente eléctrica constante</strong><br>
+       ● Se arriendan mínimo <strong>2 unidades</strong></p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Me interesa el juego Pégale al Topo" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Pégale al Topo', 30000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+<!-- Kiddie Rosado -->
+<div class="producto" style="background-color: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  <img src="img/electronico-kiddie-rosado.jpg" alt="Kiddie Rosado" class="producto-img" />
+  <div class="producto-detalle">
+    <h3>Kiddie Rosado</h3>
+    <p><strong>Precio:</strong> <span style="text-decoration: line-through;">$45.000</span> <strong style="color: red;">$30.000 (oferta)</strong></p>
+    <p><strong>Edad:</strong> Hasta 4 años</p>
+    <p><strong>Peso máximo:</strong> 20 kilos</p>
+    <p><strong>Capacidad:</strong> 1 jugador</p>
+    <p><strong>Funcionamiento:</strong> Free Pass (no requiere fichas)</p>
+    <p>● Necesita <strong>corriente eléctrica constante</strong><br>
+       ● Se arriendan mínimo <strong>2 unidades</strong></p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Me interesa el Kiddie Rosado" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Kiddie Rosado', 30000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+<!-- Kiddie Cohete -->
+<div class="producto" style="background-color: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  <img src="img/electronico-kiddie-cohete.jpg" alt="Kiddie Cohete" class="producto-img" />
+  <div class="producto-detalle">
+    <h3>Kiddie Cohete</h3>
+    <p><strong>Precio:</strong> <span style="text-decoration: line-through;">$45.000</span> <strong style="color: red;">$30.000 (oferta)</strong></p>
+    <p><strong>Edad:</strong> Hasta 4 años</p>
+    <p><strong>Peso máximo:</strong> 20 kilos</p>
+    <p><strong>Capacidad:</strong> 1 jugador</p>
+    <p><strong>Funcionamiento:</strong> Free Pass (no requiere fichas)</p>
+    <p>● Necesita <strong>corriente eléctrica constante</strong><br>
+       ● Se arriendan mínimo <strong>2 unidades</strong></p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Me interesa el Kiddie Cohete" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Kiddie Cohete', 30000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+<!-- Kiddie Astronauta -->
+<div class="producto" style="background-color: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 8px; margin-top: 20px;">
+  <img src="img/electronico-kiddie-astronauta.jpg" alt="Kiddie Astronauta" class="producto-img" />
+  <div class="producto-detalle">
+    <h3>Kiddie Astronauta</h3>
+    <p><strong>Precio:</strong> <span style="text-decoration: line-through;">$45.000</span> <strong style="color: red;">$30.000 (oferta)</strong></p>
+    <p><strong>Edad:</strong> Hasta 4 años</p>
+    <p><strong>Peso máximo:</strong> 20 kilos</p>
+    <p><strong>Capacidad:</strong> 1 jugador</p>
+    <p><strong>Funcionamiento:</strong> Free Pass (no requiere fichas)</p>
+    <p>● Necesita <strong>corriente eléctrica constante</strong><br>
+       ● Se arriendan mínimo <strong>2 unidades</strong></p>
+    <div class="botones">
+      <a href="https://wa.me/56946535784?text=Hola! Me interesa el Kiddie Astronauta" class="boton amarillo" target="_blank">Agendar por WhatsApp</a>
+      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+    </div>
+    <button class="boton-carrito" onclick="agregarAlCarrito('Kiddie Astronauta', 30000)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+    <!-- Puedes copiar y pegar más bloques como este para cada inflable -->
+  </section>
+
+  <!-- Footer con el menú completo -->
+  <footer>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="vision-mision.html">Visión y Misión</a></li>
+        <li><a href="experiencias.html">Experiencias</a></li>
+        <li><a href="testimonios.html">Testimonios</a></li>
+        <li><a href="promociones.html">Promociones</a></li>
+        <li><a href="eventos-empresas.html">Eventos Empresas</a></li>
+        <li><a href="consejos.html">Consejos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2025 Juegos Baby Mandi. Todos los derechos reservados.</p>
+  </footer>
+
+<!-- Aquí termina tu catálogo -->
+<!-- Sección flotante del carrito -->
+<div id="carrito">
+  <div id="carrito-toggle" onclick="toggleCarrito()">🔽</div>
+  <div id="carrito-contenido">
+    <h2>🛒 Carrito</h2>
+    <ul id="carrito-lista"></ul>
+    <p id="total-carrito"><strong>Total: $0</strong></p>
+  </div>
+  <div class="carrito-botones">
+    <a id="enviar-carrito" href="#" target="_blank" class="boton-carrito">Cotizar por WhatsApp</a>
+    <button id="vaciar-carrito" class="boton-vaciar">Vaciar Carrito</button>
+  </div>
+</div>
+
+<!-- Mensaje flotante -->
+<div id="mensaje-carrito" class="mensaje-carrito"></div>
+
+<!-- Modal de confirmación -->
+<div id="modal-confirmacion" class="modal">
+  <div class="modal-contenido">
+    <p id="modal-mensaje">¿Estás seguro que deseas eliminar este juego del carrito?</p>
+    <div class="modal-botones">
+      <button id="cancelar-btn">Cancelar</button>
+      <button id="confirmar-btn">Sí, eliminar</button>
+    </div>
+  </div>
+</div>
+  <script>
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  let productoAEliminar = null;
+
+  function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    mostrarCarrito();
+    mostrarMensaje("✅ " + nombre + " fue agregado al carrito.");
+  }
+
+  function mostrarCarrito() {
+    const lista = document.getElementById("carrito-lista");
+    const boton = document.getElementById("enviar-carrito");
+    const totalElement = document.getElementById("total-carrito");
+    const vaciarBtn = document.getElementById("vaciar-carrito");
+
+    lista.innerHTML = "";
+    let total = 0;
+
+    carrito.forEach((item, index) => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        ${item.nombre} - $${item.precio.toLocaleString()}
+        <button class="btn-eliminar" data-index="${index}" style="margin-left: 10px;">❌</button>
+      `;
+      lista.appendChild(li);
+      total += item.precio;
+    });
+
+    // Agregar evento a cada botón ❌
+    setTimeout(() => {
+      const botonesEliminar = document.querySelectorAll(".btn-eliminar");
+      botonesEliminar.forEach(boton => {
+        boton.addEventListener("click", function () {
+          const index = parseInt(this.getAttribute("data-index"));
+          eliminarProducto(index);
+        });
+      });
+    }, 0);
+
+    totalElement.innerHTML = `<strong>Total: $${total.toLocaleString()}</strong>`;
+
+    if (carrito.length > 0) {
+      const mensaje = carrito
+        .map(item => `- ${item.nombre}: $${item.precio.toLocaleString()}`)
+        .join("\n");
+
+      const link = `https://wa.me/56946535784?text=Hola! Quiero cotizar:\n${mensaje}`;
+      boton.href = link;
+      boton.style.display = "inline-block";
+      vaciarBtn.style.display = "inline-block";
+    } else {
+      boton.style.display = "none";
+      vaciarBtn.style.display = "none";
+    }
+  }
+
+  function vaciarCarrito() {
+    carrito = [];
+    localStorage.removeItem("carrito");
+    mostrarCarrito();
+    mostrarMensaje("🗑️ Carrito vaciado.");
+  }
+
+  function eliminarProducto(index) {
+    productoAEliminar = index;
+    document.getElementById("modal-confirmacion").style.display = "flex";
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    mostrarCarrito();
+
+    document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
+
+    document.getElementById("confirmar-btn").addEventListener("click", () => {
+      if (productoAEliminar !== null) {
+        carrito.splice(productoAEliminar, 1);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        mostrarCarrito();
+        mostrarMensaje("❌ Producto eliminado del carrito.");
+      }
+      document.getElementById("modal-confirmacion").style.display = "none";
+      productoAEliminar = null;
+    });
+
+    document.getElementById("cancelar-btn").addEventListener("click", () => {
+      document.getElementById("modal-confirmacion").style.display = "none";
+      productoAEliminar = null;
+    });
+  });
+
+  function mostrarMensaje(texto) {
+    const mensaje = document.createElement("div");
+    mensaje.textContent = texto;
+    mensaje.style.position = "fixed";
+    mensaje.style.bottom = "20px";
+    mensaje.style.right = "20px";
+    mensaje.style.background = "#8e44ad";
+    mensaje.style.color = "#fff";
+    mensaje.style.padding = "10px 15px";
+    mensaje.style.borderRadius = "6px";
+    mensaje.style.zIndex = "10000";
+    document.body.appendChild(mensaje);
+
+    setTimeout(() => {
+      mensaje.remove();
+    }, 2500);
+  }
+  function eliminarProducto(index) {
+  productoAEliminar = index;
+  document.getElementById("modal-confirmacion").style.display = "flex";
+}
+
+
+function toggleCarrito() {
+  const carrito = document.getElementById("carrito");
+  const contenido = document.getElementById("carrito-contenido");
+  const toggle = document.getElementById("carrito-toggle");
+  
+  carrito.classList.toggle("minimizado");
+  if (carrito.classList.contains("minimizado")) {
+    contenido.style.display = "none";
+    toggle.textContent = "🔼";
+  } else {
+    contenido.style.display = "block";
+    toggle.textContent = "🔽";
+  }
+}
+
 </script>
+
+
 
 </body>
 </html>
