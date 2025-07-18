@@ -259,40 +259,53 @@
     mostrarMensaje("✅ \"" + nombre + "\" fue agregado al carrito.");
   }
 
-  function mostrarCarrito() {
-    const lista = document.getElementById("carrito-lista");
-    const boton = document.getElementById("enviar-carrito");
-    const totalElement = document.getElementById("total-carrito");
-    const vaciarBtn = document.getElementById("vaciar-carrito");
+function mostrarCarrito() {
+  const lista = document.getElementById("carrito-lista");
+  const boton = document.getElementById("enviar-carrito");
+  const totalElement = document.getElementById("total-carrito");
+  const vaciarBtn = document.getElementById("vaciar-carrito");
 
-    lista.innerHTML = "";
-    let total = 0;
+  lista.innerHTML = "";
+  let total = 0;
 
-    carrito.forEach((item, index) => {
-      const li = document.createElement("li");
-      li.innerHTML = `
-        ${item.nombre} - $${item.precio.toLocaleString()}
-        <button class="btn-eliminar" data-index="${index}" style="margin-left:10px; background:#ff4d4d; color:white; border:none; padding:2px 6px; border-radius:4px;">❌</button>
-      `;
-      lista.appendChild(li);
-      total += item.precio;
+  carrito.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      ${item.nombre} - $${item.precio.toLocaleString()}
+      <button class="btn-eliminar" data-index="${index}" style="margin-left: 10px;">❌</button>
+    `;
+    lista.appendChild(li);
+    total += item.precio;
+  });
+
+  // Agrega eventos a todos los botones ❌ después de renderizar
+  setTimeout(() => {
+    const botonesEliminar = document.querySelectorAll(".btn-eliminar");
+    botonesEliminar.forEach(boton => {
+      boton.addEventListener("click", function () {
+        const index = parseInt(this.getAttribute("data-index"));
+        eliminarProducto(index);
+      });
     });
+  }, 0);
 
-    totalElement.innerHTML = `<strong>Total: $${total.toLocaleString()}</strong>`;
+  totalElement.innerHTML = `<strong>Total: $${total.toLocaleString()}</strong>`;
 
-    if (carrito.length > 0) {
-      const mensaje = carrito
-        .map(item => `- ${item.nombre}: $${item.precio.toLocaleString()}`)
-        .join("\n");
+  if (carrito.length > 0) {
+    const mensaje = carrito
+      .map(item => `- ${item.nombre}: $${item.precio.toLocaleString()}`)
+      .join("\n");
 
-      const link = `https://wa.me/56946535784?text=Hola! Quiero cotizar los siguientes juegos:%0A${encodeURIComponent(mensaje)}%0A%0ATotal estimado: $${total.toLocaleString()}`;
-      boton.href = link;
-      boton.style.display = "inline-block";
-      vaciarBtn.style.display = "inline-block";
-    } else {
-      boton.style.display = "none";
-      vaciarBtn.style.display = "none";
-    }
+    const link = `https://wa.me/56946535784?text=Hola! Quiero cotizar:\n${mensaje}`;
+    boton.href = link;
+    boton.style.display = "inline-block";
+    vaciarBtn.style.display = "inline-block";
+  } else {
+    boton.style.display = "none";
+    vaciarBtn.style.display = "none";
+  }
+}
+
 
     // ACTIVAR BOTONES ELIMINAR
     document.querySelectorAll(".btn-eliminar").forEach(btn => {
