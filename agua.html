@@ -108,19 +108,59 @@
   </div>
 </section>
 <style>
-  .titulo-animado {
-    font-size: 22px;
+  .condiciones-agua {
+    background: linear-gradient(to bottom right, #e0f7fa, #b2ebf2);
+    border: 3px dashed #26c6da;
+    border-radius: 15px 15px 0 0;
+    padding: 30px;
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .condiciones-agua::before {
+    content: "💦";
+    font-size: 30px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    animation: flotar 3s ease-in-out infinite;
+  }
+
+  .condiciones-agua::after {
+    content: "💦";
+    font-size: 30px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    animation: flotar 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes flotar {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .titulo-animado-agua {
+    font-size: 24px;
     font-weight: bold;
-    color: #00796b;
-    animation: aparecer 1.5s ease-out forwards, brillo 2.5s infinite alternate;
     text-align: center;
+    color: #00796b;
     margin-bottom: 20px;
+    animation: aparecer 1.2s ease-out forwards, brillo 3s infinite alternate;
   }
 
   @keyframes aparecer {
     0% {
       opacity: 0;
-      transform: translateY(-20px);
+      transform: translateY(-10px);
     }
     100% {
       opacity: 1;
@@ -136,30 +176,26 @@
       color: #009688;
     }
   }
+
+  .condiciones-agua p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.8;
+    margin: 10px 0;
+  }
 </style>
 
-<div style="background-color: #e0f7fa; border: 2px solid #4dd0e1; padding: 25px; border-radius: 12px; margin-top: 40px;">
-  <h3 class="titulo-animado">💧 Condiciones para el uso seguro de los juegos acuáticos</h3>
-  <p style="line-height: 1.7; font-size: 16px; color: #333;">
-    ● Todos los juegos acuáticos <strong>requieren conexión a una manguera</strong> que llegue hasta el lugar de instalación para mantener el flujo de agua durante su uso.<br><br>
-    
-    ● También necesitan <strong>una toma de corriente eléctrica constante</strong> para el funcionamiento de la turbina que mantiene inflado el juego.<br><br>
-
-    ● Los juegos deben ser instalados en áreas planas. <strong>No se recomienda instalarlos sobre cemento resbaladizo</strong> sin protección adecuada para evitar accidentes.<br><br>
-
-    ● Es importante que los niños siempre estén <strong>bajo supervisión adulta</strong> mientras juegan en los inflables acuáticos.<br><br>
-
-    ● Una vez instalado, <strong>el traslado del juego a otra zona no será posible</strong>
-    
-
-    ● Considera que al ser inflables de agua, <strong>para que aprovechen el día</strong>. Se recomienda cite a sus invitados temprano, como maximo comenzar 15:00 hrs.<br><br>
-
-    ● <strong>El mal uso o instalación en lugares no aptos puede dañar el juego</strong>. Cualquier desperfecto ocasionado por incumplir estas condiciones será responsabilidad del cliente.<br><br>
-
-    ● Si tienes dudas sobre el espacio o condiciones del lugar, <strong>contáctanos antes de agendar</strong> para ayudarte a elegir el mejor juego y evitar inconvenientes. 🌟
-  </p>
+<div class="condiciones-agua">
+  <h3 class="titulo-animado-agua">💧 Condiciones para el uso seguro de los juegos acuáticos</h3>
+  <p>● Todos los juegos acuáticos <strong>requieren conexión a una manguera</strong> que llegue hasta el lugar de instalación.</p>
+  <p>● También necesitan <strong>una toma de corriente eléctrica constante</strong> para que funcione la turbina.</p>
+  <p>● Se recomienda instalar <strong>en superficie plana</strong>. Si el terreno es cemento, se deben tomar precauciones para evitar resbalones.</p>
+  <p>● <strong>Siempre debe haber un adulto supervisando</strong> mientras se usa el juego.</p>
+  <p>● Una vez instalado el juego, <strong>no podrá trasladarse a otro lugar</strong> para evitar daños.</p>
+  <p>● Se recomienda cite a sus invitados temprano, para aprobechar el día.</p>
+  <p>● <strong>Los daños causados por uso inadecuado o instalación en lugares no aptos</strong> serán responsabilidad del cliente.</p>
+  <p>● Si tienes dudas sobre el lugar donde se instalará, <strong>consúltanos antes de agendar</strong>. ¡Estamos para ayudarte! 😊</p>
 </div>
-
 
   <!-- Footer con el menú completo -->
   <footer>
