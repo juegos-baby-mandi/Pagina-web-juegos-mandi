@@ -356,13 +356,11 @@
       mensaje.remove();
     }, 2500);
   }
-    function eliminarProducto(index) {
-  if (confirm("¿Estás seguro de eliminar este producto del carrito?")) {
-    carrito.splice(index, 1);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    mostrarCarrito();
-  }
+  function eliminarProducto(index) {
+  productoAEliminar = index;
+  document.getElementById("modal-confirmacion").style.display = "flex";
 }
+
 
 function toggleCarrito() {
   const carrito = document.getElementById("carrito");
