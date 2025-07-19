@@ -645,7 +645,7 @@ footer {
 /* Solo aplica en pantallas mayores a 768px (web) */
 @media screen and (min-width: 768px) {
   .boton-faq-flotante {
-    bottom: 570px; /* Súbelo más si quieres */
+    bottom: 200px; /* Súbelo más si quieres */
   }
 }
 
@@ -678,7 +678,7 @@ footer {
 
 @media screen and (min-width: 768px) {
   .boton-catalogo-flotante {
-    bottom: 600px;
+    bottom: 200px;
   }
 }
 
