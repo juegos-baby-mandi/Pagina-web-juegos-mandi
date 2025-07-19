@@ -642,6 +642,13 @@ footer {
   font-family: 'Poppins', sans-serif;
 }
 
+/* Solo aplica en pantallas mayores a 768px (web) */
+@media screen and (min-width: 768px) {
+  .boton-faq-flotante {
+    bottom: 570px; /* Súbelo más si quieres */
+  }
+}
+
 .boton-faq-flotante:hover {
   background-color: #8d3aff; /* Un poco más oscuro al pasar el mouse */
   transform: scale(1.05);
@@ -667,6 +674,12 @@ footer {
 .boton-catalogo-flotante:hover {
   background-color: #8a3cf0;
   transform: scale(1.05);
+}
+
+@media screen and (min-width: 768px) {
+  .boton-catalogo-flotante {
+    bottom: 600px;
+  }
 }
 
 
@@ -873,10 +886,4 @@ footer {
   border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
-}
-
-@media screen and (min-width: 768px) {
-  .boton-catalogo-flotante {
-    bottom: 300px;
-  }
 }
