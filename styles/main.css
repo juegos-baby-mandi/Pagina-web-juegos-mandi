@@ -638,6 +638,44 @@ footer {
 .boton-faq-flotante {
   position: fixed;
   right: 20px;
+  z-index: 9999;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: #9b00b7;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 14px;
+}
+
+/* 📦 Ver todo el catálogo */
+.boton-catalogo-flotante {
+  bottom: 330px; /* Altura para quedar alineado con juegos típicos */
+}
+
+/* Preguntas frecuentes */
+.boton-faq-flotante {
+  bottom: 270px; /* 60px más abajo para que no queden pegados */
+}
+
+/* Ajuste en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .boton-catalogo-flotante {
+    bottom: 260px;
+    right: 15px;
+  }
+
+  .boton-faq-flotante {
+    bottom: 200px;
+    right: 15px;
+  }
+}
+
+.boton-catalogo-flotante,
+.boton-faq-flotante {
+  position: fixed;
+  right: 20px;
   z-index: 999;
   padding: 10px 15px;
   border-radius: 25px;
