@@ -821,3 +821,56 @@ footer {
   background-color: #1ebc5e;
 }
 
+.seccion-promociones {
+  padding: 20px;
+  background-color: #f9f0ff;
+  text-align: center;
+}
+
+.titulo-seccion {
+  font-size: 28px;
+  color: #5e0080;
+  margin-bottom: 25px;
+}
+
+.promo-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.promo-card h3 {
+  margin-top: 0;
+  color: #800080;
+}
+
+.valor-normal {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.ahorro {
+  color: green;
+  font-weight: bold;
+}
+
+.promo-contacto {
+  background-color: #eae4ff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.boton-promo-whatsapp {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
