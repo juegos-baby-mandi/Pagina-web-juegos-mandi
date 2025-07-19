@@ -41,16 +41,12 @@
     <h1>Testimonios Clientes</h1>
   </section>
 
-  <style>
+<style>
   .carrusel-container {
     position: relative;
     max-width: 360px;
     margin: 0 auto;
     overflow: hidden;
-    background-color: #f3e5f5; /* fondo lila suave */
-    padding: 20px;
-    border-radius: 16px;
-    border: 2px solid #ce93d8; /* borde morado claro */
   }
 
   .testimonios-slider {
@@ -63,7 +59,7 @@
     flex: 0 0 100%;
     box-sizing: border-box;
     padding: 20px;
-    background: white;
+    background: #fff;
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.15);
     margin: 10px;
@@ -111,12 +107,9 @@
   .flecha.der { right: -10px; }
 </style>
 
-
 <div class="carrusel-container">
   <button class="flecha izq" onclick="moverCarrusel(-1)">‹</button>
   <div class="testimonios-slider" id="slider">
-    
-    <div class="testimonio">
       <div class="comentario">"100% recomendables y responsables. Éxitooo!!!"</div>
       <div class="autor">Paulina León Sepúlveda</div>
       <div class="origen">– comentario de Facebook</div>
@@ -199,7 +192,36 @@
       <div class="autor">paz_con_globos</div>
       <div class="origen">– comentario de Instagram</div>
     </div>
-
+    <div class="testimonio">
+      <div class="comentario">"100% recomendables y responsables. Éxitooo!!!"</div>
+      <div class="autor">Paulina León Sepúlveda</div>
+      <div class="origen">– comentario de Facebook</div>
+    </div>
+    <div class="testimonio">
+      <div class="comentario">"Excelente atención y servicio, 100% recomendado 👌💕"</div>
+      <div class="autor">Joselyn Poblete</div>
+      <div class="origen">– comentario de Facebook</div>
+    </div>
+    <div class="testimonio">
+      <div class="comentario">"Todo super 👌🏻 los niños lo disfrutaron. Volveremos a preferir sus juegos!"</div>
+      <div class="autor">Daniela Godoy Aros</div>
+      <div class="origen">– comentario de Facebook</div>
+    </div>
+    <div class="testimonio">
+      <div class="comentario">"Súper servicio, llegada a la hora, inflables hermosos y súper buen precio."</div>
+      <div class="autor">Alejandra PeGe</div>
+      <div class="origen">– comentario de Facebook</div>
+    </div>
+    <div class="testimonio">
+      <div class="comentario">"Muy buena atención, llegan a la hora acordada. Lo recomiendo al 100%."</div>
+      <div class="autor">María Isabel Fuentealba</div>
+      <div class="origen">– comentario de Facebook</div>
+    </div>
+    <div class="testimonio">
+      <div class="comentario">"Gracias por el juego, excelente, 100% recomendable."</div>
+      <div class="autor">Valeri Villarroel</div>
+      <div class="origen">– comentario de Facebook</div>
+    </div>
   </div>
   <button class="flecha der" onclick="moverCarrusel(1)">›</button>
 </div>
@@ -216,12 +238,10 @@
     slider.style.transform = `translateX(-${slideIndex * 100}%)`;
   }
 
-  // Movimiento automático cada 6 segundos
   setInterval(() => {
     moverCarrusel(1);
-  }, 6000);
+  }, 6000); // Desliza automáticamente cada 6 segundos
 </script>
-
 
 
 </body>
