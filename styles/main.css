@@ -623,65 +623,48 @@ footer {
   color: white;
 }
 
-.boton-faq-flotante {
+/* BOTÓN FLOTANTE CATÁLOGO */
+.boton-catalogo-flotante {
   position: fixed;
-  bottom: 20px;
+  bottom: 90px;
   right: 20px;
-  background-color: #a259ff; /* Morado principal */
+  z-index: 1000;
+  background-color: #a020f0;
   color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   font-weight: bold;
-  font-size: 14px;
-  padding: 12px 16px;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  text-align: center;
-  line-height: 1.2;
-  text-decoration: none;
-  z-index: 999;
-  transition: all 0.3s ease;
-  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s;
 }
 
-/* Solo aplica en pantallas mayores a 768px (web) */
-@media screen and (min-width: 768px) {
-  .boton-faq-flotante {
-    bottom: 200px; /* Súbelo más si quieres */
-  }
+.boton-catalogo-flotante:hover {
+  background-color: #8b1dd0;
+}
+
+/* BOTÓN FLOTANTE PREGUNTAS FRECUENTES */
+.boton-faq-flotante {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 999;
+  background-color: #a020f0;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.boton-faq-flotante:hover {
+  background-color: #8b1dd0;
 }
 
 .boton-faq-flotante:hover {
   background-color: #8d3aff; /* Un poco más oscuro al pasar el mouse */
   transform: scale(1.05);
 }
-
-.boton-catalogo-flotante {
-  position: fixed;
-  bottom: 100px;
-  right: 20px;
-  background-color: #a259ff;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 14px 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  text-decoration: none;
-  z-index: 1000;
-  transition: all 0.3s ease;
-  font-family: 'Poppins', sans-serif;
-}
-
-.boton-catalogo-flotante:hover {
-  background-color: #8a3cf0;
-  transform: scale(1.05);
-}
-
-@media screen and (min-width: 768px) {
-  .boton-catalogo-flotante {
-    bottom: 200px;
-  }
-}
-
 
 .faq-section {
   background-color: #f9f5ff;
