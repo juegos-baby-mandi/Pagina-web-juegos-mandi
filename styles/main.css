@@ -803,3 +803,21 @@ footer {
   font-size: 1rem;
   color: #333;
 }
+
+.boton-promocion {
+  background-color: #25d366;
+  color: white;
+  font-size: 1.1rem;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.boton-promocion:hover {
+  background-color: #1ebc5e;
+}
+
