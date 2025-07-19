@@ -9,36 +9,69 @@
 </head>
 <body>
 
-<!-- EXPERIENCIA Y VIDEOS -->
+<!-- Encabezado superior con íconos -->
+<header class="top-header">
+  <div class="logo-header">
+    <a href="index.html">
+      <img src="img/logo.png" alt="Logo Juegos Baby Mandi" />
+    </a>
+  </div>
+  <div class="contact-links">
+    <a href="https://wa.me/56946535784?text=Hola%2C%20estaba%20viendo%20la%20p%C3%A1gina%20web" target="_blank">
+      <img src="img/whatsapp.png" alt="WhatsApp" class="icono-red" />
+    </a>
+    <a href="https://www.instagram.com/juegosbabymandi" target="_blank">
+      <img src="img/instagram.png" alt="Instagram" class="icono-red" />
+    </a>
+    <a href="mailto:juegosbabymandi@gmail.com">
+      <img src="img/gmail.png" alt="Correo" class="icono-red" />
+    </a>
+    <a href="https://fb.me/JuegosBabyMandi" target="_blank">
+      <img src="img/facebook.png" alt="Facebook" class="icono-red" />
+    </a>
+    <a href="https://www.tiktok.com/@juegosbabymandi" target="_blank">
+      <img src="img/tiktok.png" alt="TikTok" class="icono-red" />
+    </a>
+  </div>
+</header>
+  <!-- Título de la sección -->
+  <section class="titulo-seccion">
+    <h1>Experiencia</h1>
+  </section>
+
 <section style="padding: 60px 20px; background-color: #fefefe;">
-  <h2 style="text-align:center; font-size:30px; color:#6A1B9A; margin-bottom:20px;">🎉 Con nosotros, tienes una gran experiencia de principio a fin</h2>
-  <p style="text-align:center; max-width:800px; margin:0 auto 40px; color:#555;">
-    Nos preocupamos por cada detalle: desde la limpieza de nuestros juegos antes de cada uso, hasta un servicio atento y puntual. ¡Queremos que tu evento sea inolvidable!
+  <h2 style="text-align:center; font-size:30px; color:#6A1B9A; margin-bottom:20px;">
+    💫 Con nosotros, tienes una gran experiencia de principio a fin
+  </h2>
+  <p style="text-align:center; max-width:800px; margin:0 auto 40px; color:#555; font-size:18px;">
+    Nos preocupamos por cada detalle: desde la limpieza de nuestros juegos antes de cada uso, hasta un servicio atento y puntual. 
+    ¡Queremos que tu evento sea inolvidable!
   </p>
 
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+  <!-- VIDEOS -->
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-bottom:50px;">
     <!-- Video 1 -->
-    <div style="background:#f3e5f5; border-radius:16px; padding:20px; max-width:400px;">
+    <div style="background:#f3e5f5; border-radius:16px; padding:20px; max-width:400px; flex:1;">
       <video src="videos/aspirando.mp4" controls style="width:100%; border-radius:12px;"></video>
       <p style="text-align:center; margin-top:10px; font-size:16px; color:#6A1B9A;">
-        Aspiramos y sanitizamos cada juego antes de entregarlo 💎
+        Aspiramos y sanitizamos cada juego antes de entregarlo 💨
       </p>
     </div>
-
     <!-- Video 2 -->
-    <div style="background:#e1bee7; border-radius:16px; padding:20px; max-width:400px;">
+    <div style="background:#e1bee7; border-radius:16px; padding:20px; max-width:400px; flex:1;">
       <video src="videos/limpiando.mp4" controls style="width:100%; border-radius:12px;"></video>
       <p style="text-align:center; margin-top:10px; font-size:16px; color:#6A1B9A;">
-        Higienización completa para cada evento ✨
+        Higienización para cada evento ✨
       </p>
     </div>
   </div>
-</section>
 
-<!-- GALERÍA DE FOTOS -->
-<h3 style="text-align:center; font-size:26px; color:#6A1B9A; margin:40px 0 20px;">📸 Nuestras experiencias en imágenes</h3>
+  <!-- GALERÍA DE FOTOS -->
+  
+<h3 style="text-align:center; font-size:26px; color:#6A1B9A; margin-bottom:20px;">📸 Nuestras experiencias en imágenes</h3>
+
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; padding: 20px;">
-  <!-- 24 imágenes de evento -->
+  <!-- Asegúrate de que todas tengan exactamente data-lightbox="galeria" -->
   <a href="img/evento1.jpg" data-lightbox="galeria"><img src="img/evento1.jpg" style="width:100%; border-radius:12px;"></a>
   <a href="img/evento2.jpg" data-lightbox="galeria"><img src="img/evento2.jpg" style="width:100%; border-radius:12px;"></a>
   <a href="img/evento3.jpg" data-lightbox="galeria"><img src="img/evento3.jpg" style="width:100%; border-radius:12px;"></a>
@@ -64,10 +97,6 @@
   <a href="img/evento23.jpg" data-lightbox="galeria"><img src="img/evento23.jpg" style="width:100%; border-radius:12px;"></a>
   <a href="img/evento24.jpg" data-lightbox="galeria"><img src="img/evento24.jpg" style="width:100%; border-radius:12px;"></a>
 </div>
-
-<!-- LIBRERÍA LIGHTBOX (debe ir antes de cerrar body) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
   <!-- Footer con el menú completo -->
   <footer>
