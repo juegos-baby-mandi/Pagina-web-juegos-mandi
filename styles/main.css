@@ -660,7 +660,7 @@ footer {
   bottom: 160px;
 }
 
-/* Estilo responsivo para celulares */
+/* Responsive para pantallas pequeñas */
 @media screen and (max-width: 768px) {
   .boton-catalogo-flotante {
     bottom: 160px;
@@ -674,11 +674,6 @@ footer {
 }
 
 
-
-.boton-faq-flotante:hover {
-  background-color: #8d3aff; /* Un poco más oscuro al pasar el mouse */
-  transform: scale(1.05);
-}
 
 .faq-section {
   background-color: #f9f5ff;
