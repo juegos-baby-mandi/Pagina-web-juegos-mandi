@@ -634,7 +634,8 @@ footer {
   transition: background-color 0.3s;
 }
 
-#boton-flotante-catalogo, #boton-flotante-preguntas {
+.boton-catalogo-flotante,
+.boton-faq-flotante {
   position: fixed;
   right: 20px;
   z-index: 999;
@@ -646,29 +647,32 @@ footer {
   background-color: #9b00b7;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
-/* Botón "Ver todo el catálogo" */
-#boton-flotante-catalogo {
+/* "Ver todo el catálogo" más arriba */
+.boton-catalogo-flotante {
   bottom: 220px;
 }
 
-/* Botón "Preguntas frecuentes" */
-#boton-flotante-preguntas {
+/* "Preguntas frecuentes" más abajo */
+.boton-faq-flotante {
   bottom: 160px;
 }
 
-/* Responsivo para pantallas pequeñas */
+/* Estilo responsivo para celulares */
 @media screen and (max-width: 768px) {
-  #boton-flotante-catalogo {
+  .boton-catalogo-flotante {
     bottom: 160px;
     right: 10px;
   }
 
-  #boton-flotante-preguntas {
+  .boton-faq-flotante {
     bottom: 100px;
     right: 10px;
   }
+}
+
 
 
 .boton-faq-flotante:hover {
