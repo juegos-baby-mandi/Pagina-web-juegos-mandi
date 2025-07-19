@@ -11,7 +11,14 @@
 
 </head>
 <body>
-  
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!window.lightbox) {
+      alert('Lightbox no se cargó correctamente. Revisa tu conexión o intenta recargar.');
+    }
+  });
+</script>
+
 <!-- Encabezado superior con íconos -->
 <header class="top-header">
   <div class="logo-header">
