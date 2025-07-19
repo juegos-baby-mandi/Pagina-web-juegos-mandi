@@ -649,7 +649,7 @@ footer {
 
 .boton-catalogo-flotante {
   position: fixed;
-  bottom: 140px;
+  bottom: 100px;
   right: 20px;
   background-color: #a259ff;
   color: white;
@@ -873,4 +873,10 @@ footer {
   border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .boton-catalogo-flotante {
+    bottom: 300px;
+  }
 }
