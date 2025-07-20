@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url><loc>https://juegosbabymandi.cl/index.html</loc><priority>1.0</priority></url>
-  <url><loc>https://juegosbabymandi.cl/catalogo.html</loc><priority>0.9</priority></url>
-  <url><loc>https://juegosbabymandi.cl/vision-mision.html</loc></url>
-  <url><loc>https://juegosbabymandi.cl/testimonios.html</loc></url>
-  <url><loc>https://juegosbabymandi.cl/promociones.html</loc></url>
-  <url><loc>https://juegosbabymandi.cl/eventos-empresas.html</loc></url>
-  <url><loc>https://juegosbabymandi.cl/consejos.html</loc></url>
-  <url><loc>https://juegosbabymandi.cl/contacto.html</loc></url>
-  <url><loc>https://juegosbabymandi.cl/preguntas-frecuentes.html</loc></url>
-  <url><loc>https://juegosbabymandi.cl/experiencias.html</loc></url>
+  <!-- Página principal -->
+  <url><loc>https://www.juegosbabymandi.cl/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.juegosbabymandi.cl/index.html</loc><priority>1.0</priority></url>
+
+  <!-- Páginas generales -->
+  <url><loc>https://www.juegosbabymandi.cl/catalogo.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.juegosbabymandi.cl/vision-mision.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/testimonios.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/promociones.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/eventos-empresas.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/consejos.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/contacto.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/preguntas-frecuentes.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/experiencias.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/abono.html</loc></url>
 
   <!-- Catálogo por secciones -->
-  <url><loc>https://juegosbabymandi.cl/inflables.html</loc></url>
-  <url><loc>https://juegosbabymandi.cl/mecanicos.html</loc></url>
-  <url><loc>https://juegosbabymandi.cl/electronicos.html</loc></url>
-  <url><loc>https://juegosbabymandi.cl/agua.html</loc></url>
-  <url><loc>https://juegosbabymandi.cl/fiestas-de-espuma.html</loc></url>
-  <url><loc>https://juegosbabymandi.cl/juegos-tipicos.html</loc></url>
-  <url><loc>https://juegosbabymandi.cl/reloj-derribador.html</loc></url>
-  <url><loc>https://juegosbabymandi.cl/tacataca-arcade.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/inflables.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/mecanicos.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/electronicos.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/agua.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/fiestas-de-espuma.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/juegos-tipicos.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/reloj-derribador.html</loc></url>
+  <url><loc>https://www.juegosbabymandi.cl/tacataca-arcade.html</loc></url>
 
 </urlset>
