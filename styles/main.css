@@ -917,3 +917,21 @@ footer {
   text-decoration: none;
   font-weight: bold;
 }
+
+.promo-cuadro {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: 20px;
+  width: 300px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.promo-cuadro img.promo-img {
+  width: 100px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
