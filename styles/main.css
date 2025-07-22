@@ -970,3 +970,32 @@ footer {
   background-color: #5e2d91;
 }
 
+.seo-bloque.estilizado {
+  background-color: #f2eaff; /* fondo suave lila */
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: left;
+  font-size: 16px;
+}
+
+.seo-bloque.estilizado h2 {
+  color: #6a1b9a;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.seo-bloque.estilizado a.boton-wsp {
+  background-color: #25d366;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.seo-bloque.estilizado a.boton-wsp:hover {
+  background-color: #1ebe5d;
+}
