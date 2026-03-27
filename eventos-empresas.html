@@ -358,6 +358,131 @@
   text-decoration: none;
   font-weight: bold;
 }
+    .catalogo-eventos {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.catalogo-eventos h2 {
+  color: #7b3fa0;
+  margin-bottom: 8px;
+}
+
+.catalogo-subtexto {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.scroll-juegos {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 10px 5px 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-juegos::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-juegos::-webkit-scrollbar-thumb {
+  background: #d4c0e8;
+  border-radius: 999px;
+}
+
+.item-juego {
+  min-width: 210px;
+  max-width: 210px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 12px;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+.item-juego img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.item-juego h3 {
+  font-size: 1rem;
+  color: #7b3fa0;
+  margin: 0 0 10px;
+  min-height: 42px;
+}
+
+.item-juego button {
+  background: #7b3fa0;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.item-juego button:hover {
+  background: #5b2d82;
+}
+
+.resumen-cotizacion {
+  margin-top: 25px;
+  background: #f7f0fb;
+  border-radius: 20px;
+  padding: 24px;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.resumen-cotizacion h3 {
+  color: #7b3fa0;
+  margin-top: 0;
+}
+
+#lista-cotizacion {
+  margin: 0;
+  padding-left: 20px;
+}
+
+#lista-cotizacion li {
+  margin-bottom: 8px;
+}
+
+#mensaje-vacio {
+  color: #666;
+  margin: 0;
+}
+
+.botones-cotizacion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-limpiar,
+.btn-whatsapp-cotizacion {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-limpiar {
+  background: #e6d9f3;
+  color: #5b2d82;
+}
+
+.btn-whatsapp-cotizacion {
+  background: #25D366;
+  color: white;
+}
   </style>
 </head>
 <body>
@@ -445,6 +570,121 @@
     </div>
   </div>
 <!--cierre de pack-->
+
+    <section class="catalogo-eventos">
+  <h2>Juegos para complementar tu evento 🎉</h2>
+  <p class="catalogo-subtexto">Selecciona los juegos que te interesan y arma tu cotización.</p>
+
+  <div class="scroll-juegos">
+    <div class="item-juego">
+      <img src="img/toro-mecanico1.jpg" alt="Toro mecánico">
+      <h3>Toro mecánico</h3>
+      <button onclick="agregarJuego('Toro mecánico')">➕ Agregar</button>
+    </div>
+
+    <div class="item-juego">
+      <img src="img/reloj-derribador1.jpg" alt="Reloj derribador">
+      <h3>Reloj derribador</h3>
+      <button onclick="agregarJuego('Reloj derribador')">➕ Agregar</button>
+    </div>
+
+    <div class="item-juego">
+      <img src="img/burbuja-con-globos.jpg" alt="Burbuja con globos">
+      <h3>Burbuja con globos</h3>
+      <button onclick="agregarJuego('Burbuja con globos')">➕ Agregar</button>
+    </div>
+
+    <div class="item-juego">
+      <img src="img/arco-juego-diana.jpg" alt="Arco tiro al blanco">
+      <h3>Arco tiro al blanco</h3>
+      <button onclick="agregarJuego('Arco tiro al blanco')">➕ Agregar</button>
+    </div>
+
+    <div class="item-juego">
+      <img src="img/destreza-atrapa-palos.jpg" alt="Juego de destreza">
+      <h3>Juego de destreza</h3>
+      <button onclick="agregarJuego('Juego de destreza')">➕ Agregar</button>
+    </div>
+
+<div class="item-juego">
+      <img src="img/obstaculos-mario.jpg" alt="Obstaculos Mario">
+      <h3>Obstaculos Mario</h3>
+      <button onclick="agregarJuego('Obstaculos Mario')">➕ Agregar</button>
+    </div>
+
+    <div class="item-juego">
+      <img src="img/mega-obstaculos-emoji.jpg" alt="Obstáculos Emoji">
+      <h3>Obstáculos grandes</h3>
+      <button onclick="agregarJuego('Obstáculos grandes')">➕ Agregar</button>
+    </div>
+
+<div class="item-juego">
+      <img src="img/fiesta-de-espuma.jpg" alt="Fiestas de Espuma">
+      <h3>Fiesta De Espuma</h3>
+      <button onclick="agregarJuego('Espuma')">➕ Agregar</button>
+    </div>
+
+<div class="item-juego">
+      <img src="img/tobogan-gigante.jpg" alt="Mega Tobogan">
+      <h3>Mega Tobogan</h3>
+      <button onclick="agregarJuego('Mega Tobogan')">➕ Agregar</button>
+    </div>
+
+<div class="item-juego">
+      <img src="img/hockey.jpg" alt="Hockey">
+      <h3>Hockey</h3>
+      <button onclick="agregarJuego('Hockey')">➕ Agregar</button>
+    </div>
+
+<div class="item-juego">
+      <img src="img/pool.jpg" alt="Pool">
+      <h3>Pool</h3>
+      <button onclick="agregarJuego('Pool')">➕ Agregar</button>
+    </div>
+
+<div class="item-juego">
+      <img src="img/taca-taca.jpg" alt="Taca taca">
+      <h3>Taca taca</h3>
+      <button onclick="agregarJuego('Taca taca')">➕ Agregar</button>
+    </div>
+
+    <div class="item-juego">
+      <img src="img/arcade-grande.jpg" alt="Arcade">
+      <h3>Arcade</h3>
+      <button onclick="agregarJuego('Arcade')">➕ Agregar</button>
+    </div>
+
+<div class="item-juego">
+      <img src="img/feria-americana.jpg" alt="Feria Americana">
+      <h3>Feria Americana</h3>
+      <button onclick="agregarJuego('Feria Americana')">➕ Agregar</button>
+    </div>
+
+<div class="item-juego">
+      <img src="img/domino-gigante.jpg" alt="Domino Gigante">
+      <h3>Domino Gigante</h3>
+      <button onclick="agregarJuego('Domino Gigante')">➕ Agregar</button>
+    </div>
+
+    <div class="item-juego">
+      <img src="img/jenga-grande.jpg" alt="Jenga Gigante">
+      <h3>Jenga Gigante</h3>
+      <button onclick="agregarJuego('Jenga Gigante')">➕ Agregar</button>
+    </div>
+  </div>
+
+  <div class="resumen-cotizacion">
+    <h3>Tu cotización</h3>
+    <ul id="lista-cotizacion"></ul>
+    <p id="mensaje-vacio">Aún no has agregado juegos.</p>
+
+    <div class="botones-cotizacion">
+      <button class="btn-limpiar" onclick="limpiarCotizacion()">Limpiar selección</button>
+      <button class="btn-whatsapp-cotizacion" onclick="enviarCotizacionWhatsApp()">📲 Cotizar por WhatsApp</button>
+    </div>
+  </div>
+    </section>
+    
     <div class="cta-evento">
   <h2>Cotiza tu evento ahora 🎯</h2>
   <p>Escríbenos y armamos una propuesta a medida para tu evento.</p>
@@ -547,6 +787,66 @@
 </section>
     <p>&copy; 2025 Juegos Baby Mandi. Todos los derechos reservados.</p>
   </footer>
+<script>
+  let juegosSeleccionados = [];
 
+  function renderCotizacion() {
+    const lista = document.getElementById("lista-cotizacion");
+    const mensajeVacio = document.getElementById("mensaje-vacio");
+
+    lista.innerHTML = "";
+
+    if (juegosSeleccionados.length === 0) {
+      mensajeVacio.style.display = "block";
+      return;
+    }
+
+    mensajeVacio.style.display = "none";
+
+    juegosSeleccionados.forEach((juego, index) => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        ${juego}
+        <button onclick="eliminarJuego(${index})" style="margin-left:10px; border:none; background:none; color:#7b3fa0; font-weight:bold; cursor:pointer;">
+          ✕
+        </button>
+      `;
+      lista.appendChild(li);
+    });
+  }
+
+  function agregarJuego(juego) {
+    if (!juegosSeleccionados.includes(juego)) {
+      juegosSeleccionados.push(juego);
+      renderCotizacion();
+    }
+  }
+
+  function eliminarJuego(index) {
+    juegosSeleccionados.splice(index, 1);
+    renderCotizacion();
+  }
+
+  function limpiarCotizacion() {
+    juegosSeleccionados = [];
+    renderCotizacion();
+  }
+
+  function enviarCotizacionWhatsApp() {
+    if (juegosSeleccionados.length === 0) {
+      alert("Primero agrega al menos un juego a tu cotización.");
+      return;
+    }
+
+    let mensaje = "Hola, quiero cotizar un evento con los siguientes juegos:%0A";
+    juegosSeleccionados.forEach(juego => {
+      mensaje += "- " + juego + "%0A";
+    });
+
+    window.open("https://wa.me/56946535784?text=" + mensaje, "_blank");
+  }
+
+  renderCotizacion();
+</script>
 </body>
 </html>
