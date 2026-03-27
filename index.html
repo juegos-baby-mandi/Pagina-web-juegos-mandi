@@ -161,6 +161,52 @@
   </div>
 </section>
 
+  <style>
+.floating-eventos-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: white;
+  border-radius: 50px;
+  padding: 8px 14px 8px 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+  z-index: 9999;
+  transition: all 0.25s ease;
+}
+
+.floating-eventos-btn img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.floating-eventos-btn span {
+  font-weight: 700;
+  color: #7b3fa0;
+  font-size: 0.9rem;
+}
+
+.floating-eventos-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .floating-eventos-btn {
+    right: 14px;
+    bottom: 120px;
+  }
+}
+</style>
+  
+  <a href="eventos-empresas.html" class="floating-eventos-btn">
+  <img src="img/logoeventos.png" alt="Eventos">
+  <span>Eventos masivos</span>
+  </a>
+
 <a href="preguntas-frecuentes.html" class="boton-faq-flotante" title="Preguntas frecuentes">
   <span>Preguntas<br>frecuentes</span>
 </a>
