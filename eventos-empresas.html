@@ -238,6 +238,70 @@
     font-size: 1.3rem;
   }
 }
+    .galeria-eventos-premium {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 18px;
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+.galeria-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  min-height: 260px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+}
+
+.galeria-card.grande {
+  min-height: 260px;
+}
+
+.galeria-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.galeria-card:hover img {
+  transform: scale(1.06);
+}
+
+.galeria-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(43, 16, 63, 0.82), rgba(43, 16, 63, 0.18));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px;
+}
+
+.galeria-overlay h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.galeria-overlay p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 900px) {
+  .galeria-eventos-premium {
+    grid-template-columns: 1fr;
+  }
+
+  .galeria-card,
+  .galeria-card.grande {
+    min-height: 230px;
+  }
+}
     
   </style>
 </head>
@@ -255,6 +319,32 @@
   </section>
 
   <h2 class="section-title-eventos">Producción de eventos a otro nivel</h2>
+
+    <div class="galeria-eventos-premium">
+  <div class="galeria-card grande">
+    <img src="img/eventomasivo1.jpg" alt="Evento masivo juegos inflables">
+    <div class="galeria-overlay">
+      <h3>Eventos masivos</h3>
+      <p>Montajes de gran escala para municipalidades, empresas y colegios.</p>
+    </div>
+  </div>
+
+  <div class="galeria-card">
+    <img src="img/eventomasivo2.jpg" alt="Evento con juegos y espuma">
+    <div class="galeria-overlay">
+      <h3>Experiencias memorables</h3>
+      <p>Actividades dinámicas, zonas de juego y entretención para grandes jornadas.</p>
+    </div>
+  </div>
+
+  <div class="galeria-card">
+    <img src="img/eventomasivo3.jpg" alt="Evento municipal juegos inflables">
+    <div class="galeria-overlay">
+      <h3>Producción profesional</h3>
+      <p>Organización, montaje y propuesta pensada según cada espacio y asistentes.</p>
+    </div>
+  </div>
+    </div>
 
   <div class="intro-box-eventos">
     Realizamos montajes completos con juegos inflables, juegos mecánicos,
