@@ -483,6 +483,14 @@
   background: #25D366;
   color: white;
 }
+
+    .catalogo-eventos {
+  background: #f3e9f9;
+  padding: 30px 20px;
+  border-radius: 20px;
+  margin-top: 30px;
+    }
+    
   </style>
 </head>
 <body>
@@ -672,6 +680,7 @@
       <button onclick="agregarJuego('Jenga Gigante')">➕ Agregar</button>
     </div>
   </div>
+    
 
   <div class="resumen-cotizacion">
     <h3>Tu cotización</h3>
@@ -693,8 +702,7 @@
     📲 Cotizar por WhatsApp
   </a>
     </div>
-    
-  <div class="grid-eventos">
+  
     <div class="card-evento">
       <h3>¿Qué tipo de eventos realizamos?</h3>
       <p>
@@ -710,8 +718,7 @@
         pensada según la cantidad de asistentes y el espacio disponible.
       </p>
     </div>
-  </div>
-  </div>
+  
 
 
 <!-- 👇 PEGA AQUÍ 👇 -->
@@ -838,9 +845,9 @@
       return;
     }
 
-    let mensaje = "Hola, quiero cotizar un evento con los siguientes juegos:%0A";
+    let mensaje = "Hola! 😊 Quiero cotizar un evento y me interesan estos juegos:%0A";
     juegosSeleccionados.forEach(juego => {
-      mensaje += "- " + juego + "%0A";
+      mensaje += "✨ " + juego + "%0A";
     });
 
     window.open("https://wa.me/56935167953?text=" + mensaje, "_blank");
