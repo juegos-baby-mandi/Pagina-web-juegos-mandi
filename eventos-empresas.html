@@ -290,7 +290,48 @@
     min-height: 230px;
   }
 }
-    
+    .imagen-final-evento {
+  position: relative;
+  margin: 50px 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.imagen-final-evento img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.texto-imagen-final {
+  position: absolute;
+  inset: 0;
+  background: rgba(43, 16, 63, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.texto-imagen-final h2 {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+
+.texto-imagen-final p {
+  max-width: 600px;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .imagen-final-evento img {
+    height: 240px;
+  }
+}
   </style>
 </head>
 <body>
@@ -396,6 +437,17 @@
     </div>
   </div>
   </div>
+
+
+<!-- 👇 PEGA AQUÍ 👇 -->
+<section class="imagen-final-evento">
+  <img src="img/coordinacion.jpg" alt="Coordinación de eventos en terreno">
+  <div class="texto-imagen-final">
+    <h2>Coordinación en terreno en tiempo real</h2>
+    <p>Supervisamos cada detalle para que tu evento funcione perfecto de principio a fin.</p>
+  </div>
+</section>
+
 
   <!-- Formulario de contacto -->
   <main>
