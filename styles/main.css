@@ -1055,7 +1055,7 @@ html {
 
 #btnSubir {
   position: fixed;
-  bottom: 100px; /* 👈 subimos el botón */
+  bottom: 140px;
   right: 20px;
   background: #6A1B9A;
   color: white;
@@ -1066,4 +1066,11 @@ html {
   cursor: pointer;
   display: none;
   z-index: 999;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 600px) {
+  #btnSubir {
+    bottom: 160px;
+  }
 }
