@@ -1055,7 +1055,7 @@ html {
 
 #btnSubir {
   position: fixed;
-  bottom: 20px;
+  bottom: 100px; /* 👈 subimos el botón */
   right: 20px;
   background: #6A1B9A;
   color: white;
