@@ -1044,9 +1044,26 @@ footer {
   border-radius: 20px;
   text-decoration: none;
   font-weight: bold;
+
 }
 
 /* SCROLL SUAVE */
 html {
   scroll-behavior: smooth;
+}
+
+
+#btnSubir {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #6A1B9A;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
 }
