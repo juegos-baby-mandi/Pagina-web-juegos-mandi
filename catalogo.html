@@ -1703,7 +1703,24 @@ function toggleCarrito() {
 
 </script>
 
+<button id="btnSubir" onclick="volverArriba()">⬆</button>
+  <script>
+window.onscroll = function() {
+  let boton = document.getElementById("btnSubir");
+  if (document.documentElement.scrollTop > 200) {
+    boton.style.display = "block";
+  } else {
+    boton.style.display = "none";
+  }
+};
 
+function volverArriba() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+  </script>
 
 </body>
 </html>
