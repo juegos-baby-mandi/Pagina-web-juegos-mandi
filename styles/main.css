@@ -1119,3 +1119,30 @@ html {
 .producto-destacado .producto-detalle {
   font-size: 16px;
 }
+
+.seo-electronicos {
+  background-color: #f3e5f5;
+  padding: 18px;
+  border-radius: 14px;
+  margin: 25px 0;
+}
+
+/* 👇 AJUSTE SOLO PARA CELULAR */
+@media (max-width: 600px) {
+  .seo-electronicos {
+    padding: 12px;
+    border-radius: 10px;
+    margin: 15px 10px;
+  }
+
+  .seo-electronicos p {
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: left; /* 👈 CLAVE */
+  }
+}
+.seo-electronicos {
+  background-color: #f3e5f5;
+  padding: 15px;
+  border-radius: 10px;
+}
