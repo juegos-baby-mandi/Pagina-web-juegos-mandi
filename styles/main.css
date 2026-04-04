@@ -999,3 +999,12 @@ footer {
 .seo-bloque.estilizado a.boton-wsp:hover {
   background-color: #1ebe5d;
 }
+
+.producto-detalle ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.producto-detalle li {
+  margin-bottom: 5px;
+}
