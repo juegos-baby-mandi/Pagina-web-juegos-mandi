@@ -1146,3 +1146,17 @@ html {
   padding: 15px;
   border-radius: 10px;
 }
+
+.seo-electronicos {
+  background-color: #f3e5f5;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin: 15px 10px;
+}
+
+.seo-electronicos p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: left;
+}
