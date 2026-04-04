@@ -1074,3 +1074,10 @@ html {
     bottom: 160px;
   }
 }
+
+@media (max-width: 600px) {
+  #carrito {
+    left: 10px;
+    right: auto;
+  }
+}
