@@ -1353,6 +1353,41 @@ html {
 .categoria-card.inflables {
   background-image: url("/img/boton-inflables.jpg");
 }
+.categoria-card.mecanicos {
+  background-image: url("/img/boton-mecanicos.jpg");
+}
+
+.categoria-card.interactivos {
+  background-image: url("/img/boton-interactivos.jpg");
+}
+
+.categoria-card.electronicos {
+  background-image: url("/img/boton-electronicos.jpg");
+}
+
+.categoria-card.agua {
+  background-image: url("/img/boton-agua.jpg");
+}
+
+.categoria-card.espuma {
+  background-image: url("/img/boton-espuma.jpg");
+}
+
+.categoria-card.tipicos {
+  background-image: url("/img/boton-tipicos.jpg");
+}
+
+.categoria-card.arcade {
+  background-image: url("/img/boton-arcade.jpg");
+}
+
+.categoria-card.vip {
+  background-image: url("/img/boton-vip.jpg");
+}
+
+.categoria-card.eventos {
+  background-image: url("/img/boton-eventos.jpg");
+}
 
 @media (max-width: 768px) {
   .categoria-card {
