@@ -71,8 +71,37 @@
   flex: 1;
   min-width: 260px;
 }
+.media-burbuja {
+  position: relative;
+  max-width: 420px;
+  margin-bottom: 15px;
+}
 
+.media-burbuja img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+/* VIDEO FLOTANTE */
+.video-burbuja {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 110px;
+  border-radius: 12px;
+  border: 3px solid white;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  background: #000;
+}
 /* 📱 CELULAR */
+    @media (max-width: 768px) {
+  .video-burbuja {
+    width: 90px;
+    bottom: 8px;
+    right: 8px;
+  }
+    }
 @media (max-width: 768px) {
   .producto-burbuja {
     display: block;
@@ -172,16 +201,14 @@
   Están disponibles para arriendo en Santiago, ideales para complementar eventos, cumpleaños, empresas y celebraciones.</p>
 
 <!-- Burbuja -->
-  
-<div class="producto producto-burbuja">
-
   <div class="media-burbuja">
-    <img src="img/burbuja-de-globos-experiencia.jpg" alt="Burbuja con globos">
+  <img src="img/burbuja-de-globos-experiencia.jpg" alt="Burbuja con globos">
 
-    <video controls playsinline preload="metadata">
-      <source src="videos/video-burbuja-con-globos.mp4" type="video/mp4">
-    </video>
+  <video autoplay muted loop playsinline class="video-burbuja">
+    <source src="videos/video-burbuja-con-globos.mp4" type="video/mp4">
+  </video>
   </div>
+
 
   <div class="producto-detalle">
     <h3>🎈 Burbuja con globos</h3>
@@ -500,6 +527,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+  <script>
+  document.querySelectorAll("video").forEach(video => {
+    video.play().catch(() => {});
+  });
+  </script>
+  
 </body>
 </html>
   
