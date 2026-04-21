@@ -1371,3 +1371,77 @@ html {
     margin: 20px auto;
   }
 }
+
+
+
+  /* ===== BUSCADOR GLOBAL HACIA CATALOGO ===== */
+
+.buscador-global-catalogo {
+  width: 90%;
+  max-width: 900px;
+  margin: 25px auto 30px auto;
+}
+
+.buscador-global-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 2px solid #8e44ad;
+  border-radius: 40px;
+  padding: 10px 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.buscador-global-icono {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+#input-buscador-global {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+  color: #333;
+}
+
+#input-buscador-global::placeholder {
+  color: #888;
+}
+
+.buscador-global-btn {
+  background: #8e44ad;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.buscador-global-btn:hover {
+  background: #732d91;
+}
+
+@media (max-width: 768px) {
+  .buscador-global-catalogo {
+    width: 95%;
+  }
+
+  .buscador-global-form {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  #input-buscador-global {
+    font-size: 15px;
+  }
+
+  .buscador-global-btn {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+}
