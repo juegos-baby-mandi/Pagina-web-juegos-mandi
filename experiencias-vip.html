@@ -31,6 +31,68 @@
   <title>Experiencias VIP | Juegos Baby Mandi</title>
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="icon" href="favicon.png" type="image/png" />
+
+  <style>
+/* ===== BURBUJA PRO LIMPIA ===== */
+
+.producto-burbuja {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* CONTENEDOR */
+.producto-burbuja .media-burbuja {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  flex: 0 0 360px;
+}
+
+/* IMAGEN */
+.producto-burbuja .media-burbuja img {
+  width: 220px;
+  border-radius: 14px;
+  display: block;
+}
+
+/* VIDEO */
+.producto-burbuja .media-burbuja video {
+  width: 120px;
+  border-radius: 14px;
+  background: #000;
+  display: block;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* TEXTO */
+.producto-burbuja .producto-detalle {
+  flex: 1;
+  min-width: 260px;
+}
+
+/* 📱 CELULAR */
+@media (max-width: 768px) {
+  .producto-burbuja {
+    display: block;
+  }
+
+  .producto-burbuja .media-burbuja {
+    display: block;
+  }
+
+  .producto-burbuja .media-burbuja img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .producto-burbuja .media-burbuja video {
+    width: 140px;
+    margin: 0 auto 12px auto;
+  }
+}
+  </style>
 </head>
 
 <body>
@@ -88,12 +150,13 @@
     <button type="submit" class="buscador-global-btn">Buscar</button>
   </form>
   </div>
-
-  <div style="max-width: 900px; margin: 0 auto 30px auto;">
-  <video autoplay muted loop playsinline style="width:100%; border-radius:15px;">
+<div style="max-width: 500px; margin: 0 auto 30px auto;">
+  <video autoplay muted loop playsinline style="width:100%; border-radius:12px;">
     <source src="videos/experiencias-vip-mandi-eventos.mp4" type="video/mp4">
   </video>
-  </div>
+</div>
+  
+  
   
   <section class="seo-arcade" style="background-color: #f3e5f5; padding: 18px; border-radius: 14px; margin: 25px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
   <p style="margin: 0; font-size: 17px; line-height: 1.7;">
@@ -110,13 +173,12 @@
 
 <!-- Burbuja -->
   
-
 <div class="producto producto-burbuja">
 
-  <div class="burbuja-media">
+  <div class="media-burbuja">
     <img src="img/burbuja-de-globos-experiencia.jpg" alt="Burbuja con globos">
 
-    <video controls muted loop playsinline preload="metadata">
+    <video controls playsinline preload="metadata">
       <source src="videos/video-burbuja-con-globos.mp4" type="video/mp4">
     </video>
   </div>
@@ -153,6 +215,8 @@
   </div>
 
 </div>
+
+
 
 
   
