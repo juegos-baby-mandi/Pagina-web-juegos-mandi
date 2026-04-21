@@ -67,6 +67,19 @@
   Todos los valores incluyen IVA
 </p>
 
+    <div class="buscador-global-catalogo">
+  <form id="form-buscador-global" class="buscador-global-form">
+    <span class="buscador-global-icono">🔍</span>
+    <input
+      type="text"
+      id="input-buscador-global"
+      placeholder="Busca tu juego aca... ej: toro, taca taca, escalda..."
+      autocomplete="off"
+    />
+    <button type="submit" class="buscador-global-btn">Buscar</button>
+  </form>
+    </div>
+    
 </h2>
   <section class="seo-tipicos" style="background-color: #f3e5f5; padding: 18px; border-radius: 14px; margin: 25px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-left: 6px solid #8e24aa;">
   <p style="margin: 0; font-size: 17px; line-height: 1.6;">
@@ -247,7 +260,7 @@ Celebra con tradición chilena con nuestros <strong>juegos típicos en Santiago<
     <a href="experiencias.html">📸 Experiencias</a>
     <a href="testimonios.html">🗣️ Testimonios</a>
     <a href="promociones.html">💥 Promociones</a>
-    <a href="eventos-empresas.html">🏢 Eventos Empresas</a>
+    <a href="mandi-eventos.html">🏢 Eventos Empresas</a>
     <a href="consejos.html">📝 Consejos</a>
     <a href="contacto.html">📬 Contacto</a>
   </div>
@@ -414,6 +427,27 @@ function toggleCarrito() {
 
 </script>
 
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const formBuscador = document.getElementById("form-buscador-global");
+  const inputBuscador = document.getElementById("input-buscador-global");
+
+  if (!formBuscador || !inputBuscador) return;
+
+  formBuscador.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const texto = inputBuscador.value.trim();
+
+    if (!texto) {
+      window.location.href = "catalogo.html";
+      return;
+    }
+
+    window.location.href = "catalogo.html?buscar=" + encodeURIComponent(texto);
+  });
+});
+  </script>
 
 
 </body>
