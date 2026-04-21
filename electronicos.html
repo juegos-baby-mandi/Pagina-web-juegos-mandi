@@ -63,6 +63,20 @@
     <p style="text-align: center; font-size: 16px; color: #666; margin-top: -10px;">
   Todos los valores incluyen IVA
     </p>
+
+    <div class="buscador-global-catalogo">
+  <form id="form-buscador-global" class="buscador-global-form">
+    <span class="buscador-global-icono">🔍</span>
+    <input
+      type="text"
+      id="input-buscador-global"
+      placeholder="Busca cualquier juego del catálogo completo..."
+      autocomplete="off"
+    />
+    <button type="submit" class="buscador-global-btn">Buscar</button>
+  </form>
+    </div>
+    
 <p style="text-align: center; max-width: 700px; margin: 10px auto 20px auto; font-size: 16px; color: #555;">
   En <strong>Juegos Baby Mandi</strong> ofrecemos arriendo de <strong>juegos electrónicos en Santiago</strong>, ideales para 
   <strong>cumpleaños, eventos de empresas, colegios y municipalidades</strong>. 
@@ -385,7 +399,7 @@
     <a href="experiencias.html">📸 Experiencias</a>
     <a href="testimonios.html">🗣️ Testimonios</a>
     <a href="promociones.html">💥 Promociones</a>
-    <a href="eventos-empresas.html">🏢 Eventos Empresas</a>
+    <a href="mandi-eventos.html">🏢 Eventos Empresas</a>
     <a href="consejos.html">📝 Consejos</a>
     <a href="contacto.html">📬 Contacto</a>
   </div>
@@ -553,7 +567,27 @@ function toggleCarrito() {
 
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const formBuscador = document.getElementById("form-buscador-global");
+  const inputBuscador = document.getElementById("input-buscador-global");
 
+  if (!formBuscador || !inputBuscador) return;
+
+  formBuscador.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const texto = inputBuscador.value.trim();
+
+    if (!texto) {
+      window.location.href = "catalogo.html";
+      return;
+    }
+
+    window.location.href = "catalogo.html?buscar=" + encodeURIComponent(texto);
+  });
+});
+</script>
 
 </body>
 </html>
