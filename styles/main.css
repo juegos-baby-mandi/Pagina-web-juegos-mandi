@@ -1445,31 +1445,61 @@ html {
     font-size: 13px;
   }
 }
+
+/* BURBUJA EXPERIENCIA */
+.producto-burbuja {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+}
+
 .burbuja-media {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 420px;
+  flex: 0 0 420px;
 }
 
 .burbuja-media img {
   width: 100%;
-  border-radius: 12px;
-}
-.video-overlay {
-  border: 2px solid white;
-}
-.video-overlay {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: 120px; /* 👈 tamaño del video */
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: block;
+  border-radius: 16px;
 }
 
-/* 📱 celular */
+.video-overlay {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 120px;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 3px solid #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  background: #000;
+}
+
+.producto-burbuja .producto-detalle {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* CELULAR */
 @media (max-width: 768px) {
+  .producto-burbuja {
+    display: block;
+  }
+
+  .burbuja-media {
+    max-width: 100%;
+    width: 100%;
+    flex: none;
+  }
+
   .video-overlay {
-    width: 100px;
+    width: 110px;
+    right: 10px;
+    bottom: 10px;
   }
 }
