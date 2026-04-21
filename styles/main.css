@@ -1447,42 +1447,29 @@ html {
 }
 
 /* BURBUJA EXPERIENCIA */
+/* BURBUJA PRO */
 .producto-burbuja {
   display: flex;
-  flex-wrap: wrap;
   gap: 30px;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .burbuja-media {
-  position: relative;
-  width: 100%;
-  max-width: 420px;
-  flex: 0 0 420px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
 }
 
 .burbuja-media img {
-  width: 100%;
-  display: block;
-  border-radius: 16px;
-}
-
-.video-overlay {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  width: 120px;
-  height: auto;
-  display: block;
+  width: 280px;
   border-radius: 14px;
-  border: 3px solid #fff;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  background: #000;
 }
 
-.producto-burbuja .producto-detalle {
-  flex: 1;
-  min-width: 280px;
+.burbuja-media video {
+  width: 160px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
 /* CELULAR */
@@ -1492,14 +1479,15 @@ html {
   }
 
   .burbuja-media {
-    max-width: 100%;
-    width: 100%;
-    flex: none;
+    flex-direction: column;
   }
 
-  .video-overlay {
-    width: 110px;
-    right: 10px;
-    bottom: 10px;
+  .burbuja-media img {
+    width: 100%;
+  }
+
+  .burbuja-media video {
+    width: 100%;
+    margin-top: 10px;
   }
 }
