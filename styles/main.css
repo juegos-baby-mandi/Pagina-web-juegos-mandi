@@ -1160,3 +1160,155 @@ html {
   line-height: 1.5;
   text-align: left;
 }
+
+
+/* ===== BUSCADOR CATALOGO ===== */
+
+.buscador-catalogo {
+  max-width: 700px;
+  margin: 25px auto 30px auto;
+  position: relative;
+  z-index: 9999;
+}
+
+.buscador-caja {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 2px solid #8e44ad;
+  border-radius: 40px;
+  padding: 12px 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.buscador-icono {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+#buscador-juegos {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+  color: #333;
+}
+
+#buscador-juegos::placeholder {
+  color: #888;
+}
+
+.resultados-buscador {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  overflow: hidden;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.resultado-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  text-decoration: none;
+  color: #222;
+  border-bottom: 1px solid #f2f2f2;
+  transition: background 0.2s ease;
+}
+
+.resultado-item:last-child {
+  border-bottom: none;
+}
+
+.resultado-item:hover {
+  background: #f8f1fc;
+}
+
+.resultado-item img {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  border: 1px solid #eee;
+}
+
+.resultado-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultado-titulo {
+  font-size: 15px;
+  font-weight: 700;
+  color: #8e44ad;
+  line-height: 1.2;
+}
+
+.resultado-subtexto {
+  font-size: 13px;
+  color: #666;
+  margin-top: 3px;
+}
+
+.sin-resultados {
+  padding: 14px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.producto-resaltado {
+  animation: resaltarProducto 2s ease;
+  border-radius: 14px;
+}
+
+@keyframes resaltarProducto {
+  0% {
+    box-shadow: 0 0 0 rgba(142,68,173,0);
+    transform: scale(1);
+  }
+  30% {
+    box-shadow: 0 0 0 8px rgba(142,68,173,0.18);
+    transform: scale(1.01);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(142,68,173,0);
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .buscador-catalogo {
+    width: 92%;
+  }
+
+  .buscador-caja {
+    padding: 11px 14px;
+  }
+
+  #buscador-juegos {
+    font-size: 15px;
+  }
+
+  .resultado-item img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .resultado-titulo {
+    font-size: 14px;
+  }
+
+  .resultado-subtexto {
+    font-size: 12px;
+  }
+}
