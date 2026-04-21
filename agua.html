@@ -65,6 +65,19 @@
   Todos los valores incluyen IVA
 </p>
 
+    <div class="buscador-global-catalogo">
+  <form id="form-buscador-global" class="buscador-global-form">
+    <span class="buscador-global-icono">🔍</span>
+    <input
+      type="text"
+      id="input-buscador-global"
+      placeholder="Busca cualquier juego del catálogo completo..."
+      autocomplete="off"
+    />
+    <button type="submit" class="buscador-global-btn">Buscar</button>
+  </form>
+    </div>
+    
   </section>
   
   <section class="seo-agua" style="background-color: #f3e5f5; padding: 18px; border-radius: 14px; margin: 25px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-left: 6px solid #8e24aa;">
@@ -677,7 +690,27 @@ function toggleCarrito() {
 
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const formBuscador = document.getElementById("form-buscador-global");
+  const inputBuscador = document.getElementById("input-buscador-global");
 
+  if (!formBuscador || !inputBuscador) return;
+
+  formBuscador.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const texto = inputBuscador.value.trim();
+
+    if (!texto) {
+      window.location.href = "catalogo.html";
+      return;
+    }
+
+    window.location.href = "catalogo.html?buscar=" + encodeURIComponent(texto);
+  });
+});
+</script>
 
 </body>
 </html>
