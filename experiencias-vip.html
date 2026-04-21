@@ -121,31 +121,15 @@
     margin: 0 auto 12px auto;
   }
 
-    .seccion-vip-productos {
+
+.seccion-vip-productos {
   background: #f7f4f9;
   padding: 25px 12px 40px 12px;
   border-radius: 24px;
   margin-top: 20px;
-    }
-    .producto.producto-burbuja {
-  background: #ffffff !important;
-  border-radius: 22px;
-  padding: 22px;
-  margin: 25px auto 35px auto;
-  max-width: 1100px;
+}
 
-  box-shadow: 0 12px 30px rgba(142, 36, 170, 0.16) !important;
-  border: 2px solid rgba(142, 36, 170, 0.18) !important;
-    }
-    
-    
-    @media (max-width: 768px) {
-  .producto-burbuja {
-    padding: 14px;
-    border-radius: 14px;
-  }
-    }
-    .producto-burbuja {
+.producto-burbuja {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -165,29 +149,22 @@
 
 .producto-burbuja .media-burbuja {
   position: relative;
-  max-width: 420px;
+  width: 100%;
+  max-width: 380px;
   margin: 0 auto 18px auto;
 }
 
 .producto-burbuja .media-burbuja img {
   width: 100%;
-  max-width: 300px; /* 👈 AQUÍ achicas */
-  margin: 0 auto;
   display: block;
   border-radius: 18px;
 }
 
-  @media (max-width: 768px) {
-  .producto-burbuja .media-burbuja img {
-    max-width: 100%;
-  }
-  
-  
 .video-burbuja {
   position: absolute;
   right: 10px;
   bottom: 10px;
-  width: 105px;
+  width: 95px;
   border-radius: 14px;
   border: 3px solid #fff;
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
@@ -215,6 +192,8 @@
     bottom: 8px;
   }
 }
+
+
   </style>
 </head>
 
@@ -298,6 +277,17 @@
 
 <!-- Burbuja -->
 
+<!-- Burbuja -->
+<div class="producto producto-burbuja">
+  <div class="burbuja-card">
+
+    <div class="media-burbuja">
+      <img src="img/burbuja-de-globos-experiencia.jpg" alt="Burbuja con globos">
+
+      <video class="video-burbuja" autoplay muted loop playsinline preload="auto">
+        <source src="videos/video-burbuja-con-globos.mp4" type="video/mp4">
+      </video>
+    </div>
 
     <div class="producto-detalle">
       <h3>🎈 Burbuja con globos</h3>
