@@ -1446,27 +1446,29 @@ html {
   }
 }
 
-/* VIDEO + IMAGEN BURBUJA */
-.media-burbuja {
+  .media-burbuja {
   display: flex;
-  gap: 10px;
+  gap: 15px;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 
-.video-burbuja {
-  width: 100%;
-  border-radius: 12px;
+.media-burbuja img {
+  width: 48%;
+  border-radius: 10px;
 }
 
-/* En PC se ve lado a lado */
-@media (min-width: 768px) {
-  .media-burbuja {
-    flex-wrap: nowrap;
-    align-items: center;
-  }
+.video-burbuja {
+  width: 48%;
+  max-width: 250px; /* 👈 esto evita que se vea gigante */
+  border-radius: 10px;
+}
 
+/* 📱 En celular que se ordene bonito */
+@media (max-width: 768px) {
   .media-burbuja img,
-  .media-burbuja video {
-    width: 50%;
+  .video-burbuja {
+    width: 100%;
+    max-width: 100%;
   }
 }
