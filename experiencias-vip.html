@@ -171,10 +171,18 @@
 
 .producto-burbuja .media-burbuja img {
   width: 100%;
+  max-width: 300px; /* 👈 AQUÍ achicas */
+  margin: 0 auto;
   display: block;
   border-radius: 18px;
 }
 
+  @media (max-width: 768px) {
+  .producto-burbuja .media-burbuja img {
+    max-width: 100%;
+  }
+  
+  
 .video-burbuja {
   position: absolute;
   right: 10px;
@@ -289,25 +297,7 @@
   Están disponibles para arriendo en Santiago, ideales para complementar eventos, cumpleaños, empresas y celebraciones.</p>
 
 <!-- Burbuja -->
-  <div class="media-burbuja">
-  <img src="img/burbuja-de-globos-experiencia.jpg" alt="Burbuja con globos">
 
-  <video autoplay muted loop playsinline class="video-burbuja">
-    <source src="videos/video-burbuja-con-globos.mp4" type="video/mp4">
-  </video>
-  </div>
-
-
-<div class="producto producto-burbuja">
-  <div class="burbuja-card">
-
-    <div class="media-burbuja">
-      <img src="img/burbuja-de-globos-experiencia.jpg" alt="Burbuja con globos">
-
-      <video class="video-burbuja" autoplay muted loop playsinline preload="auto">
-        <source src="videos/video-burbuja-con-globos.mp4" type="video/mp4">
-      </video>
-    </div>
 
     <div class="producto-detalle">
       <h3>🎈 Burbuja con globos</h3>
