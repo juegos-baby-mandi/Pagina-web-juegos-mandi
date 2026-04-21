@@ -1340,9 +1340,23 @@ html {
   inset: 0;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.6);
+}
+
+/* capa oscura encima */
+.categoria-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .categoria-card.inflables::before {
   background-image: url("img/boton-inflables.jpg");
+}
+
+.categoria-card span {
+  position: relative;
+  z-index: 2;
+  font-size: 20px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
