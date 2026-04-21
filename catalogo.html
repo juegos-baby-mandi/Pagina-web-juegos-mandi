@@ -52,7 +52,19 @@
 </p>
 
   </section>
-  
+    <div class="buscador-catalogo">
+  <div class="buscador-caja">
+    <span class="buscador-icono">🔍</span>
+    <input
+      type="text"
+      id="buscador-juegos"
+      placeholder="Busca tu juego aquí... Ej: toro, arcade, agua"
+      autocomplete="off"
+    />
+  </div>
+
+  <div id="resultados-buscador" class="resultados-buscador"></div>
+    </div>
   <section class="seo-catalogo" style="background-color: #f3e5f5; padding: 18px; border-radius: 14px; margin: 25px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-left: 6px solid #8e24aa;">
   <p style="margin: 0; font-size: 17px; line-height: 1.6;">
     🎪 <strong>Descubre todo nuestro catálogo de juegos en un solo lugar</strong>. En <strong>Juegos Baby Mandi</strong> tenemos:
@@ -76,19 +88,7 @@
   <a href="#feria" class="boton-categoria">🇨🇱 Tipicos y Feria</a>
   </div>
 
-  <div class="buscador-catalogo">
-  <div class="buscador-caja">
-    <span class="buscador-icono">🔍</span>
-    <input
-      type="text"
-      id="buscador-juegos"
-      placeholder="Busca tu juego aquí... Ej: toro, arcade, agua"
-      autocomplete="off"
-    />
-  </div>
 
-  <div id="resultados-buscador" class="resultados-buscador"></div>
-  </div>
   
   <h2 id="inflables" class="titulo-seccion">🎈 Juegos Inflables</h2>
 <p class="descripcion-seccion">
@@ -1842,6 +1842,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     cajaResultados.style.display = "block";
   }
+  // 🔍 detectar búsqueda desde otras páginas (inflables, etc)
+const parametros = new URLSearchParams(window.location.search);
+const textoInicial = parametros.get("buscar");
+
+if (textoInicial) {
+  inputBuscador.value = textoInicial;
+  mostrarResultados(textoInicial.trim().toLowerCase());
+}
 
   inputBuscador.addEventListener("input", function () {
     mostrarResultados(this.value.trim().toLowerCase());
