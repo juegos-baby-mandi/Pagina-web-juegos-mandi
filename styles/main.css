@@ -1445,3 +1445,28 @@ html {
     font-size: 13px;
   }
 }
+
+/* VIDEO + IMAGEN BURBUJA */
+.media-burbuja {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.video-burbuja {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* En PC se ve lado a lado */
+@media (min-width: 768px) {
+  .media-burbuja {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .media-burbuja img,
+  .media-burbuja video {
+    width: 50%;
+  }
+}
