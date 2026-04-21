@@ -76,6 +76,20 @@
   <a href="#feria" class="boton-categoria">🇨🇱 Tipicos y Feria</a>
   </div>
 
+  <div class="buscador-catalogo">
+  <div class="buscador-caja">
+    <span class="buscador-icono">🔍</span>
+    <input
+      type="text"
+      id="buscador-juegos"
+      placeholder="Busca tu juego aquí... Ej: toro, arcade, agua"
+      autocomplete="off"
+    />
+  </div>
+
+  <div id="resultados-buscador" class="resultados-buscador"></div>
+  </div>
+  
   <h2 id="inflables" class="titulo-seccion">🎈 Juegos Inflables</h2>
 <p class="descripcion-seccion">
 Diversión asegurada para cumpleaños y eventos. Contamos con castillos, toboganes y obstáculos inflables para todas las edades.
@@ -1722,6 +1736,131 @@ function toggleCarrito() {
 
 </script>
 
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const inputBuscador = document.getElementById("buscador-juegos");
+  const cajaResultados = document.getElementById("resultados-buscador");
+
+  if (!inputBuscador || !cajaResultados) return;
+
+  const productos = document.querySelectorAll(".catalogo .producto");
+  let listaProductos = [];
+
+  function crearSlug(texto) {
+    return texto
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+  }
+
+  productos.forEach((producto, index) => {
+    const titulo =
+      producto.querySelector(".producto-detalle h2") ||
+      producto.querySelector(".producto-detalle h3");
+
+    const imagen = producto.querySelector("img.producto-img");
+    const descripcion = producto.querySelector(".producto-detalle p");
+
+    if (!titulo || !imagen) return;
+
+    if (!producto.id) {
+      producto.id = "producto-" + crearSlug(titulo.textContent.trim()) + "-" + index;
+    }
+
+    listaProductos.push({
+      id: producto.id,
+      nombre: titulo.textContent.trim(),
+      imagen: imagen.getAttribute("src"),
+      descripcion: descripcion ? descripcion.textContent.trim().replace(/\s+/g, " ").substring(0, 70) + "..." : "Ver producto",
+      textoBusqueda: (
+        titulo.textContent + " " +
+        producto.textContent + " " +
+        (imagen.getAttribute("alt") || "")
+      ).toLowerCase()
+    });
+  });
+
+  function mostrarResultados(texto) {
+    cajaResultados.innerHTML = "";
+
+    if (!texto) {
+      cajaResultados.style.display = "none";
+      return;
+    }
+
+    const coincidencias = listaProductos
+      .filter(item => item.textoBusqueda.includes(texto))
+      .slice(0, 10);
+
+    if (coincidencias.length === 0) {
+      cajaResultados.innerHTML = '<div class="sin-resultados">No encontramos ese juego</div>';
+      cajaResultados.style.display = "block";
+      return;
+    }
+
+    coincidencias.forEach(item => {
+      const enlace = document.createElement("a");
+      enlace.href = "#" + item.id;
+      enlace.className = "resultado-item";
+
+      enlace.innerHTML = `
+        <img src="${item.imagen}" alt="${item.nombre}">
+        <div class="resultado-info">
+          <span class="resultado-titulo">${item.nombre}</span>
+          <span class="resultado-subtexto">${item.descripcion}</span>
+        </div>
+      `;
+
+      enlace.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const destino = document.getElementById(item.id);
+        if (!destino) return;
+
+        const topDestino = destino.getBoundingClientRect().top + window.pageYOffset - 100;
+
+        window.scrollTo({
+          top: topDestino,
+          behavior: "smooth"
+        });
+
+        cajaResultados.style.display = "none";
+        inputBuscador.value = item.nombre;
+
+        setTimeout(() => {
+          destino.classList.add("producto-resaltado");
+          setTimeout(() => {
+            destino.classList.remove("producto-resaltado");
+          }, 2000);
+        }, 400);
+      });
+
+      cajaResultados.appendChild(enlace);
+    });
+
+    cajaResultados.style.display = "block";
+  }
+
+  inputBuscador.addEventListener("input", function () {
+    mostrarResultados(this.value.trim().toLowerCase());
+  });
+
+  inputBuscador.addEventListener("focus", function () {
+    if (this.value.trim() !== "") {
+      mostrarResultados(this.value.trim().toLowerCase());
+    }
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".buscador-catalogo")) {
+      cajaResultados.style.display = "none";
+    }
+  });
+});
+  </script>
+  
 <button id="btnSubir" onclick="volverArriba()">⬆</button>
   <script>
 window.onscroll = function() {
