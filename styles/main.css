@@ -1320,7 +1320,7 @@ html {
   align-items: center;
   justify-content: center;
   height: 110px;
-  max-width: 900px;
+  width: 90%;
   margin: 15px auto;
   border-radius: 20px;
   text-decoration: none;
@@ -1329,6 +1329,7 @@ html {
   background-size: cover;
   background-position: center;
 }
+
 
 
 .categoria-card::after {
@@ -1355,11 +1356,17 @@ html {
 
 @media (max-width: 768px) {
   .categoria-card {
-    height: 90px;
-    max-width: 95%;
+    width: 95%;
+    height: 110px; /* 👈 importante, no lo achiques */
   }
 
   .categoria-card span {
-    font-size: 16px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .categoria-card {
+    max-width: 800px;
   }
 }
