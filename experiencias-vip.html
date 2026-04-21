@@ -145,7 +145,68 @@
     border-radius: 14px;
   }
     }
-    
+    .producto-burbuja {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 25px 0 35px 0 !important;
+}
+
+.burbuja-card {
+  background: #fff !important;
+  border: 2px solid rgba(142, 36, 170, 0.18) !important;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(142, 36, 170, 0.14);
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.producto-burbuja .media-burbuja {
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto 18px auto;
+}
+
+.producto-burbuja .media-burbuja img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+}
+
+.video-burbuja {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 105px;
+  border-radius: 14px;
+  border: 3px solid #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  background: #000;
+}
+
+.producto-burbuja .producto-detalle {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .burbuja-card {
+    padding: 14px;
+    border-radius: 18px;
+    margin: 0 10px;
+  }
+
+  .producto-burbuja .media-burbuja {
+    max-width: 100%;
+  }
+
+  .video-burbuja {
+    width: 92px;
+    right: 8px;
+    bottom: 8px;
+  }
+}
   </style>
 </head>
 
@@ -237,37 +298,49 @@
   </div>
 
 
-  <div class="producto-detalle">
-    <h3>🎈 Burbuja con globos</h3>
+<div class="producto producto-burbuja">
+  <div class="burbuja-card">
 
-    <p>
-      Una experiencia única para niños y adultos.<br>
-      Ideal para fotos, videos y momentos inolvidables dentro de una burbuja gigante.
-    </p>
+    <div class="media-burbuja">
+      <img src="img/burbuja-de-globos-experiencia.jpg" alt="Burbuja con globos">
 
-    <p><strong>Incluye:</strong></p>
-    <ul style="list-style:none; padding-left:0;">
-      <li>✔ 50 globos</li>
-      <li>✔ Instalación completa</li>
-      <li>✔ Monitor de apoyo durante el uso</li>
-    </ul>
-
-    <p><strong>Desde $90.000</strong></p>
-
-    <p style="font-size:14px; color:#777;">
-      💡 Incluye monitor para una experiencia segura y guiada
-    </p>
-
-    <div class="botones">
-      <a href="https://wa.me/56946535784?text=Hola! Me interesa arrendar la burbuja con globos" class="boton amarillo">Cotizar por WhatsApp</a>
-      <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+      <video class="video-burbuja" autoplay muted loop playsinline preload="auto">
+        <source src="videos/video-burbuja-con-globos.mp4" type="video/mp4">
+      </video>
     </div>
 
-    <button class="boton-carrito" onclick="agregarAlCarrito('Burbuja con globos', 90000)">
-      🛒 Agregar al carrito
-    </button>
-  </div>
+    <div class="producto-detalle">
+      <h3>🎈 Burbuja con globos</h3>
 
+      <p>
+        Una experiencia única para niños y adultos.<br>
+        Ideal para fotos, videos y momentos inolvidables dentro de una burbuja gigante.
+      </p>
+
+      <p><strong>Incluye:</strong></p>
+      <ul style="list-style:none; padding-left:0;">
+        <li>✔ 50 globos</li>
+        <li>✔ Instalación completa</li>
+        <li>✔ Monitor de apoyo durante el uso</li>
+      </ul>
+
+      <p><strong>Desde $90.000</strong></p>
+
+      <p style="font-size:14px; color:#777;">
+        💡 Incluye monitor para una experiencia segura y guiada
+      </p>
+
+      <div class="botones">
+        <a href="https://wa.me/56946535784?text=Hola! Me interesa arrendar la burbuja con globos" class="boton amarillo">Cotizar por WhatsApp</a>
+        <a href="mailto:juegosbabymandi@gmail.com" class="boton celeste">Necesito ser contactado</a>
+      </div>
+
+      <button class="boton-carrito" onclick="agregarAlCarrito('Burbuja con globos', 90000)">
+        🛒 Agregar al carrito
+      </button>
+    </div>
+
+  </div>
 </div>
 
 
