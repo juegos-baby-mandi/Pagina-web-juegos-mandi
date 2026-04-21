@@ -1315,21 +1315,21 @@ html {
 
 /* ===== BOTONES CON IMAGEN (NUEVO) ===== */
 /* ===== BOTONES CATEGORÍAS CON IMAGEN ===== */
-
 .categoria-card {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 110px;
+  max-width: 900px;
+  margin: 15px auto;
   border-radius: 20px;
   text-decoration: none;
-  margin: 15px 20px;
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 }
+
 
 .categoria-card::after {
   content: "";
@@ -1351,4 +1351,15 @@ html {
 /* Imagen específica por categoría */
 .categoria-card.inflables {
   background-image: url("/img/boton-inflables.jpg");
+}
+
+@media (max-width: 768px) {
+  .categoria-card {
+    height: 90px;
+    max-width: 95%;
+  }
+
+  .categoria-card span {
+    font-size: 16px;
+  }
 }
