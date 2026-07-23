@@ -1,105 +1,295 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Cotización | Juegos Baby Mandi</title>
 
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="cotizacion.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Estilos pagina -->
-    
-    <style>
+<title>Crear Cotización | Juegos Baby Mandi</title>
 
-body{
-    font-family: Arial, sans-serif;
-    background:#f5f5f5;
+<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="cotizacion.css">
+
+<style>
+
+:root{
+
+    --naranja:#ff7a00;
+    --naranja-hover:#e56d00;
+    --azul:#0f4c81;
+    --gris:#f4f6f9;
+    --texto:#333;
+    --borde:#e8e8e8;
+    --verde:#17a34a;
+
+}
+
+*{
     margin:0;
-    padding:20px;
-}
-
-.contenedor-cotizacion{
-    max-width:900px;
-    margin:auto;
-}
-
-.resumen,
-.datos{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    margin-bottom:25px;
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
-}
-
-.producto-cotizacion{
-    display:flex;
-    justify-content:space-between;
-    padding:12px 0;
-    border-bottom:1px solid #e5e5e5;
-}
-
-label{
-    display:block;
-    margin-top:15px;
-    font-weight:bold;
-}
-
-input,
-select{
-    width:100%;
-    padding:12px;
-    margin-top:5px;
-    border:1px solid #ccc;
-    border-radius:6px;
+    padding:0;
     box-sizing:border-box;
 }
 
-.btn-cotizar{
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(180deg,#eef4fb,#f8f8f8);
+    color:var(--texto);
+    padding:25px;
+
+}
+
+.contenedor-cotizacion{
+
+    max-width:950px;
+    margin:auto;
+
+}
+
+.cabecera-cotizacion{
+
+    background:white;
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
+    margin-bottom:30px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+.cabecera-cotizacion h1{
+
+    color:var(--azul);
+    font-size:34px;
+    margin-bottom:10px;
+
+}
+
+.cabecera-cotizacion p{
+
+    color:#666;
+    line-height:1.6;
+
+}
+
+.resumen,
+.datos,
+.card{
+
+    background:white;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.card h2,
+.resumen h2,
+.datos h2{
+
+    color:var(--azul);
+    margin-bottom:22px;
+    border-left:6px solid var(--naranja);
+    padding-left:14px;
+
+}
+
+.producto-cotizacion{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:20px;
+
+    padding:18px 0;
+
+    border-bottom:1px solid var(--borde);
+
+}
+
+.producto-cotizacion:last-child{
+
+    border-bottom:none;
+
+}
+
+label{
+
+    display:block;
+    margin-top:18px;
+    margin-bottom:6px;
+
+    font-weight:bold;
+
+}
+
+input,
+select,
+textarea{
+
     width:100%;
-    margin-top:25px;
-    padding:15px;
-    background:#ff7a00;
+    padding:13px 15px;
+
+    border:1px solid #d8d8d8;
+    border-radius:10px;
+
+    font-size:15px;
+
+    transition:.25s;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    outline:none;
+
+    border-color:var(--naranja);
+
+    box-shadow:0 0 0 3px rgba(255,122,0,.15);
+
+}
+
+.btn-cotizar{
+
+    width:100%;
+
+    margin-top:35px;
+
+    padding:18px;
+
+    background:var(--naranja);
+
     color:white;
+
     border:none;
-    border-radius:8px;
+
+    border-radius:12px;
+
     font-size:18px;
+
+    font-weight:bold;
+
     cursor:pointer;
+
+    transition:.25s;
+
 }
 
 .btn-cotizar:hover{
-    background:#e56d00;
+
+    background:var(--naranja-hover);
+
+    transform:translateY(-2px);
+
 }
 
 #subtotal,
-#valor-traslado,
-#total-final{
+#valor-traslado{
+
     text-align:right;
-    font-size:20px;
-    margin-top:15px;
+    margin-top:18px;
+
+    font-size:19px;
+
 }
 
-    </style>
+#total-final{
+
+    margin-top:25px;
+
+    background:var(--verde);
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    text-align:right;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+hr{
+
+    border:none;
+    border-top:1px solid #ececec;
+    margin:25px 0;
+
+}
+
+@media(max-width:768px){
+
+    body{
+
+        padding:15px;
+
+    }
+
+    .cabecera-cotizacion{
+
+        padding:25px;
+
+    }
+
+    .cabecera-cotizacion h1{
+
+        font-size:28px;
+
+    }
+
+    .producto-cotizacion{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+    }
+
+    #total-final{
+
+        font-size:24px;
+
+    }
+
+}
+
+</style>
     
 </head>
 
 <body>
 
 <header>
-    <!-- Aquí después pondremos el mismo menú de tu página -->
+    <!-- Aquí puedes agregar el mismo menú de la página principal -->
 </header>
 
 <main class="contenedor-cotizacion">
 
-    <h1>📄 Crear Cotización</h1>
+    <div class="cabecera-cotizacion">
 
-    <p class="intro">
-        Completa tus datos y recibirás una cotización profesional en tu correo.
-        La disponibilidad será confirmada posteriormente por WhatsApp.
-    </p>
+        <h1>📄 Solicitud de Cotización</h1>
 
-    <section class="resumen">
+        <p>
+            Completa la siguiente información y te enviaremos una cotización profesional.
+            La disponibilidad será confirmada posteriormente por WhatsApp.
+        </p>
+
+    </div>
+
+    <!-- ================= RESUMEN ================= -->
+
+    <section class="card resumen">
+
         <h2>🛒 Resumen de tu cotización</h2>
 
         <div id="resumen-carrito"></div>
@@ -109,158 +299,254 @@ select{
         <div id="valor-traslado"></div>
 
         <div id="total-final"></div>
+
     </section>
 
-    <h2>➕ Servicios adicionales</h2>
+    <!-- ================= SERVICIOS ================= -->
 
-<div class="servicio-adicional">
-    <h3>👷 Monitores (opcional)</h3>
+    <section class="card">
 
-<label>
-    <input type="checkbox" id="usarMonitores">
-    Agregar monitores
-</label>
+        <h2>➕ Servicios adicionales</h2>
 
-<div id="configMonitores" style="display:none; margin-top:15px;">
+        <div class="servicio-adicional">
 
-    <label>Cantidad de monitores</label>
-    <input type="number" id="cantidadMonitores" min="1" value="1">
+            <h3>👷 Monitores</h3>
 
-    <label>Duración del evento (horas)</label>
-    <input type="number" id="horasMonitores" min="1" value="4">
+            <label class="check">
 
-    <p id="totalMonitores"></p>
+                <input type="checkbox" id="usarMonitores">
 
-</div>
-    
+                Agregar monitores al evento
 
-</div>
+            </label>
 
-<hr>
+            <div id="configMonitores" style="display:none; margin-top:20px;">
 
-<div class="servicio-adicional">
+                <label>Cantidad de monitores</label>
 
-    <label>
-        <input type="checkbox" id="usarHorasExtra">
-        Horas adicionales (Toro Mecánico / Reloj Derribador)
-    </label>
+                <input
+                    type="number"
+                    id="cantidadMonitores"
+                    min="1"
+                    value="1">
 
-    <div id="configHorasExtra" style="display:none;">
+                <label>Duración del evento (horas)</label>
 
-        <div id="listaHorasExtra"></div>
+                <input
+                    type="number"
+                    id="horasMonitores"
+                    min="1"
+                    value="4">
 
-    </div>
+                <p id="totalMonitores"></p>
 
-</div>
+            </div>
 
-    
-    <section class="datos">
+        </div>
 
-        <h2>Datos del cliente</h2>
+        <hr>
+
+        <div class="servicio-adicional">
+
+            <h3>⏰ Horas adicionales</h3>
+
+            <label class="check">
+
+                <input type="checkbox" id="usarHorasExtra">
+
+                Agregar horas adicionales
+
+            </label>
+
+            <div id="configHorasExtra" style="display:none; margin-top:20px;">
+
+                <div id="listaHorasExtra"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= DATOS ================= -->
+
+    <section class="card datos">
+
+        <h2>👤 Datos del solicitante</h2>
 
         <form id="form-cotizacion">
 
-            <h2>Datos del solicitante</h2>
+            <label>¿Quién solicita la cotización?</label>
 
-<label>¿Quién solicita la cotización?</label>
+            <select id="tipoSolicitante" required>
 
-<select id="tipoSolicitante" required>
+                <option value="">Seleccione una opción</option>
 
-    <option value="">Seleccione una opción</option>
+                <option value="Particular">👤 Particular</option>
 
-    <option value="Particular">👤 Particular</option>
+                <option value="Empresa">🏢 Empresa</option>
 
-    <option value="Empresa">🏢 Empresa</option>
+                <option value="Productora">🎪 Productora</option>
 
-    <option value="Productora">🎪 Productora</option>
+                <option value="Municipalidad">🏛 Municipalidad</option>
 
-    <option value="Municipalidad">🏛️ Municipalidad</option>
+                <option value="Colegio">🏫 Colegio o Jardín</option>
 
-    <option value="Colegio">🏫 Colegio o Jardín</option>
+                <option value="Otro">✨ Otro</option>
 
-    <option value="Otro">🎉 Otro</option>
+            </select>
 
-</select>
+            <div id="campoOrganizacion"></div>
 
-<div id="campoOrganizacion"></div>
+            <label>Nombre del contacto</label>
 
-<label>Nombre del contacto</label>
-<input type="text" id="nombre" required>
+            <input
+                type="text"
+                id="nombre"
+                required>
 
-<label>Teléfono</label>
-<input type="tel" id="telefono" required>
+            <label>Teléfono</label>
 
-<label>Correo electrónico</label>
-<input type="email" id="correo" required>
+            <input
+                type="tel"
+                id="telefono"
+                required>
 
-<label>Cantidad aproximada de asistentes</label>
+            <label>Correo electrónico</label>
 
-<input
-type="number"
-id="asistentes"
-min="1"
-placeholder="Ej: 80 personas"
-required>
+            <input
+                type="email"
+                id="correo"
+                required>
+
+            <label>Cantidad aproximada de asistentes</label>
+
+            <input
+                type="number"
+                id="asistentes"
+                min="1"
+                placeholder="Ej: 80 personas"
+                required>
+
             <label>¿Cómo nos conociste?</label>
 
-<select id="comoNosConocio" required>
+            <select id="comoNosConocio" required>
 
-    <option value="">Seleccione una opción</option>
+                <option value="">Seleccione una opción</option>
 
-    <option>Google</option>
+                <option>Google</option>
 
-    <option>Instagram</option>
+                <option>Instagram</option>
 
-    <option>Facebook</option>
+                <option>Facebook</option>
 
-    <option>TikTok</option>
+                <option>TikTok</option>
 
-    <option>WhatsApp</option>
+                <option>WhatsApp</option>
 
-    <option>Cliente antiguo</option>
+                <option>Cliente antiguo</option>
 
-    <option>Recomendación</option>
+                <option>Recomendación</option>
 
-    <option>Municipalidad</option>
+                <option>Municipalidad</option>
 
-    <option>Otro</option>
+                <option>Otro</option>
 
-</select>
+            </select>
+
             <div id="otroOrigen"></div>
 
             <label>Tipo de actividad</label>
+
             <select id="actividad">
+
                 <option>Cumpleaños</option>
+
                 <option>Matrimonio</option>
+
                 <option>Empresa</option>
+
                 <option>Colegio</option>
+
                 <option>Municipalidad</option>
+
                 <option>Evento Particular</option>
+
                 <option>Otro</option>
+
             </select>
-            <div id="otroOrigen"></div>
 
             <label>Fecha del evento</label>
-            <input type="date" id="fecha" required>
+
+            <input
+                type="date"
+                id="fecha"
+                required>
 
             <label>Comuna</label>
-            <select id="comuna" required></select>
+
+            <select
+                id="comuna"
+                required>
+            </select>
 
             <label>Dirección del evento</label>
-            <input type="text" id="direccion" required>
 
-            <button type="submit" class="btn-cotizar">
+            <input
+                type="text"
+                id="direccion"
+                placeholder="Ej: Av. Pajaritos 1234"
+                required>
+
+            <button
+                type="submit"
+                class="btn-cotizar">
+
                 📄 Generar Cotización
+
             </button>
 
         </form>
 
     </section>
 
+    <!-- ================= CONDICIONES ================= -->
+
+    <section class="card">
+
+        <h2>📋 Condiciones de reserva</h2>
+
+        <ul class="condiciones-lista">
+
+            <li>✔ La cotización no reserva automáticamente la fecha.</li>
+
+            <li>✔ La reserva se confirma mediante el abono correspondiente.</li>
+
+            <li>✔ El saldo debe quedar pagado antes del evento.</li>
+
+            <li>✔ El cliente debe disponer de un punto de energía cercano.</li>
+
+            <li>✔ Los juegos requieren un espacio adecuado para su instalación.</li>
+
+        </ul>
+
+    </section>
+
 </main>
+    
+
 
 <script>
-const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+/* ==========================================================
+   CARRITO DE PRODUCTOS
+========================================================== */
+
+const carrito = JSON.parse(localStorage.getItem("carrito")) || {};
+
+/* ==========================================================
+   AGRUPAR PRODUCTOS
+========================================================== */
 
 const productosAgrupados = {};
 
@@ -279,40 +565,64 @@ carrito.forEach(producto => {
 
 });
 
-let subtotal = 0;
+/* ==========================================================
+   CREAR RESUMEN
+========================================================== */
 
-let html = "";
+let subtotal = 0;
+let htmlResumen = "";
 
 for (const nombre in productosAgrupados) {
 
     const producto = productosAgrupados[nombre];
 
-    const subtotalProducto = producto.cantidad * producto.precio;
+    const subtotalProducto =
+        producto.cantidad * producto.precio;
 
     subtotal += subtotalProducto;
 
-    html += `
+    htmlResumen += `
+
         <div class="producto-resumen">
+
             <h3>${nombre}</h3>
 
-            <p><strong>Cantidad:</strong> ${producto.cantidad}</p>
+            <p>
+                <strong>Cantidad:</strong>
+                ${producto.cantidad}
+            </p>
 
-            <p><strong>Valor unitario:</strong> $${producto.precio.toLocaleString("es-CL")}</p>
+            <p>
+                <strong>Valor unitario:</strong>
+                $${producto.precio.toLocaleString("es-CL")}
+            </p>
 
-            <p><strong>Subtotal:</strong> $${subtotalProducto.toLocaleString("es-CL")}</p>
+            <p>
+                <strong>Subtotal:</strong>
+                $${subtotalProducto.toLocaleString("es-CL")}
+            </p>
+
         </div>
+
     `;
+
 }
 
-document.getElementById("resumen-carrito").innerHTML = html;
+/* ==========================================================
+   MOSTRAR RESUMEN
+========================================================== */
+
+document.getElementById("resumen-carrito").innerHTML =
+    htmlResumen;
 
 document.getElementById("subtotal").innerHTML = `
-    <h3>Subtotal: $${subtotal.toLocaleString("es-CL")}</h3>
+    <h3>
+        Subtotal:
+        $${subtotal.toLocaleString("es-CL")}
+    </h3>
 `;
 
-    
 
-    
 
 
 // ===== TRASLADOS =====
@@ -372,110 +682,148 @@ const traslados = {
     "Vitacura":40000
 };
 
+/* ==========================================================
+   TRASLADOS
+========================================================== */
+
+/* AQUÍ VAN TUS TRASLADOS */
+
 const comunaSelect = document.getElementById("comuna");
 
-// Agregar opción inicial
-comunaSelect.innerHTML = `<option value="">Seleccione una comuna</option>`;
+/* Cargar comunas */
 
-// Llenar el listado automáticamente
+comunaSelect.innerHTML = `
+    <option value="">
+        Seleccione una comuna
+    </option>
+`;
+
 Object.keys(traslados)
-.sort()
-.forEach(comuna => {
+    .sort()
+    .forEach(comuna => {
 
-    comunaSelect.innerHTML += `
-        <option value="${comuna}">
-            ${comuna}
-        </option>
-    `;
+        comunaSelect.innerHTML += `
+            <option value="${comuna}">
+                ${comuna}
+            </option>
+        `;
 
-});
+    });
 
-    comunaSelect.addEventListener("change", actualizarTotal);
+comunaSelect.addEventListener("change", actualizarTotal);
 
-function actualizarTotal(){
+/* Calcular traslado */
+
+function actualizarTotal() {
 
     const comuna = comunaSelect.value;
 
     const traslado = traslados[comuna] || 0;
 
-    document.getElementById("valor-traslado").innerHTML = `
-        <h3>
-            🚚 Traslado a ${comuna}: $${traslado.toLocaleString("es-CL")}
-        </h3>
-    `;
+    document.getElementById("valor-traslado").innerHTML = comuna
+        ? `
+            <h3>
+                🚚 Traslado a ${comuna}:
+                $${traslado.toLocaleString("es-CL")}
+            </h3>
+        `
+        : "";
 
     const total = subtotal + traslado;
 
     document.getElementById("total-final").innerHTML = `
         <h2>
-            Total: $${total.toLocaleString("es-CL")}
+            Total:
+            $${total.toLocaleString("es-CL")}
         </h2>
     `;
 
 }
 
+/* Mostrar total al cargar la página */
 
-    const tipoSolicitante = document.getElementById("tipoSolicitante");
+actualizarTotal();
 
-const campoOrganizacion = document.getElementById("campoOrganizacion");
 
-tipoSolicitante.addEventListener("change", mostrarCampo);
+/* ==========================================================
+   TIPO DE SOLICITANTE
+========================================================== */
 
-function mostrarCampo(){
+const tipoSolicitante =
+    document.getElementById("tipoSolicitante");
+
+const campoOrganizacion =
+    document.getElementById("campoOrganizacion");
+
+tipoSolicitante.addEventListener(
+    "change",
+    mostrarCampo
+);
+
+function mostrarCampo() {
 
     const tipo = tipoSolicitante.value;
 
-    let texto = "";
+    const nombres = {
 
-    switch(tipo){
+        Empresa: "Nombre de la empresa",
 
-        case "Empresa":
-            texto = "Nombre de la empresa";
-            break;
+        Productora: "Nombre de la productora",
 
-        case "Productora":
-            texto = "Nombre de la productora";
-            break;
+        Municipalidad: "Nombre de la municipalidad",
 
-        case "Municipalidad":
-            texto = "Nombre de la municipalidad";
-            break;
+        Colegio: "Nombre del colegio o jardín",
 
-        case "Colegio":
-            texto = "Nombre del colegio o jardín";
-            break;
+        Otro: "Nombre de la organización"
 
-        case "Otro":
-            texto = "Nombre de la organización";
-            break;
+    };
 
-        default:
-            campoOrganizacion.innerHTML = "";
-            return;
+    if (!nombres[tipo]) {
+
+        campoOrganizacion.innerHTML = "";
+        return;
 
     }
 
     campoOrganizacion.innerHTML = `
-        <label>${texto}</label>
+
+        <label>${nombres[tipo]}</label>
 
         <input
             type="text"
             id="organizacion"
             required>
+
     `;
 
 }
 
-    const origen = document.getElementById("comoNosConocio");
-const otroOrigen = document.getElementById("otroOrigen");
 
-origen.addEventListener("change", function () {
+/* ==========================================================
+   ¿CÓMO NOS CONOCISTE?
+========================================================== */
 
-    if (this.value === "Otro") {
+const origen =
+    document.getElementById("comoNosConocio");
+
+const otroOrigen =
+    document.getElementById("otroOrigen");
+
+origen.addEventListener("change", () => {
+
+    if (origen.value === "Otro") {
 
         otroOrigen.innerHTML = `
-            <label>¿Dónde nos conociste?</label>
-            <input type="text" id="detalleOrigen" placeholder="Escribe aquí...">
+
+            <label>
+                ¿Dónde nos conociste?
+            </label>
+
+            <input
+                type="text"
+                id="detalleOrigen"
+                placeholder="Escribe aquí...">
+
         `;
 
     } else {
@@ -485,170 +833,200 @@ origen.addEventListener("change", function () {
     }
 
 });
-    const usarMonitores = document.getElementById("usarMonitores");
 
-usarMonitores.addEventListener("change", function(){
+
+/* ==========================================================
+   MONITORES
+========================================================== */
+
+const usarMonitores =
+    document.getElementById("usarMonitores");
+
+usarMonitores.addEventListener("change", () => {
 
     document.getElementById("configMonitores").style.display =
-        this.checked ? "block" : "none";
+        usarMonitores.checked ? "block" : "none";
 
     actualizarServicios();
 
 });
 
-    
 
-    document.getElementById("cantidadMonitores")
-.addEventListener("input",actualizarServicios);
+
+    /* ==========================================================
+   MONITORES
+========================================================== */
+
+document.getElementById("cantidadMonitores")
+    .addEventListener("input", actualizarServicios);
 
 document.getElementById("horasMonitores")
-.addEventListener("input",actualizarServicios);
+    .addEventListener("input", actualizarServicios);
 
 
-
-    function actualizarServicios(){
-
-    let totalMonitores = 0;
-
-    if(usarMonitores.checked){
-
-        const cantidad =
-        parseInt(document.getElementById("cantidadMonitores").value)||1;
-
-        const horas =
-        parseInt(document.getElementById("horasMonitores").value)||4;
-
-        totalMonitores = cantidad*25000;
-
-        if(horas>4){
-
-            totalMonitores +=
-            (horas-4)*5000*cantidad;
-
-        }
-
-    }
-
-    document.getElementById("totalMonitores").innerHTML=
-    `Total monitores: <strong>$${totalMonitores.toLocaleString("es-CL")}</strong>`;
-
-    }
+/* ==========================================================
+   HORAS ADICIONALES
+========================================================== */
 
 const juegosHoraExtra = {
+
     "Toro Mecánico": 40000,
     "Reloj Derribador": 40000,
     "Muro de Escalada": 50000,
     "Cámara 360": 50000,
     "Atrapa Bastones": 30000,
     "Martillo de Fuerza": 30000
-};
 
-    
-    
-let htmlHoras = "";
-
-for(const nombre in productosAgrupados){
-
-    if(juegosHoraExtra.includes(nombre)){
-
-        htmlHoras += `
-
-        <label>${nombre}</label>
-
-        <input
-            type="number"
-            class="horaExtra"
-            data-juego="${nombre}"
-            min="0"
-            value="0">
-
-        `;
-
-    }
-
-}
-    document.getElementById("listaHorasExtra").innerHTML = htmlHoras;
-
-
-    const juegosHoraExtra = {
-    "Toro Mecánico":40000,
-    "Reloj Derribador":40000,
-    "Muro de Escalada":50000,
-    "Cámara 360":50000,
-    "Atrapa Bastones":30000,
-    "Martillo de Fuerza":30000
 };
 
 let htmlHoras = "";
 
-for(const nombre in productosAgrupados){
+for (const nombre in productosAgrupados) {
 
-    if(juegosHoraExtra[nombre]){
+    if (!juegosHoraExtra[nombre]) continue;
 
-        htmlHoras += `
+    htmlHoras += `
 
         <div class="hora-extra-item">
 
             <h4>${nombre}</h4>
 
-            <p>Valor por hora: <strong>$${juegosHoraExtra[nombre].toLocaleString("es-CL")}</strong></p>
+            <p>
+                Valor por hora:
+                <strong>
+                    $${juegosHoraExtra[nombre].toLocaleString("es-CL")}
+                </strong>
+            </p>
 
             <label>Horas adicionales</label>
 
             <input
                 type="number"
                 class="horaExtra"
-                data-juego="${nombre}"
                 data-valor="${juegosHoraExtra[nombre]}"
                 data-cantidad="${productosAgrupados[nombre].cantidad}"
                 min="0"
                 value="0">
 
-            <p class="subtotalHoraExtra">$0</p>
+            <p class="subtotalHoraExtra">
+                $0
+            </p>
 
         </div>
 
-        `;
-
-    }
+    `;
 
 }
 
 document.getElementById("listaHorasExtra").innerHTML = htmlHoras;
 
-    document.querySelectorAll(".horaExtra").forEach(input=>{
 
-    input.addEventListener("input",actualizarServicios);
+/* ==========================================================
+   EVENTOS
+========================================================== */
 
-});
+document.querySelectorAll(".horaExtra").forEach(input => {
 
-let totalHorasExtra = 0;
-
-document.querySelectorAll(".horaExtra").forEach(input=>{
-
-    const horas = parseInt(input.value)||0;
-
-    const valor = parseInt(input.dataset.valor);
-
-    const cantidad = parseInt(input.dataset.cantidad);
-
-    const subtotal = horas * valor * cantidad;
-
-    input.parentElement.querySelector(".subtotalHoraExtra").innerHTML =
-        "Subtotal: $" + subtotal.toLocaleString("es-CL");
-
-    totalHorasExtra += subtotal;
+    input.addEventListener("input", actualizarServicios);
 
 });
+
+
+/* ==========================================================
+   CALCULAR SERVICIOS
+========================================================== */
+
+function actualizarServicios() {
+
+    /* ---------- Monitores ---------- */
+
+    let totalMonitores = 0;
+
+    if (usarMonitores.checked) {
+
+        const cantidad =
+            parseInt(document.getElementById("cantidadMonitores").value) || 1;
+
+        const horas =
+            parseInt(document.getElementById("horasMonitores").value) || 4;
+
+        totalMonitores = cantidad * 25000;
+
+        if (horas > 4) {
+
+            totalMonitores +=
+                (horas - 4) * 5000 * cantidad;
+
+        }
+
+    }
+
+    document.getElementById("totalMonitores").innerHTML = `
+        Total monitores:
+        <strong>
+            $${totalMonitores.toLocaleString("es-CL")}
+        </strong>
+    `;
+
+
+    /* ---------- Horas adicionales ---------- */
+
+    let totalHorasExtra = 0;
+
+    document.querySelectorAll(".horaExtra").forEach(input => {
+
+        const horas =
+            parseInt(input.value) || 0;
+
+        const valor =
+            parseInt(input.dataset.valor);
+
+        const cantidad =
+            parseInt(input.dataset.cantidad);
+
+        const subtotalHora =
+            horas * valor * cantidad;
+
+        input.parentElement.querySelector(".subtotalHoraExtra").innerHTML =
+            "Subtotal: $" + subtotalHora.toLocaleString("es-CL");
+
+        totalHorasExtra += subtotalHora;
+
+    });
+
+
+    /* ---------- Total ---------- */
+
+    const comuna = comunaSelect.value;
+
+    const traslado = traslados[comuna] || 0;
 
     const totalGeneral =
-subtotal +
-traslado +
-totalMonitores +
-totalHorasExtra;
-    
-    
+        subtotal +
+        traslado +
+        totalMonitores +
+        totalHorasExtra;
+
+    document.getElementById("total-final").innerHTML = `
+        <h2>
+            Total:
+            $${totalGeneral.toLocaleString("es-CL")}
+        </h2>
+    `;
+
+}
+
+
+/* ==========================================================
+   INICIAR
+========================================================== */
+
+actualizarServicios();
+
 </script>
 
 </body>
 </html>
+    
+
+    
