@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cotización | Juegos Baby Mandi</title>
+
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="cotizacion.css">
+</head>
+
+<body>
+
+<header>
+    <!-- Aquí después pondremos el mismo menú de tu página -->
+</header>
+
+<main>
+
+    <h1>Crear Cotización</h1>
+
+    <div id="resumen-carrito"></div>
+
+    <form id="form-cotizacion">
+
+        <label>Nombre</label>
+        <input type="text" id="nombre" required>
+
+        <label>Teléfono</label>
+        <input type="tel" id="telefono" required>
+
+        <label>Correo</label>
+        <input type="email" id="correo" required>
+
+        <label>Tipo de actividad</label>
+        <select id="actividad">
+            <option>Cumpleaños</option>
+            <option>Matrimonio</option>
+            <option>Empresa</option>
+            <option>Colegio</option>
+            <option>Municipalidad</option>
+            <option>Otro</option>
+        </select>
+
+        <label>Fecha del evento</label>
+        <input type="date" id="fecha">
+
+        <label>Comuna</label>
+        <select id="comuna"></select>
+
+        <label>Dirección</label>
+        <input type="text" id="direccion">
+
+        <div id="valor-traslado"></div>
+
+        <div id="total-final"></div>
+
+        <button type="submit">
+            📄 Generar Cotización
+        </button>
+
+    </form>
+
+</main>
+
+<script src="cotizacion.js"></script>
+
+</body>
+</html>
