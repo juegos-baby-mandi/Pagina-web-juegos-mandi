@@ -158,6 +158,32 @@ id="asistentes"
 min="1"
 placeholder="Ej: 80 personas"
 required>
+            <label>¿Cómo nos conociste?</label>
+
+<select id="comoNosConocio" required>
+
+    <option value="">Seleccione una opción</option>
+
+    <option>Google</option>
+
+    <option>Instagram</option>
+
+    <option>Facebook</option>
+
+    <option>TikTok</option>
+
+    <option>WhatsApp</option>
+
+    <option>Cliente antiguo</option>
+
+    <option>Recomendación</option>
+
+    <option>Municipalidad</option>
+
+    <option>Otro</option>
+
+</select>
+            <div id="otroOrigen"></div>
 
             <label>Tipo de actividad</label>
             <select id="actividad">
@@ -169,6 +195,7 @@ required>
                 <option>Evento Particular</option>
                 <option>Otro</option>
             </select>
+            <div id="otroOrigen"></div>
 
             <label>Fecha del evento</label>
             <input type="date" id="fecha" required>
@@ -388,6 +415,25 @@ function mostrarCampo(){
 
 }
 
+    const origen = document.getElementById("comoNosConocio");
+const otroOrigen = document.getElementById("otroOrigen");
+
+origen.addEventListener("change", function () {
+
+    if (this.value === "Otro") {
+
+        otroOrigen.innerHTML = `
+            <label>¿Dónde nos conociste?</label>
+            <input type="text" id="detalleOrigen" placeholder="Escribe aquí...">
+        `;
+
+    } else {
+
+        otroOrigen.innerHTML = "";
+
+    }
+
+});
 </script>
 
 </body>
