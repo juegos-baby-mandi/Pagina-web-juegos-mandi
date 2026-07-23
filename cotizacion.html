@@ -117,14 +117,47 @@ select{
 
         <form id="form-cotizacion">
 
-            <label>Nombre completo</label>
-            <input type="text" id="nombre" required>
+            <h2>Datos del solicitante</h2>
 
-            <label>Teléfono</label>
-            <input type="tel" id="telefono" required>
+<label>¿Quién solicita la cotización?</label>
 
-            <label>Correo electrónico</label>
-            <input type="email" id="correo" required>
+<select id="tipoSolicitante" required>
+
+    <option value="">Seleccione una opción</option>
+
+    <option value="Particular">👤 Particular</option>
+
+    <option value="Empresa">🏢 Empresa</option>
+
+    <option value="Productora">🎪 Productora</option>
+
+    <option value="Municipalidad">🏛️ Municipalidad</option>
+
+    <option value="Colegio">🏫 Colegio o Jardín</option>
+
+    <option value="Otro">🎉 Otro</option>
+
+</select>
+
+<div id="campoOrganizacion"></div>
+
+<label>Nombre del contacto</label>
+<input type="text" id="nombre" required>
+
+<label>Teléfono</label>
+<input type="tel" id="telefono" required>
+
+<label>Correo electrónico</label>
+<input type="email" id="correo" required>
+
+<label>Cantidad aproximada de asistentes</label>
+
+<input
+type="number"
+id="asistentes"
+min="1"
+placeholder="Ej: 80 personas"
+required>
 
             <label>Tipo de actividad</label>
             <select id="actividad">
@@ -202,6 +235,158 @@ subtotalDiv.innerHTML = `
         Subtotal: $${subtotal.toLocaleString("es-CL")}
     </h3>
 `;
+
+
+// ===== TRASLADOS =====
+
+const traslados = {
+    "Alhué":100000,
+    "Buin":50000,
+    "Calera de Tango":40000,
+    "Cerrillos":10000,
+    "Cerro Navia":0,
+    "Colina":45000,
+    "Conchalí":15000,
+    "Curacaví":60000,
+    "El Bosque":15000,
+    "El Monte":80000,
+    "Estación Central":10000,
+    "Huechuraba":20000,
+    "Independencia":15000,
+    "Isla de Maipo":60000,
+    "La Cisterna":20000,
+    "La Florida":30000,
+    "La Granja":25000,
+    "La Pintana":35000,
+    "La Reina":35000,
+    "Lampa":30000,
+    "Las Condes":40000,
+    "Lo Barnechea":40000,
+    "Lo Espejo":20000,
+    "Lo Prado":0,
+    "Macul":35000,
+    "Maipú":10000,
+    "María Pinto":80000,
+    "Melipilla":100000,
+    "Ñuñoa":25000,
+    "Padre Hurtado":25000,
+    "Paine":40000,
+    "Pedro Aguirre Cerda":20000,
+    "Peñaflor":35000,
+    "Peñalolén":40000,
+    "Pirque":40000,
+    "Providencia":30000,
+    "Pudahuel":0,
+    "Puente Alto":40000,
+    "Quilicura":15000,
+    "Quinta Normal":5000,
+    "Recoleta":15000,
+    "Renca":5000,
+    "San Bernardo":25000,
+    "San Joaquín":25000,
+    "San José de Maipo":80000,
+    "San Miguel":25000,
+    "San Pedro":150000,
+    "San Ramón":25000,
+    "Santiago":35000,
+    "Talagante":40000,
+    "Tiltil":50000,
+    "Vitacura":40000
+};
+
+const comunaSelect = document.getElementById("comuna");
+
+// Agregar opción inicial
+comunaSelect.innerHTML = `<option value="">Seleccione una comuna</option>`;
+
+// Llenar el listado automáticamente
+Object.keys(traslados)
+.sort()
+.forEach(comuna => {
+
+    comunaSelect.innerHTML += `
+        <option value="${comuna}">
+            ${comuna}
+        </option>
+    `;
+
+});
+
+    comunaSelect.addEventListener("change", actualizarTotal);
+
+function actualizarTotal(){
+
+    const comuna = comunaSelect.value;
+
+    const traslado = traslados[comuna] || 0;
+
+    document.getElementById("valor-traslado").innerHTML = `
+        <h3>
+            🚚 Traslado a ${comuna}: $${traslado.toLocaleString("es-CL")}
+        </h3>
+    `;
+
+    const total = subtotal + traslado;
+
+    document.getElementById("total-final").innerHTML = `
+        <h2>
+            Total: $${total.toLocaleString("es-CL")}
+        </h2>
+    `;
+
+}
+
+
+    const tipoSolicitante = document.getElementById("tipoSolicitante");
+
+const campoOrganizacion = document.getElementById("campoOrganizacion");
+
+tipoSolicitante.addEventListener("change", mostrarCampo);
+
+function mostrarCampo(){
+
+    const tipo = tipoSolicitante.value;
+
+    let texto = "";
+
+    switch(tipo){
+
+        case "Empresa":
+            texto = "Nombre de la empresa";
+            break;
+
+        case "Productora":
+            texto = "Nombre de la productora";
+            break;
+
+        case "Municipalidad":
+            texto = "Nombre de la municipalidad";
+            break;
+
+        case "Colegio":
+            texto = "Nombre del colegio o jardín";
+            break;
+
+        case "Otro":
+            texto = "Nombre de la organización";
+            break;
+
+        default:
+            campoOrganizacion.innerHTML = "";
+            return;
+
+    }
+
+    campoOrganizacion.innerHTML = `
+        <label>${texto}</label>
+
+        <input
+            type="text"
+            id="organizacion"
+            required>
+    `;
+
+}
 
 </script>
 
