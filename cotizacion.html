@@ -263,6 +263,49 @@ hr{
 
 }
 
+    /* ===== TABLA RESUMEN ===== */
+
+.tabla-resumen{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.tabla-resumen th{
+    background:#1f5a97;
+    color:white;
+    padding:12px;
+    font-size:15px;
+}
+
+.tabla-resumen td{
+    padding:12px 10px;
+    border-bottom:1px solid #ececec;
+    font-size:15px;
+}
+
+.tabla-resumen tr:nth-child(even){
+    background:#fafafa;
+}
+
+.tabla-resumen td:nth-child(2){
+    text-align:center;
+}
+
+.tabla-resumen td:nth-child(3),
+.tabla-resumen td:nth-child(4){
+    text-align:right;
+}
+
+.total-tabla{
+    margin-top:20px;
+    text-align:right;
+    font-size:30px;
+    font-weight:bold;
+}
+    
 </style>
     
 </head>
@@ -570,7 +613,25 @@ carrito.forEach(producto => {
 ========================================================== */
 
 let subtotal = 0;
-let htmlResumen = "";
+
+let htmlResumen = `
+
+<table class="tabla-resumen">
+
+<thead>
+
+<tr>
+    <th>Juego</th>
+    <th>Cant.</th>
+    <th>Valor Unit.</th>
+    <th>Subtotal</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+`;
 
 for (const nombre in productosAgrupados) {
 
@@ -583,28 +644,29 @@ for (const nombre in productosAgrupados) {
 
     htmlResumen += `
 
-        <div class="producto-resumen">
+    <tr>
 
-            <h3>${nombre}</h3>
+        <td>${nombre}</td>
 
-            <p>
-                <strong>Cantidad:</strong>
-                ${producto.cantidad}
-            </p>
+        <td>${producto.cantidad}</td>
 
-            <p>
-                <strong>Valor unitario:</strong>
-                $${producto.precio.toLocaleString("es-CL")}
-            </p>
+        <td>$${producto.precio.toLocaleString("es-CL")}</td>
 
-            <p>
-                <strong>Subtotal:</strong>
-                $${subtotalProducto.toLocaleString("es-CL")}
-            </p>
+        <td>$${subtotalProducto.toLocaleString("es-CL")}</td>
 
-        </div>
+    </tr>
 
     `;
+
+}
+
+htmlResumen += `
+
+</tbody>
+
+</table>
+
+`;
 
 }
 
