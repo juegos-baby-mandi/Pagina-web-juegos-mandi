@@ -834,13 +834,11 @@ origen.addEventListener("change", () => {
 
 });
 
-
 /* ==========================================================
    MONITORES
 ========================================================== */
 
-const usarMonitores =
-    document.getElementById("usarMonitores");
+const usarMonitores = document.getElementById("usarMonitores");
 
 usarMonitores.addEventListener("change", () => {
 
@@ -850,12 +848,6 @@ usarMonitores.addEventListener("change", () => {
     actualizarServicios();
 
 });
-
-
-
-    /* ==========================================================
-   MONITORES
-========================================================== */
 
 document.getElementById("cantidadMonitores")
     .addEventListener("input", actualizarServicios);
@@ -868,6 +860,17 @@ document.getElementById("horasMonitores")
    HORAS ADICIONALES
 ========================================================== */
 
+const usarHorasExtra = document.getElementById("usarHorasExtra");
+
+usarHorasExtra.addEventListener("change", () => {
+
+    document.getElementById("configHorasExtra").style.display =
+        usarHorasExtra.checked ? "block" : "none";
+
+    actualizarServicios();
+
+});
+
 const juegosHoraExtra = {
 
     "Toro Mecánico": 40000,
@@ -878,6 +881,11 @@ const juegosHoraExtra = {
     "Martillo de Fuerza": 30000
 
 };
+
+
+/* ==========================================================
+   CREAR LISTADO DE HORAS ADICIONALES
+========================================================== */
 
 let htmlHoras = "";
 
@@ -909,7 +917,7 @@ for (const nombre in productosAgrupados) {
                 value="0">
 
             <p class="subtotalHoraExtra">
-                $0
+                Subtotal: $0
             </p>
 
         </div>
@@ -922,7 +930,7 @@ document.getElementById("listaHorasExtra").innerHTML = htmlHoras;
 
 
 /* ==========================================================
-   EVENTOS
+   EVENTOS HORAS ADICIONALES
 ========================================================== */
 
 document.querySelectorAll(".horaExtra").forEach(input => {
@@ -973,27 +981,57 @@ function actualizarServicios() {
 
     let totalHorasExtra = 0;
 
-    document.querySelectorAll(".horaExtra").forEach(input => {
+    if (usarHorasExtra.checked) {
 
-        const horas =
-            parseInt(input.value) || 0;
+        document.querySelectorAll(".horaExtra").forEach(input => {
 
-        const valor =
-            parseInt(input.dataset.valor);
+            const horas =
+                parseInt(input.value) || 0;
 
-        const cantidad =
-            parseInt(input.dataset.cantidad);
+            const valor =
+                parseInt(input.dataset.valor);
 
-        const subtotalHora =
-            horas * valor * cantidad;
+            const cantidad =
+                parseInt(input.dataset.cantidad);
 
-        input.parentElement.querySelector(".subtotalHoraExtra").innerHTML =
-            "Subtotal: $" + subtotalHora.toLocaleString("es-CL");
+            const subtotalHora =
+                horas * valor * cantidad;
 
-        totalHorasExtra += subtotalHora;
+            input.parentElement.querySelector(".subtotalHoraExtra").innerHTML =
+                "Subtotal: $" + subtotalHora.toLocaleString("es-CL");
 
-    });
+            totalHorasExtra += subtotalHora;
 
+        });
+
+    }
+
+    /* ---------- Total ---------- */
+
+    const comuna = comunaSelect.value;
+    const traslado = traslados[comuna] || 0;
+
+    const totalGeneral =
+        subtotal +
+        traslado +
+        totalMonitores +
+        totalHorasExtra;
+
+    document.getElementById("total-final").innerHTML = `
+        <h2>
+            Total:
+            $${totalGeneral.toLocaleString("es-CL")}
+        </h2>
+    `;
+
+}
+
+
+/* ==========================================================
+   INICIAR
+========================================================== */
+
+actualizarServicios();
 
     /* ---------- Total ---------- */
 
@@ -1015,6 +1053,7 @@ function actualizarServicios() {
     `;
 
 }
+
 
 
 /* ==========================================================
