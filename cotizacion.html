@@ -611,26 +611,25 @@ carrito.forEach(producto => {
 /* ==========================================================
    CREAR RESUMEN
 ========================================================== */
+/* ===========================================================
+   CREAR RESUMEN
+=========================================================== */
 
 let subtotal = 0;
 
 let htmlResumen = `
-
 <table class="tabla-resumen">
 
 <thead>
-
 <tr>
     <th>Juego</th>
     <th>Cant.</th>
     <th>Valor Unit.</th>
     <th>Subtotal</th>
 </tr>
-
 </thead>
 
 <tbody>
-
 `;
 
 for (const nombre in productosAgrupados) {
@@ -643,32 +642,30 @@ for (const nombre in productosAgrupados) {
     subtotal += subtotalProducto;
 
     htmlResumen += `
-
-    <tr>
-
-        <td>${nombre}</td>
-
-        <td>${producto.cantidad}</td>
-
-        <td>$${producto.precio.toLocaleString("es-CL")}</td>
-
-        <td>$${subtotalProducto.toLocaleString("es-CL")}</td>
-
-    </tr>
-
+        <tr>
+            <td>${nombre}</td>
+            <td>${producto.cantidad}</td>
+            <td>$${producto.precio.toLocaleString("es-CL")}</td>
+            <td>$${subtotalProducto.toLocaleString("es-CL")}</td>
+        </tr>
     `;
 
 }
 
 htmlResumen += `
-
 </tbody>
-
 </table>
-
 `;
 
-}
+document.getElementById("resumen-carrito").innerHTML = htmlResumen;
+
+document.getElementById("subtotal").innerHTML = `
+<div class="total-tabla">
+    Subtotal: $${subtotal.toLocaleString("es-CL")}
+</div>
+`;
+
+
 
 /* ==========================================================
    MOSTRAR RESUMEN
