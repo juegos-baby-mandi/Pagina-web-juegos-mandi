@@ -114,23 +114,25 @@ select{
     <h2>➕ Servicios adicionales</h2>
 
 <div class="servicio-adicional">
+    <h3>👷 Monitores (opcional)</h3>
 
-    <label>
-        <input type="checkbox" id="usarMonitores">
-        Monitores
-    </label>
+<label>
+    <input type="checkbox" id="usarMonitores">
+    Agregar monitores
+</label>
 
-    <div id="configMonitores" style="display:none;">
+<div id="configMonitores" style="display:none; margin-top:15px;">
 
-        <label>Cantidad de monitores</label>
-        <input type="number" id="cantidadMonitores" min="1" value="1">
+    <label>Cantidad de monitores</label>
+    <input type="number" id="cantidadMonitores" min="1" value="1">
 
-        <label>Horas de trabajo</label>
-        <input type="number" id="horasMonitores" min="1" value="4">
+    <label>Duración del evento (horas)</label>
+    <input type="number" id="horasMonitores" min="1" value="4">
 
-        <p id="totalMonitores">$0</p>
+    <p id="totalMonitores"></p>
 
-    </div>
+</div>
+    
 
 </div>
 
@@ -483,19 +485,18 @@ origen.addEventListener("change", function () {
     }
 
 });
-
     const usarMonitores = document.getElementById("usarMonitores");
-const configMonitores = document.getElementById("configMonitores");
 
-usarMonitores.addEventListener("change",()=>{
+usarMonitores.addEventListener("change", function(){
 
-    configMonitores.style.display =
-        usarMonitores.checked ? "block" : "none";
+    document.getElementById("configMonitores").style.display =
+        this.checked ? "block" : "none";
 
     actualizarServicios();
 
 });
 
+    
 
     document.getElementById("cantidadMonitores")
 .addEventListener("input",actualizarServicios);
@@ -568,6 +569,83 @@ for(const nombre in productosAgrupados){
 }
     document.getElementById("listaHorasExtra").innerHTML = htmlHoras;
 
+
+    const juegosHoraExtra = {
+    "Toro Mecánico":40000,
+    "Reloj Derribador":40000,
+    "Muro de Escalada":50000,
+    "Cámara 360":50000,
+    "Atrapa Bastones":30000,
+    "Martillo de Fuerza":30000
+};
+
+let htmlHoras = "";
+
+for(const nombre in productosAgrupados){
+
+    if(juegosHoraExtra[nombre]){
+
+        htmlHoras += `
+
+        <div class="hora-extra-item">
+
+            <h4>${nombre}</h4>
+
+            <p>Valor por hora: <strong>$${juegosHoraExtra[nombre].toLocaleString("es-CL")}</strong></p>
+
+            <label>Horas adicionales</label>
+
+            <input
+                type="number"
+                class="horaExtra"
+                data-juego="${nombre}"
+                data-valor="${juegosHoraExtra[nombre]}"
+                data-cantidad="${productosAgrupados[nombre].cantidad}"
+                min="0"
+                value="0">
+
+            <p class="subtotalHoraExtra">$0</p>
+
+        </div>
+
+        `;
+
+    }
+
+}
+
+document.getElementById("listaHorasExtra").innerHTML = htmlHoras;
+
+    document.querySelectorAll(".horaExtra").forEach(input=>{
+
+    input.addEventListener("input",actualizarServicios);
+
+});
+
+let totalHorasExtra = 0;
+
+document.querySelectorAll(".horaExtra").forEach(input=>{
+
+    const horas = parseInt(input.value)||0;
+
+    const valor = parseInt(input.dataset.valor);
+
+    const cantidad = parseInt(input.dataset.cantidad);
+
+    const subtotal = horas * valor * cantidad;
+
+    input.parentElement.querySelector(".subtotalHoraExtra").innerHTML =
+        "Subtotal: $" + subtotal.toLocaleString("es-CL");
+
+    totalHorasExtra += subtotal;
+
+});
+
+    const totalGeneral =
+subtotal +
+traslado +
+totalMonitores +
+totalHorasExtra;
     
     
 </script>
