@@ -1026,36 +1026,6 @@ function actualizarServicios() {
 
 }
 
-
-/* ==========================================================
-   INICIAR
-========================================================== */
-
-actualizarServicios();
-
-    /* ---------- Total ---------- */
-
-    const comuna = comunaSelect.value;
-
-    const traslado = traslados[comuna] || 0;
-
-    const totalGeneral =
-        subtotal +
-        traslado +
-        totalMonitores +
-        totalHorasExtra;
-
-    document.getElementById("total-final").innerHTML = `
-        <h2>
-            Total:
-            $${totalGeneral.toLocaleString("es-CL")}
-        </h2>
-    `;
-
-}
-
-
-
 /* ==========================================================
    INICIAR
 ========================================================== */
@@ -1063,9 +1033,5 @@ actualizarServicios();
 actualizarServicios();
 
 </script>
-
 </body>
 </html>
-    
-
-    
