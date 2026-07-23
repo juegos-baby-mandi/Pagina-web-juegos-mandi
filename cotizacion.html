@@ -1135,6 +1135,29 @@ function actualizarServicios() {
 
 actualizarServicios();
 
+    // ===== Guardar formulario automáticamente =====
+
+const campos = document.querySelectorAll("input, select, textarea");
+
+campos.forEach(campo => {
+
+    // Restaurar valor guardado
+    const valor = localStorage.getItem("form_" + campo.id);
+    if (valor !== null) {
+        campo.value = valor;
+    }
+
+    // Guardar al cambiar
+    campo.addEventListener("input", () => {
+        localStorage.setItem("form_" + campo.id, campo.value);
+    });
+
+    campo.addEventListener("change", () => {
+        localStorage.setItem("form_" + campo.id, campo.value);
+    });
+
+});
+    
 </script>
 </body>
 </html>
