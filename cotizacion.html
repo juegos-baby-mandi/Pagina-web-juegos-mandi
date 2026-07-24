@@ -1138,6 +1138,46 @@ function actualizarServicios() {
 
 actualizarServicios();
 
+    /* ==========================================================
+   GENERAR COTIZACIÓN
+========================================================== */
+
+const formulario = document.querySelector("form");
+
+formulario.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    if(!formulario.checkValidity()){
+
+        formulario.reportValidity();
+
+        return;
+
+    }
+
+    // ==========================================
+    // AQUÍ SE GENERARÁ EL PDF
+    // ==========================================
+
+
+
+    // ==========================================
+    // MENSAJE DE ÉXITO
+    // ==========================================
+
+    alert(
+`🎉 ¡Gracias por cotizar con Juegos Baby Mandi!
+
+Tu cotización ha sido generada correctamente.
+
+En los próximos minutos revisaremos la disponibilidad y nos pondremos en contacto contigo.
+
+Muchas gracias por preferirnos.`
+    );
+
+});
+
     // ===== Guardar formulario automáticamente =====
 
 const campos = document.querySelectorAll("input, select, textarea");
