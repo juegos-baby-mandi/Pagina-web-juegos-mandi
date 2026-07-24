@@ -1299,67 +1299,62 @@ actualizarServicios();
    GENERAR COTIZACIÓN
 ========================================================== */
 
-const formulario = document.querySelector("form");
+/* ==========================================================
+GENERAR COTIZACIÓN
+========================================================== */
+
+const formulario = document.getElementById("form-cotizacion");
 
 formulario.addEventListener("submit", async function(e){
 
     e.preventDefault();
 
     if(!formulario.checkValidity()){
-
         formulario.reportValidity();
-
         return;
-
     }
 
-    // ==========================================
-    // AQUÍ SE GENERARÁ EL PDF
-    // ==========================================
+    // AQUÍ MÁS ADELANTE GENERAREMOS EL PDF Y ENVIAREMOS EL CORREO
 
+    document.getElementById("modalExito").classList.add("mostrar");
 
+});
 
-    // ==========================================
-    // MENSAJE DE ÉXITO
-    // ==========================================
-
-    document
-.getElementById("modalExito")
-.classList.add("mostrar");
-
-    // ===== Guardar formulario automáticamente =====
+/* ==========================================================
+GUARDAR FORMULARIO AUTOMÁTICAMENTE
+========================================================== */
 
 const campos = document.querySelectorAll("input, select, textarea");
 
-campos.forEach(campo => {
+campos.forEach(campo=>{
 
-    // Restaurar valor guardado
-    const valor = localStorage.getItem("form_" + campo.id);
-    if (valor !== null) {
-        campo.value = valor;
+    const valorGuardado = localStorage.getItem("form_" + campo.id);
+
+    if(valorGuardado !== null){
+        campo.value = valorGuardado;
     }
 
-    // Guardar al cambiar
-    campo.addEventListener("input", () => {
-        localStorage.setItem("form_" + campo.id, campo.value);
+    campo.addEventListener("input",()=>{
+        localStorage.setItem("form_" + campo.id,campo.value);
     });
 
-    campo.addEventListener("change", () => {
-        localStorage.setItem("form_" + campo.id, campo.value);
+    campo.addEventListener("change",()=>{
+        localStorage.setItem("form_" + campo.id,campo.value);
     });
 
 });
-    document
-.getElementById("cerrarModal")
-.addEventListener("click",()=>{
 
-    document
-    .getElementById("modalExito")
-    .classList.remove("mostrar");
+/* ==========================================================
+CERRAR MODAL
+========================================================== */
+
+document.getElementById("cerrarModal").addEventListener("click",()=>{
+
+    document.getElementById("modalExito").classList.remove("mostrar");
 
 });
+    </script>
     
-</script>
     <!-- ========= VENTANA ÉXITO ========= -->
 <div id="modalExito" class="modal-exito">
 
