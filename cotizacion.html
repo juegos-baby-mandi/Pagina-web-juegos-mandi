@@ -306,6 +306,163 @@ hr{
     font-size:30px;
     font-weight:bold;
 }
+
+    /*==========================
+VENTANA ÉXITO
+==========================*/
+
+.modal-exito{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:99999;
+
+}
+
+.modal-exito.mostrar{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.modal-contenido{
+
+    width:90%;
+
+    max-width:470px;
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    text-align:center;
+
+    animation:subir .35s;
+
+}
+
+.logo-modal{
+
+    width:95px;
+
+    margin-bottom:15px;
+
+}
+
+.icono-exito{
+
+    width:75px;
+
+    height:75px;
+
+    margin:auto;
+
+    margin-bottom:20px;
+
+    border-radius:50%;
+
+    background:#28a745;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:38px;
+
+    font-weight:bold;
+
+}
+
+.modal-contenido h2{
+
+    color:#0f4c81;
+
+    margin-bottom:18px;
+
+}
+
+.modal-contenido p{
+
+    color:#555;
+
+    line-height:1.7;
+
+    margin-bottom:15px;
+
+}
+
+.btn-modal{
+
+    margin-top:18px;
+
+    background:#ff7a00;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:12px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+.btn-modal:hover{
+
+    background:#e56d00;
+
+}
+
+@keyframes subir{
+
+    from{
+
+        transform:translateY(30px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+}
+    
     
 </style>
 
@@ -1166,17 +1323,9 @@ formulario.addEventListener("submit", async function(e){
     // MENSAJE DE ÉXITO
     // ==========================================
 
-    alert(
-`🎉 ¡Gracias por cotizar con Juegos Baby Mandi!
-
-Tu cotización ha sido generada correctamente.
-
-En los próximos minutos revisaremos la disponibilidad y nos pondremos en contacto contigo.
-
-Muchas gracias por preferirnos.`
-    );
-
-});
+    document
+.getElementById("modalExito")
+.classList.add("mostrar");
 
     // ===== Guardar formulario automáticamente =====
 
@@ -1200,7 +1349,50 @@ campos.forEach(campo => {
     });
 
 });
+    document
+.getElementById("cerrarModal")
+.addEventListener("click",()=>{
+
+    document
+    .getElementById("modalExito")
+    .classList.remove("mostrar");
+
+});
     
 </script>
+    <!-- ========= VENTANA ÉXITO ========= -->
+<div id="modalExito" class="modal-exito">
+
+    <div class="modal-contenido">
+
+        <div class="icono-exito">
+            ✔
+        </div>
+
+        <img src="img/logo.png" class="logo-modal">
+
+        <h2>¡Cotización enviada!</h2>
+
+        <p>
+            Muchas gracias por cotizar con
+            <strong>Juegos Baby Mandi.</strong>
+        </p>
+
+        <p>
+            Hemos recibido correctamente tu solicitud.
+        </p>
+
+        <p>
+            En los próximos minutos revisaremos la disponibilidad y nos pondremos en contacto contigo.
+        </p>
+
+        <button id="cerrarModal" class="btn-modal">
+            Cerrar
+        </button>
+
+    </div>
+
+</div>
+    
 </body>
 </html>
