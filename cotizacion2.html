@@ -1414,10 +1414,11 @@ doc.setTextColor(0,0,0);
 doc.setFillColor(...gris);
 
 // Caja Cliente
-doc.roundedRect(10, y, 92, 55, 3, 3, "F");
+    doc.roundedRect(10, y, 92, 62, 3, 3, "F");
 
 // Caja Proveedor
-doc.roundedRect(108, y, 92, 55, 3, 3, "F");
+    doc.roundedRect(108, y, 92, 62, 3, 3, "F");
+
     
 y += 8;
 
@@ -1445,25 +1446,27 @@ let yp = y;
 
 doc.setFontSize(8);
 
-doc.text("Empresa:",112,yp);
-doc.text("Juegos Baby Mandi Ltda.",132,yp);
+doc.setFont("helvetica","bold");
+doc.text("Juegos Baby Mandi Ltda.",112,yp);
 
-yp += 6;
+doc.setFont("helvetica","normal");
+
+yp += 7;
 
 doc.text("RUT:",112,yp);
 doc.text("77.816.056-0",132,yp);
 
-yp += 6;
+yp += 7;
 
 doc.text("Giro:",112,yp);
 doc.text("Entretención Infantil",132,yp);
 
-yp += 6;
+yp += 7;
 
 doc.text("Correo:",112,yp);
 doc.text("juegosbabymandi@gmail.com",132,yp);
 
-yp += 6;
+yp += 7;
 
 doc.text("Sitio Web:",112,yp);
 doc.text("www.juegosbabymandi.cl",132,yp);
