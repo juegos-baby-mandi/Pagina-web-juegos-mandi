@@ -1310,20 +1310,12 @@ formulario.addEventListener("submit", async function(e){
         return;
     }
 
-    generarPDF();
+    await generarPDF();
 
     document.getElementById("modalExito").classList.add("mostrar");
 
 });
 
-
-    // AQUÍ MÁS ADELANTE GENERAREMOS EL PDF Y ENVIAREMOS EL CORREO
-
-    await generarPDF();
-
-document.getElementById("modalExito").classList.add("mostrar");
-    
-});
 
 /* ==========================================================
 GUARDAR FORMULARIO AUTOMÁTICAMENTE
