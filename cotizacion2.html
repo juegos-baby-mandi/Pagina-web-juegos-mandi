@@ -1299,10 +1299,6 @@ actualizarServicios();
    GENERAR COTIZACIÓN
 ========================================================== */
 
-/* ==========================================================
-GENERAR COTIZACIÓN
-========================================================== */
-
 const formulario = document.getElementById("form-cotizacion");
 
 formulario.addEventListener("submit", async function(e){
@@ -1314,10 +1310,19 @@ formulario.addEventListener("submit", async function(e){
         return;
     }
 
-    // AQUÍ MÁS ADELANTE GENERAREMOS EL PDF Y ENVIAREMOS EL CORREO
+    generarPDF();
 
     document.getElementById("modalExito").classList.add("mostrar");
 
+});
+
+
+    // AQUÍ MÁS ADELANTE GENERAREMOS EL PDF Y ENVIAREMOS EL CORREO
+
+    await generarPDF();
+
+document.getElementById("modalExito").classList.add("mostrar");
+    
 });
 
 /* ==========================================================
@@ -1347,7 +1352,281 @@ campos.forEach(campo=>{
 /* ==========================================================
 CERRAR MODAL
 ========================================================== */
+/* ==========================================================
+GENERAR PDF
+========================================================== */
+async function generarPDF() {
 
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF("p","mm","a4");
+
+    const naranja = [255,122,0];
+    const azul = [15,76,129];
+    const gris = [240,240,240];
+
+    // Encabezado
+    doc.setFillColor(...azul);
+    doc.rect(0,0,210,30,"F");
+
+    // Logo
+    try{
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.src = "img/logo.png";
+
+        await new Promise(resolve=>{
+            img.onload = resolve;
+            img.onerror = resolve;
+        });
+
+        doc.addImage(img,"PNG",10,4,22,22);
+
+    }catch(e){}
+
+    doc.setTextColor(255,255,255);
+    doc.setFontSize(20);
+    doc.text("Juegos Baby Mandi",40,14);
+
+    doc.setFontSize(11);
+    doc.text("Solicitud de Cotización",40,22);
+
+    doc.setTextColor(0,0,0);
+
+    let y = 42;
+
+    doc.setFillColor(...gris);
+    doc.roundedRect(10,y,190,55,3,3,"F");
+
+    y += 8;
+
+    doc.setFontSize(15);
+    doc.setTextColor(...azul);
+    doc.text("DATOS DEL CLIENTE",15,y);
+
+    y += 8;
+
+    doc.setFontSize(11);
+    doc.setTextColor(0);
+
+    doc.text("Nombre:",15,y);
+    doc.text(document.getElementById("nombre").value,55,y);
+
+    y += 7;
+
+    doc.text("Teléfono:",15,y);
+    doc.text(document.getElementById("telefono").value,55,y);
+
+    y += 7;
+
+    doc.text("Correo:",15,y);
+    doc.text(document.getElementById("correo").value,55,y);
+
+    y += 7;
+
+    doc.text("Fecha:",15,y);
+    doc.text(document.getElementById("fecha").value,55,y);
+
+    y += 7;
+
+    doc.text("Comuna:",15,y);
+    doc.text(document.getElementById("comuna").value,55,y);
+
+    y += 7;
+
+    doc.text("Dirección:",15,y);
+    doc.text(document.getElementById("direccion").value,55,y);
+
+    y += 15;
+
+        // ===========================
+    // TABLA DE JUEGOS
+    // ===========================
+
+    const filas = [];
+
+    for (const nombre in productosAgrupados){
+
+        const producto = productosAgrupados[nombre];
+
+        filas.push([
+            nombre,
+            producto.cantidad,
+            "$" + producto.precio.toLocaleString("es-CL"),
+            "$" + (producto.cantidad * producto.precio).toLocaleString("es-CL")
+        ]);
+
+    }
+
+    doc.autoTable({
+
+        startY: y,
+
+        head:[[
+            "Juego",
+            "Cant.",
+            "Valor Unit.",
+            "Subtotal"
+        ]],
+
+        body: filas,
+
+        theme:"grid",
+
+        headStyles:{
+            fillColor:[15,76,129],
+            textColor:255,
+            halign:"center"
+        },
+
+        styles:{
+            fontSize:10
+        },
+
+        columnStyles:{
+            1:{halign:"center"},
+            2:{halign:"right"},
+            3:{halign:"right"}
+        }
+
+    });
+
+    y = doc.lastAutoTable.finalY + 10;
+
+        // ===========================
+    // TOTALES
+    // ===========================
+
+    let totalMonitores = 0;
+
+    if(usarMonitores.checked){
+
+        const cantidad = parseInt(document.getElementById("cantidadMonitores").value) || 1;
+
+        const horas = parseInt(document.getElementById("horasMonitores").value) || 4;
+
+        totalMonitores = cantidad * 25000;
+
+        if(horas > 4){
+            totalMonitores += (horas - 4) * 5000 * cantidad;
+        }
+
+    }
+
+    let totalHorasExtra = 0;
+
+    if(usarHorasExtra.checked){
+
+        document.querySelectorAll(".horaExtra").forEach(input=>{
+
+            const horas = parseInt(input.value)||0;
+
+            const valor = parseInt(input.dataset.valor);
+
+            const cantidad = parseInt(input.dataset.cantidad);
+
+            totalHorasExtra += horas * valor * cantidad;
+
+        });
+
+    }
+
+    const traslado = traslados[comunaSelect.value] || 0;
+
+    const totalGeneral =
+        subtotal +
+        traslado +
+        totalMonitores +
+        totalHorasExtra;
+
+    doc.setFontSize(12);
+
+    doc.text("Traslado:",130,y);
+    doc.text("$"+traslado.toLocaleString("es-CL"),195,y,{align:"right"});
+
+    y += 8;
+
+    doc.text("Monitores:",130,y);
+    doc.text("$"+totalMonitores.toLocaleString("es-CL"),195,y,{align:"right"});
+
+    y += 8;
+
+    doc.text("Horas adicionales:",130,y);
+    doc.text("$"+totalHorasExtra.toLocaleString("es-CL"),195,y,{align:"right"});
+
+    y += 12;
+
+    doc.setFillColor(15,76,129);
+
+    doc.roundedRect(120,y-6,80,14,2,2,"F");
+
+    doc.setFontSize(16);
+
+    doc.setTextColor(255);
+
+    doc.text(
+        "TOTAL: $" + totalGeneral.toLocaleString("es-CL"),
+        196,
+        y+3,
+        {align:"right"}
+    );
+
+    doc.setTextColor(0);
+
+    y += 22;
+
+        // ===========================
+    // CONDICIONES
+    // ===========================
+
+    doc.setFontSize(13);
+    doc.setTextColor(15,76,129);
+    doc.text("Condiciones de reserva",15,y);
+
+    y += 8;
+
+    doc.setTextColor(60);
+
+    const condiciones = [
+        "• La cotización no reserva automáticamente la fecha.",
+        "• La reserva se confirma con el abono correspondiente.",
+        "• El saldo debe quedar pagado antes del evento.",
+        "• Juegos Baby Mandi confirmará la disponibilidad.",
+        "• Valores expresados en pesos chilenos."
+    ];
+
+    condiciones.forEach(texto=>{
+        doc.text(texto,18,y);
+        y += 7;
+    });
+
+    y += 8;
+
+    doc.setDrawColor(220);
+    doc.line(15,y,195,y);
+
+    y += 10;
+
+    doc.setFontSize(11);
+    doc.setTextColor(15,76,129);
+    doc.text("Juegos Baby Mandi",105,y,{align:"center"});
+
+    y += 6;
+
+    doc.setTextColor(80);
+    doc.text("www.juegosbabymandi.cl",105,y,{align:"center"});
+
+    y += 6;
+
+    doc.text("Instagram: @juegosbabymandi",105,y,{align:"center"});
+
+    y += 6;
+
+    doc.text("WhatsApp: +56 9 5694 65784",105,y,{align:"center"});
+
+    doc.save("Cotizacion_Juegos_Baby_Mandi.pdf");
+
+}
+    
 
     function cerrarModal() {
     document.getElementById("modalExito").classList.remove("mostrar");
