@@ -1376,29 +1376,83 @@ async function generarPDF() {
     }catch(e){}
 
     doc.setTextColor(255,255,255);
-    doc.setFontSize(20);
-    doc.text("Juegos Baby Mandi",40,14);
 
-    doc.setFontSize(11);
-    doc.text("Solicitud de Cotización",40,22);
+// Nombre empresa
+doc.setFont("helvetica","bold");
+doc.setFontSize(18);
+doc.text("JUEGOS BABY MANDI",40,11);
 
-    doc.setTextColor(0,0,0);
+// Descripción
+doc.setFont("helvetica","normal");
+doc.setFontSize(9);
+doc.text("Arriendo de Juegos Inflables, Mecánicos, Electrónicos y Eventos",40,17);
+
+// Datos de contacto
+doc.setFontSize(8);
+doc.text("📞 +56 9 4653 5784",40,22);
+doc.text("✉ cotizacion.babymandi@gmail.com",40,26);
+doc.text("🌐 www.juegosbabymandi.cl",115,22);
+doc.text("📷 @juegosbabymandi",115,26);
+
+// Lado derecho
+doc.setFont("helvetica","bold");
+doc.setFontSize(15);
+doc.text("COTIZACIÓN",165,12);
+
+doc.setFont("helvetica","normal");
+doc.setFontSize(9);
+doc.text("N° JBM-000001",165,18);
+doc.text(
+    "Fecha: " + new Date().toLocaleDateString("es-CL"),
+    165,
+    24
+);
+
+doc.setTextColor(0,0,0);
 
     let y = 42;
+    
 
-    doc.setFillColor(...gris);
-    doc.roundedRect(10,y,190,55,3,3,"F");
+    // Caja Empresa
+doc.setFillColor(...gris);
+doc.roundedRect(10, y, 92, 55, 3, 3, "F");
+
+// Caja Cliente
+doc.roundedRect(108, y, 92, 55, 3, 3, "F");
 
     y += 8;
 
     doc.setFontSize(15);
     doc.setTextColor(...azul);
-    doc.text("DATOS DEL CLIENTE",15,y);
+    doc.text("JUEGOS BABY MANDI",15,y);
 
     y += 8;
 
     doc.setFontSize(11);
     doc.setTextColor(0);
+
+    doc.text("Representante:",15,y);
+doc.text("Javiera Gacitúa Liberona",45,y);
+
+y += 6;
+
+doc.text("Teléfono:",15,y);
+doc.text("+56 9 4653 5784",45,y);
+
+y += 6;
+
+doc.text("Correo:",15,y);
+doc.text("cotizacion.babymandi@gmail.com",45,y);
+
+y += 6;
+
+doc.text("Sitio web:",15,y);
+doc.text("www.juegosbabymandi.cl",45,y);
+
+y += 6;
+
+doc.text("Instagram:",15,y);
+doc.text("@juegosbabymandi",45,y);
 
     doc.text("Nombre:",15,y);
     doc.text(document.getElementById("nombre").value,55,y);
