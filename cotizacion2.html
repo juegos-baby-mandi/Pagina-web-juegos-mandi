@@ -1380,33 +1380,31 @@ async function generarPDF() {
 
 // Nombre empresa
 doc.setFont("helvetica","bold");
-doc.setFontSize(18);
-doc.text("JUEGOS BABY MANDI",40,11);
+doc.setFontSize(20);
+doc.text("JUEGOS BABY MANDI",40,13);
 
 // Descripción
 doc.setFont("helvetica","normal");
-doc.setFontSize(9);
-doc.text("Arriendo de Juegos Inflables, Mecánicos, Electrónicos y Eventos",40,17);
-
-// Datos de contacto
-doc.setFontSize(8);
-doc.text("📞 +56 9 4653 5784",40,22);
-doc.text("✉ cotizacion.babymandi@gmail.com",40,26);
-doc.text("🌐 www.juegosbabymandi.cl",115,22);
-doc.text("📷 @juegosbabymandi",115,26);
+doc.setFontSize(10);
+doc.text(
+"Arriendo de Juegos Inflables, Mecánicos, Electrónicos y Eventos",
+40,
+20
+);
 
 // Lado derecho
 doc.setFont("helvetica","bold");
-doc.setFontSize(15);
+doc.setFontSize(18);
 doc.text("COTIZACIÓN",165,12);
 
 doc.setFont("helvetica","normal");
-doc.setFontSize(9);
-doc.text("N° JBM-000001",165,18);
+doc.setFontSize(10);
+doc.text("N° JBM-000001",165,20);
+
 doc.text(
-    "Fecha: " + new Date().toLocaleDateString("es-CL"),
-    165,
-    24
+"Fecha: " + new Date().toLocaleDateString("es-CL"),
+165,
+26
 );
 
 doc.setTextColor(0,0,0);
