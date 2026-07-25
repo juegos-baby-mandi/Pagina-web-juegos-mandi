@@ -1468,8 +1468,29 @@ yp += 6;
 doc.text("Sitio Web:",112,yp);
 doc.text("www.juegosbabymandi.cl",132,yp);
 
-doc.text("Nombre:",15,y);
-doc.text(document.getElementById("nombre").value,55,y);
+    const tipo = document.getElementById("tipoSolicitante").value;
+
+const organizacion =
+document.getElementById("organizacion")
+? document.getElementById("organizacion").value
+: "";
+
+if(tipo === "Particular"){
+
+    doc.text("Nombre:",15,y);
+    doc.text(document.getElementById("nombre").value,55,y);
+
+}else{
+
+    doc.text(tipo + ":",15,y);
+    doc.text(organizacion,55,y);
+
+    y += 7;
+
+    doc.text("Contacto:",15,y);
+    doc.text(document.getElementById("nombre").value,55,y);
+
+}
 
 y += 7;
 
