@@ -1411,78 +1411,50 @@ doc.text(
 doc.setTextColor(0,0,0);
 
     let y = 42;
-    
 
-    // Caja Empresa
-doc.setFillColor(...gris);
-doc.roundedRect(10, y, 92, 55, 3, 3, "F");
+    doc.setFillColor(...gris);
+doc.roundedRect(10, y, 190, 55, 3, 3, "F");
 
-// Caja Cliente
-doc.roundedRect(108, y, 92, 55, 3, 3, "F");
+y += 8;
 
-    y += 8;
+doc.setFontSize(15);
+doc.setTextColor(...azul);
+doc.text("DATOS DEL CLIENTE", 15, y);
 
-    doc.setFontSize(15);
-    doc.setTextColor(...azul);
-    doc.text("JUEGOS BABY MANDI",15,y);
+y += 8;
 
-    y += 8;
+doc.setFontSize(11);
+doc.setTextColor(0);
 
-    doc.setFontSize(11);
-    doc.setTextColor(0);
+doc.text("Nombre:",15,y);
+doc.text(document.getElementById("nombre").value,55,y);
 
-    doc.text("Representante:",15,y);
-doc.text("Javiera Gacitúa Liberona",45,y);
-
-y += 6;
+y += 7;
 
 doc.text("Teléfono:",15,y);
-doc.text("+56 9 4653 5784",45,y);
+doc.text(document.getElementById("telefono").value,55,y);
 
-y += 6;
+y += 7;
 
 doc.text("Correo:",15,y);
-doc.text("cotizacion.babymandi@gmail.com",45,y);
+doc.text(document.getElementById("correo").value,55,y);
 
-y += 6;
+y += 7;
 
-doc.text("Sitio web:",15,y);
-doc.text("www.juegosbabymandi.cl",45,y);
+doc.text("Fecha:",15,y);
+doc.text(document.getElementById("fecha").value,55,y);
 
-y += 6;
+y += 7;
 
-doc.text("Instagram:",15,y);
-doc.text("@juegosbabymandi",45,y);
+doc.text("Comuna:",15,y);
+doc.text(document.getElementById("comuna").value,55,y);
 
-    doc.text("Nombre:",15,y);
-    doc.text(document.getElementById("nombre").value,55,y);
+y += 7;
 
-    y += 7;
+doc.text("Dirección:",15,y);
+doc.text(document.getElementById("direccion").value,55,y);
 
-    doc.text("Teléfono:",15,y);
-    doc.text(document.getElementById("telefono").value,55,y);
-
-    y += 7;
-
-    doc.text("Correo:",15,y);
-    doc.text(document.getElementById("correo").value,55,y);
-
-    y += 7;
-
-    doc.text("Fecha:",15,y);
-    doc.text(document.getElementById("fecha").value,55,y);
-
-    y += 7;
-
-    doc.text("Comuna:",15,y);
-    doc.text(document.getElementById("comuna").value,55,y);
-
-    y += 7;
-
-    doc.text("Dirección:",15,y);
-    doc.text(document.getElementById("direccion").value,55,y);
-
-    y += 15;
+y += 15;
 
         // ===========================
     // TABLA DE JUEGOS
