@@ -1348,11 +1348,11 @@ campos.forEach(campo=>{
 CERRAR MODAL
 ========================================================== */
 
-document.getElementById("cerrarModal").addEventListener("click",()=>{
 
+    function cerrarModal() {
     document.getElementById("modalExito").classList.remove("mostrar");
-
-});
+    }
+    
     </script>
     
     <!-- ========= VENTANA ÉXITO ========= -->
@@ -1380,9 +1380,8 @@ document.getElementById("cerrarModal").addEventListener("click",()=>{
         <p>
             En los próximos minutos revisaremos la disponibilidad y nos pondremos en contacto contigo.
         </p>
-
-        <button id="cerrarModal" class="btn-modal">
-            Cerrar
+<button id="cerrarModal" class="btn-modal" onclick="cerrarModal()">
+    
         </button>
 
     </div>
